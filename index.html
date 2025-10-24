@@ -27,10 +27,32 @@
             background: var(--color-light);
             overflow-x: hidden;
             font-size: 17px;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(107, 116, 96, 0.015) 2px, rgba(107, 116, 96, 0.015) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(107, 116, 96, 0.015) 2px, rgba(107, 116, 96, 0.015) 4px);
         }
 
         html {
             scroll-behavior: smooth;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-separator {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            opacity: 0.4;
         }
 
         .hero {
@@ -40,6 +62,20 @@
             justify-content: center;
             padding: 3rem 2rem;
             background: linear-gradient(135deg, rgba(245, 243, 238, 0.95), rgba(250, 248, 245, 1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(107, 116, 96, 0.03), transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(168, 159, 145, 0.03), transparent 50%);
+            pointer-events: none;
         }
 
         .hero-container {
@@ -48,6 +84,8 @@
             gap: 4rem;
             max-width: 1000px;
             animation: fadeIn 1.5s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-image {
@@ -68,6 +106,10 @@
             padding: 2rem;
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             border: 1px solid rgba(139, 126, 106, 0.15);
+            background-size: cover;
+            background-position: center;
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .hero-content {
@@ -99,6 +141,20 @@
 
         .hero-bullets p {
             margin: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .hero-bullets p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(139, 126, 106, 0.2);
         }
 
         .cta-button {
@@ -113,10 +169,30 @@
             transition: all 0.3s ease;
             margin-top: 1rem;
             letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--color-primary);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .cta-button:hover {
-            background: var(--color-primary);
             color: white;
             transform: translateY(-1px);
             box-shadow: 0 4px 15px rgba(107, 116, 96, 0.2);
@@ -135,6 +211,19 @@
             font-weight: 300;
             text-align: center;
             letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        section h2::after {
+            content: '✦';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-accent);
+            opacity: 0.4;
+            font-size: 1rem;
         }
 
         .sobre-mi {
@@ -144,32 +233,39 @@
 
         .sobre-mi-container {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 320px;
+            gap: 3.5rem;
             align-items: start;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .sobre-mi-image {
             position: sticky;
             top: 2rem;
+            order: 2;
         }
 
-        .sobre-mi-image-circle {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+        .sobre-mi-image-rect {
+            width: 100%;
+            height: 420px;
+            border-radius: 12px;
             background: linear-gradient(135deg, #d4cfc4, #e8e4dc);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-accent);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-align: center;
-            padding: 1.5rem;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
             border: 1px solid rgba(139, 126, 106, 0.15);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sobre-mi-content {
+            order: 1;
         }
 
         .sobre-mi-content p {
@@ -177,6 +273,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.8;
             color: var(--color-text);
+            text-align: justify;
         }
 
         .quote {
@@ -190,6 +287,18 @@
             line-height: 1.8;
             font-style: italic;
             border-left: 3px solid var(--color-accent);
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: -0.5rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: var(--color-accent);
+            opacity: 0.2;
+            font-style: normal;
         }
 
         .libro {
@@ -224,6 +333,14 @@
             padding: 2rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.12);
             border: 1px solid rgba(139, 126, 106, 0.2);
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .libro-image-placeholder:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
         }
 
         .libro-content h3 {
@@ -238,6 +355,7 @@
             font-size: 1.05rem;
             margin-bottom: 1.5rem;
             line-height: 1.8;
+            text-align: justify;
         }
 
         .libro-content ul {
@@ -252,11 +370,15 @@
         }
 
         .libro-content li::before {
-            content: '✦';
+            content: '';
             position: absolute;
             left: 0;
-            color: var(--color-accent);
-            font-size: 1rem;
+            top: 0.5rem;
+            width: 6px;
+            height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
         }
 
         .libro-cta {
@@ -272,8 +394,11 @@
             font-size: 1rem;
         }
 
-        .libro-cta .cta-button:hover {
+        .libro-cta .cta-button::before {
             background: var(--color-secondary);
+        }
+
+        .libro-cta .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(107, 116, 96, 0.25);
         }
@@ -302,6 +427,7 @@
         .servicio-card:hover {
             transform: translateX(5px);
             box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+            border-left-width: 5px;
         }
 
         .servicio-card h3 {
@@ -331,10 +457,14 @@
         }
 
         .servicio-card li::before {
-            content: '•';
+            content: '';
             position: absolute;
             left: 0;
-            color: var(--color-accent);
+            top: 0.6rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-accent);
+            border-radius: 50%;
         }
 
         .servicio-details {
@@ -370,10 +500,30 @@
             transition: all 0.3s ease;
             border: 1.5px solid var(--color-primary);
             font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--color-primary);
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+            z-index: -1;
+        }
+
+        .servicio-button:hover::before {
+            width: 250px;
+            height: 250px;
         }
 
         .servicio-button:hover {
-            background: var(--color-primary);
             color: white;
             transform: translateY(-1px);
         }
@@ -409,7 +559,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem;
             text-decoration: none;
             color: var(--color-text);
             transition: all 0.3s ease;
@@ -420,17 +570,22 @@
         }
 
         .social-icon {
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(139, 126, 106, 0.15);
+        }
+
+        .social-icon svg {
+            width: 28px;
+            height: 28px;
+            transition: all 0.3s ease;
         }
 
         .social-link:hover .social-icon {
@@ -439,8 +594,12 @@
             transform: scale(1.05);
         }
 
+        .social-link:hover .social-icon svg {
+            fill: white;
+        }
+
         .social-label {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--color-text-light);
         }
 
@@ -489,17 +648,26 @@
 
             .sobre-mi-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
             }
 
             .sobre-mi-image {
                 position: relative;
-                margin: 0 auto;
+                order: 1;
+                margin: 0 auto 2rem;
+                max-width: 300px;
             }
 
-            .sobre-mi-image-circle {
-                width: 150px;
-                height: 150px;
+            .sobre-mi-image-rect {
+                height: 380px;
+            }
+
+            .sobre-mi-content {
+                order: 2;
+            }
+
+            .sobre-mi-content p {
+                text-align: left;
             }
 
             .libro-container {
@@ -513,6 +681,10 @@
                 margin: 0 auto;
             }
 
+            .libro-content p {
+                text-align: left;
+            }
+
             section {
                 padding: 4rem 1.5rem;
             }
@@ -523,6 +695,10 @@
 
             section h2 {
                 font-size: 1.7rem;
+            }
+
+            .section-separator {
+                font-size: 1.2rem;
             }
         }
 
@@ -538,39 +714,37 @@
             .social-links {
                 gap: 2rem;
             }
+
+            .social-icon {
+                width: 55px;
+                height: 55px;
+            }
         }
     </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <section class="hero">
         <div class="hero-container">
             <div class="hero-image">
-                <div class="hero-image-circle">
-                    Tu foto de perfil aquí<br>
-                    <small>(Circular)</small>
-                </div>
+                <div class="hero-image-circle" id="hero-parallax"></div>
             </div>
             <div class="hero-content">
                 <h1>Javier Gómez</h1>
                 <h2>Psicoterapeuta • Explorador de la Consciencia</h2>
                 <div class="hero-bullets">
-                    <p>❖ Acompaño procesos de transformación interior</p>
-                    <p>❖ Puente entre misticismo y transformación social</p>
+                    <p>Acompaño procesos de transformación interior</p>
+                    <p>Puente entre misticismo y transformación social</p>
                 </div>
                 <a href="#servicios" class="cta-button">Explorar servicios</a>
             </div>
         </div>
     </section>
 
-    <section class="sobre-mi" id="sobre-mi">
+    <div class="section-separator">✦ ✦ ✦</div>
+
+    <section class="sobre-mi fade-in-section" id="sobre-mi">
         <h2>Sobre Mí</h2>
         <div class="sobre-mi-container">
-            <div class="sobre-mi-image">
-                <div class="sobre-mi-image-circle">
-                    Foto<br>secundaria
-                </div>
-            </div>
             <div class="sobre-mi-content">
                 <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
                 <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
@@ -580,19 +754,22 @@
                 <p>También soy profesor de meditación, estudiante de sufismo, y autor de <em>La Profecía del Eneagrama</em>, un libro que rescata el Eneagrama como mapa sagrado hacia nuestra verdadera naturaleza espiritual.</p>
                 <p>Mi enfoque está dirigido a quienes buscan no solo sanar heridas, sino recordar su centro, despertar su presencia y vivir en coherencia con el alma.</p>
             </div>
+            <div class="sobre-mi-image">
+                <div class="sobre-mi-image-rect"></div>
+            </div>
         </div>
         <div class="quote">
             Creo en una terapia <strong>humana, encarnada y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.
         </div>
     </section>
 
-    <section class="libro" id="libro">
+    <div class="section-separator">✦ ✦ ✦</div>
+
+    <section class="libro fade-in-section" id="libro">
         <h2>Mi Libro</h2>
         <div class="libro-container">
             <div class="libro-image">
-                <div class="libro-image-placeholder">
-                    Portada de<br>La Profecía del Eneagrama
-                </div>
+                <div class="libro-image-placeholder"></div>
             </div>
             <div class="libro-content">
                 <h3>La Profecía del Eneagrama</h3>
@@ -632,7 +809,9 @@
         </div>
     </section>
 
-    <section class="servicios" id="servicios">
+    <div class="section-separator">✦ ✦ ✦</div>
+
+    <section class="servicios fade-in-section" id="servicios">
         <h2>Cómo Trabajamos Juntos</h2>
         <p class="servicios-intro">Ofrezco diferentes formas de acompañamiento según tu momento y necesidades</p>
 
@@ -708,30 +887,73 @@
         </div>
     </section>
 
-    <section class="contacto" id="contacto">
+    <div class="section-separator">✦ ✦ ✦</div>
+
+    <section class="contacto fade-in-section" id="contacto">
         <h2>Conecta Conmigo</h2>
         <p>Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
         <p>También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.</p>
         
         <div class="social-links">
-            <a href="mailto:psicoalquimia.co@gmail.com" class="social-link">
-                <div class="social-icon">✉️</div>
+            <a href="mailto:tu@email.com" class="social-link">
+                <div class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="#6b7460">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </div>
                 <span class="social-label">Email</span>
             </a>
-            <a href="https://instagram.com/psicoalquimia.co" target="_blank" class="social-link">
-                <div class="fab fa-instagram"></i></div>
+            <a href="https://instagram.com/tuusuario" target="_blank" class="social-link">
+                <div class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="#6b7460">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                </div>
                 <span class="social-label">Instagram</span>
             </a>
-            <a href="https://tiktok.com/@psicoalquimia" target="_blank" class="social-link">
-                <div class="social-icon">🎵</div>
+            <a href="https://tiktok.com/@tuusuario" target="_blank" class="social-link">
+                <div class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="#6b7460">
+                        <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
+                    </svg>
+                </div>
                 <span class="social-label">TikTok</span>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Javier Gómez • PsicoAlquimia</p>
+        <p>© 2025 Javier Gómez • Psicoterapeuta y Explorador de la Consciencia</p>
         <p>Creado con presencia y dedicación</p>
     </footer>
+
+    <script>
+        // Fade-in al hacer scroll
+        const fadeElements = document.querySelectorAll('.fade-in-section');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // Parallax sutil en hero
+        const heroParallax = document.getElementById('hero-parallax');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.05;
+            
+            if (heroParallax && scrolled < window.innerHeight) {
+                heroParallax.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    </script>
 </body>
 </html>
