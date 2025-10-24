@@ -3,354 +3,734 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javier Gómez - PsicoAlquimia</title>
+    <title>Javier Gómez - Psicoterapeuta • Explorador de la Consciencia</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        :root {
+            --color-primary: #6b7460;
+            --color-secondary: #a89f91;
+            --color-accent: #8b7e6a;
+            --color-light: #faf8f5;
+            --color-text: #4a4a4a;
+            --color-text-light: #6b6b6b;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #d4c9b8 0%, #c9d1c0 50%, #b8c9d1 100%);
-            line-height: 1.6;
-            color: #5a5a5a;
-            padding: 20px;
-            min-height: 100vh;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--color-text);
+            background: var(--color-light);
+            overflow-x: hidden;
+            font-size: 17px;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
-            padding: 60px 40px;
-            backdrop-filter: blur(10px);
+
+        html {
+            scroll-behavior: smooth;
         }
-        
-        /* HERO SECTION */
+
         .hero {
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            gap: 40px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
+            justify-content: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(245, 243, 238, 0.95), rgba(250, 248, 245, 1));
         }
-        
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1000px;
+            animation: fadeIn 1.5s ease;
+        }
+
         .hero-image {
-            flex: 0 0 280px;
-            text-align: center;
+            flex-shrink: 0;
         }
-        
-        .profile-circle {
+
+        .hero-image-circle {
             width: 280px;
             height: 280px;
             border-radius: 50%;
-            border: 3px solid #c9a88a;
-            background: linear-gradient(135deg, #f5f5f0, #e8dcc8);
+            background: linear-gradient(135deg, #d4cfc4, #e8e4dc);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            color: #999;
-            margin: 0 auto;
+            color: var(--color-accent);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(139, 126, 106, 0.15);
         }
-        
+
         .hero-content {
             flex: 1;
-            min-width: 250px;
         }
-        
-        h1 {
+
+        .hero h1 {
             font-size: 3rem;
-            color: #4a4a4a;
-            margin-bottom: 10px;
             font-weight: 300;
-            letter-spacing: -1px;
-        }
-        
-        .subtitle {
-            font-size: 1.1rem;
-            color: #7a7a7a;
-            margin-bottom: 20px;
+            margin-bottom: 0.8rem;
+            color: var(--color-primary);
             letter-spacing: 1px;
         }
-        
-        .description-points {
-            margin-bottom: 30px;
-        }
-        
-        .point {
-            font-size: 1rem;
-            color: #6a6a6a;
-            margin: 8px 0;
-        }
-        
-        .point:before {
-            content: "\2738 ";
-            color: #9a8a7a;
-            margin-right: 10px;
-        }
-        
-        .btn-primary {
-            background: #c9a88a;
-            color: white;
-            border: none;
-            padding: 14px 35px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            display: inline-block;
-            text-decoration: none;
-        }
-        
-        .btn-primary:hover {
-            background: #b89973;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(201, 168, 138, 0.3);
-        }
-        
-        .section {
-            margin: 80px 0;
-            padding: 40px 0;
-            border-top: 1px solid rgba(150, 140, 130, 0.2);
-        }
-        
-        .section:first-of-type {
-            border-top: none;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            color: #4a4a4a;
-            text-align: center;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 600;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: #8a8a8a;
-            font-size: 1.05rem;
-            margin-bottom: 40px;
-            font-style: italic;
+
+        .hero h2 {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--color-secondary);
             letter-spacing: 0.5px;
         }
-        
-        .section-content {
-            max-width: 700px;
+
+        .hero-bullets {
+            margin: 2rem 0;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--color-text-light);
+        }
+
+        .hero-bullets p {
+            margin: 0.6rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: transparent;
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            border: 1.5px solid var(--color-primary);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(107, 116, 96, 0.2);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 900px;
             margin: 0 auto;
-            text-align: justify;
         }
-        
-        .section-content p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-            color: #5a5a5a;
-        }
-        
-        .highlight-text {
-            color: #4a4a4a;
-            font-weight: 600;
-        }
-        
-        .italic-quote {
-            color: #c9a88a;
-            font-style: italic;
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 3rem;
+            font-weight: 300;
             text-align: center;
-            margin: 30px 0;
+            letter-spacing: 1px;
+        }
+
+        .sobre-mi {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .sobre-mi-container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sobre-mi-image {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .sobre-mi-image-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4cfc4, #e8e4dc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            border: 1px solid rgba(139, 126, 106, 0.15);
+        }
+
+        .sobre-mi-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .quote {
+            background: linear-gradient(135deg, rgba(107, 116, 96, 0.08), rgba(168, 159, 145, 0.08));
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            text-align: center;
+            color: var(--color-text);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            font-style: italic;
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .libro {
+            background: var(--color-light);
+        }
+
+        .libro-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .libro-image {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .libro-image-placeholder {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background: linear-gradient(135deg, #d4cfc4, #c9c2b6);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(74, 74, 74, 0.5);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            border: 1px solid rgba(139, 126, 106, 0.2);
+        }
+
+        .libro-content h3 {
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            font-weight: 400;
+        }
+
+        .libro-content p, .libro-content ul {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .libro-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .libro-content li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .libro-content li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
             font-size: 1rem;
         }
-        
-        .book-section {
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .book-image {
-            width: 250px;
-            height: 350px;
-            background: linear-gradient(135deg, #d4c9b8, #c9d1c0);
-            border-radius: 15px;
-            margin: 40px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 14px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 2px solid #c9a88a;
-        }
-        
-        .book-available {
-            font-size: 0.9rem;
-            color: #7a7a7a;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 20px 0;
-        }
-        
-        .buttons-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
-        
-        .contact-section {
+
+        .libro-cta {
+            margin-top: 2.5rem;
             text-align: center;
         }
-        
-        .contact-section p {
-            margin: 20px 0;
-            color: #5a5a5a;
+
+        .libro-cta .cta-button {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
         }
-        
-        .whatsapp-link {
-            color: #c9a88a;
+
+        .libro-cta .cta-button:hover {
+            background: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 116, 96, 0.25);
+        }
+
+        .servicios {
+            background: white;
+        }
+
+        .servicios-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 4rem;
+            font-style: italic;
+        }
+
+        .servicio-card {
+            background: rgba(250, 248, 245, 0.6);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 12px;
+            border-left: 3px solid var(--color-accent);
+            transition: all 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+        }
+
+        .servicio-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .servicio-card p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .servicio-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5rem 0;
+        }
+
+        .servicio-card li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .servicio-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .servicio-details {
+            background: white;
+            padding: 1.3rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            border: 1px solid rgba(139, 126, 106, 0.15);
+        }
+
+        .servicio-details strong {
+            color: var(--color-primary);
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .servicio-precio {
+            font-size: 1.2rem;
+            color: var(--color-secondary);
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+
+        .servicio-button {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            background: transparent;
+            color: var(--color-primary);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
+            border-radius: 50px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: 1.5px solid var(--color-primary);
+            font-size: 0.95rem;
         }
-        
-        .whatsapp-link:hover {
-            color: #b89973;
+
+        .servicio-button:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-1px);
         }
-        
+
+        .contacto {
+            background: linear-gradient(135deg, rgba(107, 116, 96, 0.05), rgba(168, 159, 145, 0.05));
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .contacto h2 {
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+        }
+
+        .contacto p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+        }
+
         .social-links {
             display: flex;
+            gap: 2.5rem;
             justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
+            flex-wrap: wrap;
+            margin-top: 3rem;
         }
-        
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+
         .social-icon {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            border: 2px solid #c9a88a;
+            background: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #c9a88a;
-            text-decoration: none;
-            font-size: 24px;
-            transition: all 0.3s;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(139, 126, 106, 0.15);
         }
-        
-        .social-icon:hover {
-            background: #c9a88a;
-            color: white;
-            transform: scale(1.1);
+
+        .social-link:hover .social-icon {
+            background: var(--color-primary);
+            box-shadow: 0 6px 20px rgba(107, 116, 96, 0.25);
+            transform: scale(1.05);
         }
-        
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid rgba(150, 140, 130, 0.2);
-            color: #a0a0a0;
+
+        .social-label {
             font-size: 0.9rem;
-            margin-top: 40px;
+            color: var(--color-text-light);
         }
-        
+
+        footer {
+            background: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @media (max-width: 768px) {
-            .hero {
+            .hero-container {
                 flex-direction: column;
-                gap: 30px;
+                gap: 2.5rem;
+                text-align: center;
             }
-            
-            .hero-image {
-                flex: 0 0 auto;
-                order: -1;
+
+            .hero-image-circle {
+                width: 220px;
+                height: 220px;
             }
-            
-            h1 {
-                font-size: 2rem;
+
+            .hero h1 {
+                font-size: 2.2rem;
             }
-            
-            .container {
-                padding: 30px 20px;
+
+            .hero h2 {
+                font-size: 1.1rem;
             }
-            
-            .profile-circle {
-                width: 200px;
-                height: 200px;
+
+            .sobre-mi-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sobre-mi-image {
+                position: relative;
+                margin: 0 auto;
+            }
+
+            .sobre-mi-image-circle {
+                width: 150px;
+                height: 150px;
+            }
+
+            .libro-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .libro-image {
+                position: relative;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .servicio-card {
+                padding: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .social-links {
+                gap: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- HERO SECTION -->
-        <section class="hero">
+    <section class="hero">
+        <div class="hero-container">
             <div class="hero-image">
-                <div class="profile-circle">Imagen de Perfil</div>
+                <div class="hero-image-circle">
+                    Tu foto de perfil aquí<br>
+                    <small>(Circular)</small>
+                </div>
             </div>
             <div class="hero-content">
                 <h1>Javier Gómez</h1>
-                <p class="subtitle">Psicoterapeuta • Explorador de la Consciencia</p>
-                <div class="description-points">
-                    <div class="point">Acaño procesos de transformación interior</div>
-                    <div class="point">Puente entre misticismo y transformación social</div>
+                <h2>Psicoterapeuta • Explorador de la Consciencia</h2>
+                <div class="hero-bullets">
+                    <p>❖ Acompaño procesos de transformación interior</p>
+                    <p>❖ Puente entre misticismo y transformación social</p>
                 </div>
-                <a href="#servicios" class="btn-primary">Explorar Servicios</a>
+                <a href="#servicios" class="cta-button">Explorar servicios</a>
             </div>
-        </section>
-        
-        <!-- ABOUT SECTION -->
-        <section class="section" id="sobre">
-            <h2>Sobre Mí</h2>
-            <div class="section-content">
-                <p>Acaño procesos de <span class="highlight-text">autoconocimiento y transformación interior</span> desde un enfoque integrativo que une <span class="highlight-text">psicología, espiritualidad y cuerpo</span>.</p>
-                
-                <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino <span class="highlight-text">acañarte a recordar el tuyo</span>.</p>
-                
-                <p>No se trata de autoridad, sino de <span class="highlight-text">presencia compartida, escucha y descubrimiento mutuo</span>.</p>
-                
-                <p>Creo en una terapia <span class="highlight-text">humana, encarnada y compasiva</span>, donde cada persona pueda <span class="highlight-text">reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</span>.</p>
-                
-                <p class="italic-quote">Acaño a quienes desean recordarse, reconciliarse y volver a habitarse con autenticidad</p>
-            </div>
-        </section>
-        
-        <!-- ENEAGRAMA SECTION -->
-        <section class="section" id="eneagrama">
-            <h2>La Profecía del Eneagrama</h2>
-            <p class="section-subtitle">Apuntes del viaje colectivo hacia el Buen Vivir</p>
-            
-            <div class="book-section">
-                <div class="book-image">Portada del Libro</div>
-                <p class="book-available">YA DISPONIBLE EN PREVENTA</p>
-                <div class="buttons-group">
-                    <a href="#" class="btn-primary">Conseguir el Libro</a>
-                    <a href="#" class="btn-primary">Te Cuento de Qué Trata</a>
+        </div>
+    </section>
+
+    <section class="sobre-mi" id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <div class="sobre-mi-container">
+            <div class="sobre-mi-image">
+                <div class="sobre-mi-image-circle">
+                    Foto<br>secundaria
                 </div>
             </div>
-        </section>
-        
-        <!-- CONTACT SECTION -->
-        <section class="section contact-section" id="contacto">
-            <h2>Conecta Conmigo</h2>
-            <p>Si sientes el llamado a iniciar un proceso o simplemente a tener un primer encuentro,<br> puedes escribirme por WhatsApp al <a href="https://wa.link/vccycy" class="whatsapp-link">+57 301 37 5303</a> para coordinar una cita.</p>
-            
-            <div class="social-links">
-                <a href="https://wa.link/vccycy" class="social-icon" title="WhatsApp">💬</a>
-                <a href="#" class="social-icon" title="Instagram">📷</a>
-                <a href="#" class="social-icon" title="TikTok">🎵</a>
+            <div class="sobre-mi-content">
+                <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
+                <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
+                <p>Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando.</p>
+                <p>Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
+                <p>Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
+                <p>También soy profesor de meditación, estudiante de sufismo, y autor de <em>La Profecía del Eneagrama</em>, un libro que rescata el Eneagrama como mapa sagrado hacia nuestra verdadera naturaleza espiritual.</p>
+                <p>Mi enfoque está dirigido a quienes buscan no solo sanar heridas, sino recordar su centro, despertar su presencia y vivir en coherencia con el alma.</p>
             </div>
-        </section>
+        </div>
+        <div class="quote">
+            Creo en una terapia <strong>humana, encarnada y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.
+        </div>
+    </section>
+
+    <section class="libro" id="libro">
+        <h2>Mi Libro</h2>
+        <div class="libro-container">
+            <div class="libro-image">
+                <div class="libro-image-placeholder">
+                    Portada de<br>La Profecía del Eneagrama
+                </div>
+            </div>
+            <div class="libro-content">
+                <h3>La Profecía del Eneagrama</h3>
+                <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
+                <p>En un mundo donde todo se ha convertido en mercancía —incluso lo más sagrado—, este libro revela el eneagrama más allá de su uso superficial como herramienta de personalidad y lo devuelve a su esencia más pura: <strong>un mapa sagrado hacia la verdadera naturaleza espiritual de la humanidad.</strong></p>
+                <h3>Un viaje iniciático hacia el corazón de lo que somos</h3>
+                <p><em>La Profecía del Eneagrama</em> no es un manual de autoayuda ni una clasificación de tipos psicológicos. Es <strong>una experiencia de despertar</strong>, narrada a través de los apuntes y las notas de campo de un buscador del espíritu, que funcionan como un verdadero ritual de autodescubrimiento.</p>
+                <p>Este libro te adentrará en las profundidades de la experiencia mística para revelar:</p>
+                <ul>
+                    <li>La realidad profundamente espiritual de la simbología del eneagrama</li>
+                    <li><strong>La herida fundamental</strong> que nos mantiene desconectados de nuestra esencia</li>
+                    <li>Las puertas de <strong>acceso a la experiencia mística</strong></li>
+                    <li>Las posibilidades de <strong>construcción social a partir de la integración de la experiencia espiritual</strong></li>
+                </ul>
+                <p>Pero sobre todo, te enseñará <strong>a volver al corazón</strong>: a reconectar con la fuente de amor, sabiduría y verdad que siempre ha habitado en ti.</p>
+                <h3>Más que teoría: una herramienta espiritual de transformación profunda</h3>
+                <ul>
+                    <li><strong>Una visión revolucionaria del eneagrama</strong> como ciencia espiritual viva</li>
+                    <li><strong>Una lectura como meditación contemplativa</strong> que funciona como portales hacia estados profundos de consciencia</li>
+                    <li><strong>Un abordaje lúcido</strong> a los fenómenos que nos alejan de nuestra esencia</li>
+                    <li><strong>Un lenguaje que mezcla la razón y el corazón</strong></li>
+                </ul>
+                <h3>Una invitación urgente a practicar espiritualidad verdadera</h3>
+                <p>Es un testimonio vivo para quienes:</p>
+                <ul>
+                    <li>Buscan una espiritualidad auténtica, no diseñada para el mercado</li>
+                    <li>Sienten el llamado a despertar de la ilusión colectiva</li>
+                    <li>Están list@s para emprender el viaje de regreso a sí mism@s</li>
+                    <li>Intuyen que la revolución interior es inseparable de la transformación del mundo</li>
+                </ul>
+                <p style="font-style: italic; margin-top: 2rem;">"La Profecía del Eneagrama es una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método."</p>
+                <p><strong>Para los que aún pueden oír, en medio del ruido, el murmullo de lo sagrado.</strong></p>
+                <div class="libro-cta">
+                    <a href="https://www.amazon.com" target="_blank" class="cta-button">Conseguir el libro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="servicios" id="servicios">
+        <h2>Cómo Trabajamos Juntos</h2>
+        <p class="servicios-intro">Ofrezco diferentes formas de acompañamiento según tu momento y necesidades</p>
+
+        <div class="servicio-card">
+            <h3>Sesión Individual de Acompañamiento Terapéutico</h3>
+            <p>Espacio de 90 minutos para procesos de transformación profunda, crisis existenciales, integración de experiencias significativas (psicodélicas, místicas, traumáticas), o trabajo con patrones inconscientes.</p>
+            <p><strong>Este espacio es para ti si:</strong></p>
+            <ul>
+                <li>Estás atravesando una crisis existencial o transición vital importante</li>
+                <li>Has tenido experiencias psicodélicas o místicas que necesitas integrar</li>
+                <li>Trabajas con trauma complejo y buscas un enfoque profundo</li>
+                <li>Sientes el llamado a despertar a dimensiones más amplias de ti mismo</li>
+            </ul>
+            <div class="servicio-details">
+                <strong>Modalidad:</strong> Online (Zoom) o presencial<br>
+                <strong>Duración:</strong> 90 minutos
+            </div>
+            <p class="servicio-precio">Inversión: 65€</p>
+            <a href="https://calendly.com" target="_blank" class="servicio-button">Agendar sesión</a>
+        </div>
+
+        <div class="servicio-card">
+            <h3>Proceso de Acompañamiento Profundo (4 Sesiones)</h3>
+            <p>Acompañamiento continuado para procesos que requieren más tiempo y profundidad.</p>
+            <p><strong>Este proceso es para ti si:</strong></p>
+            <ul>
+                <li>Sientes que una sola sesión no es suficiente</li>
+                <li>Necesitas acompañamiento continuado en una transición vital</li>
+                <li>Estás trabajando con capas profundas de trauma</li>
+                <li>Buscas transformación real, no solo alivio sintomático</li>
+            </ul>
+            <div class="servicio-details">
+                <strong>Modalidad:</strong> Online<br>
+                <strong>Duración:</strong> 4 sesiones de 90 minutos
+            </div>
+            <p class="servicio-precio">Inversión: 240€ (ahorro de 20€)</p>
+            <a href="https://calendly.com" target="_blank" class="servicio-button">Agendar proceso</a>
+        </div>
+
+        <div class="servicio-card">
+            <h3>Círculo Mensual "El Umbral"</h3>
+            <p>Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
+            <p><strong>Cada encuentro incluye:</strong></p>
+            <ul>
+                <li>Meditación guiada y apertura del espacio sagrado</li>
+                <li>Círculo de palabra desde la vulnerabilidad</li>
+                <li>Integración colectiva</li>
+            </ul>
+            <div class="servicio-details">
+                <strong>Modalidad:</strong> Online<br>
+                <strong>Frecuencia:</strong> Último jueves del mes, 19:00-21:00h<br>
+                <strong>Grupo:</strong> Máximo 10 personas
+            </div>
+            <p class="servicio-precio">Inversión: 25€ por sesión</p>
+            <a href="https://calendly.com" target="_blank" class="servicio-button">Unirme al círculo</a>
+        </div>
+
+        <div class="servicio-card">
+            <h3>Sesión de Profundización: El Eneagrama Sagrado</h3>
+            <p>Sesión de 60 minutos para profundizar en los temas de "La Profecía del Eneagrama".</p>
+            <p><strong>Esta sesión es para ti si:</strong></p>
+            <ul>
+                <li>Has leído el libro y quieres profundizar personalmente</li>
+                <li>Te interesa el eneagrama como mapa de transformación espiritual</li>
+                <li>Buscas entender tu tipo como camino de despertar</li>
+            </ul>
+            <div class="servicio-details">
+                <strong>Modalidad:</strong> Online<br>
+                <strong>Duración:</strong> 60 minutos
+            </div>
+            <p class="servicio-precio">Inversión: 50€</p>
+            <a href="https://calendly.com" target="_blank" class="servicio-button">Agendar sesión</a>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <h2>Conecta Conmigo</h2>
+        <p>Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
+        <p>También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.</p>
         
-        <footer>
-            © 2025 Javier Gómez - PsicoAlquimia. Todos los derechos reservados.
-        </footer>
-    </div>
+        <div class="social-links">
+            <a href="mailto:tu@email.com" class="social-link">
+                <div class="social-icon">✉️</div>
+                <span class="social-label">Email</span>
+            </a>
+            <a href="https://instagram.com/tuusuario" target="_blank" class="social-link">
+                <div class="social-icon">📷</div>
+                <span class="social-label">Instagram</span>
+            </a>
+            <a href="https://tiktok.com/@tuusuario" target="_blank" class="social-link">
+                <div class="social-icon">🎵</div>
+                <span class="social-label">TikTok</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Javier Gómez • Psicoterapeuta y Explorador de la Consciencia</p>
+        <p>Creado con presencia y dedicación</p>
+    </footer>
 </body>
 </html>
