@@ -1254,6 +1254,90 @@
     width: 100% !important;
   }
 }
+	 /* --- AJUSTES DEFINITIVOS MÓVILES (PRIORIDAD FORZADA) --- */
+@media (max-width: 768px) {
+
+  /* --- HERO --- */
+  section.hero h2 {
+    font-size: 1.05rem !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    margin: 0.8rem auto 2rem !important;
+    display: block !important;
+    white-space: normal !important;
+  }
+
+  /* Si quieres forzar salto de línea (descomenta si lo prefieres así)
+  section.hero h2::after {
+    content: "\AExplorador de la Consciencia";
+    white-space: pre;
+  }
+  */
+
+  section.hero .hero-bullets p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    margin: 0.4rem 0 !important;
+    padding-left: 0 !important;
+  }
+  section.hero .hero-bullets p::before { display: none !important; }
+
+  /* --- LIBRO --- */
+  section#libro .libro-image {
+    position: relative !important;
+    top: auto !important;
+    max-width: 95vw !important;
+    width: 100% !important;
+    margin: 0 auto 2rem !important;
+  }
+
+  section#libro .libro-image-placeholder {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 2/3 !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    border-radius: 10px !important;
+  }
+
+  /* --- SERVICIOS --- */
+  section#servicios .servicios-intro {
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+    max-width: 85% !important;
+    margin: 0 auto 1.5rem !important;
+    text-align: center !important;
+  }
+
+  section#servicios {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    padding: 1.5rem 1rem !important;
+  }
+  footer p:first-of-type {
+    white-space: nowrap !important;
+  }
+  footer p:last-of-type {
+    margin-top: 0.6rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section#libro .libro-image {
+    max-width: 92vw !important;
+  }
+  section#libro .libro-image-placeholder {
+    width: 100% !important;
+  }
+}
  </style>
 </head>
 <body>
