@@ -1370,6 +1370,45 @@ section.visible h2 {
   opacity: 1;
   transform: translateY(0);
 }
+	 .servicios-intro {
+  font-size: 1.15rem !important;
+  line-height: 1.7 !important;
+  font-style: italic !important;
+  color: var(--color-text-light) !important;
+  max-width: 600px !important;
+  margin: 0 auto 3rem !important;
+  text-align: center !important;
+}
+	 /* --- Superposición simbólica en el HERO --- */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('geometria-sagrada.png'); /* o tu archivo SVG */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.08; /* transparencia, puedes ajustar 0.05–0.15 */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Asegura que el contenido quede arriba */
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+	 /* --- Animación general de entrada entre secciones --- */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
  </style>
 </head>
 <body>
@@ -1490,8 +1529,11 @@ section.visible h2 {
     <div class="section-separator">· · ·</div>
 
     <section class="servicios fade-in-section" id="servicios">
-        <h2>Cómo Trabajamos Juntos</h2>
-        <p class="servicios-intro">Ofrezco diferentes formas de acompañamiento según tu momento y necesidades</p>
+       <h2>Cómo Trabajamos Juntos</h2>
+<p class="servicios-intro" style="font-style: italic;">
+  “El acompañamiento es un espacio de verdad compartida.<br>
+  No para ser arreglados, sino para recordar lo que somos.”
+</p>
 
         <div class="servicio-card">
             <h3>Sesión Individual de Acompañamiento Terapéutico</h3>
@@ -1695,5 +1737,17 @@ sections.forEach(sec => titleObserver.observe(sec));
             }
         });
     </script>
+	<script>
+  // Efecto de fundido general en secciones
+  const sections = document.querySelectorAll("section");
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(s => sectionObserver.observe(s));
+</script>
 </body>
 </html> 
