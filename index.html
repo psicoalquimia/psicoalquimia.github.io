@@ -1093,7 +1093,93 @@
   }
 }
         }
-    </style>
+ 
+ /* --- AJUSTES DE VERSIÓN MÓVIL, MEJORAS VISUALES FINAS --- */
+@media (max-width: 768px) {
+
+  /* --- HERO --- */
+  /* Subtítulo en una o dos líneas ordenadas */
+  .hero h2 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    max-width: 80%;
+    margin: 0.5rem auto 2rem;
+    white-space: normal;
+  }
+
+  /* Frases bajo el nombre, más ordenadas */
+  .hero-bullets {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-bullets p {
+    margin: 0.5rem 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-bullets p::before {
+    display: none; /* quita los puntos a la izquierda en móvil */
+  }
+
+  /* --- LIBRO --- */
+  /* Foto de portada más grande */
+  .libro-image {
+    max-width: 95vw;
+  }
+
+  .libro-image-placeholder {
+    aspect-ratio: 2/3;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- SERVICIOS --- */
+  .servicios-intro {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 90%;
+    margin: 0 auto 2rem; /* menos margen inferior */
+  }
+
+  /* --- FOOTER --- */
+  footer p:first-of-type {
+    white-space: nowrap; /* mantiene toda la frase en una línea */
+  }
+
+  footer p:last-of-type {
+    margin-top: 0.8rem; /* espacio suave debajo */
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Subtítulo aún más controlado en pantallas muy pequeñas */
+  .hero h2 {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .hero-bullets p {
+    font-size: 0.95rem;
+  }
+
+  .libro-image {
+    max-width: 92vw;
+  }
+
+  footer p:first-of-type {
+    font-size: 0.85rem;
+  }
+}
+ </style>
 </head>
 <body>
     <!-- Banner de Cookies -->
