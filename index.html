@@ -352,7 +352,7 @@
 
         .sobre-mi-image {
             position: sticky;
-            top: 2rem;
+            top: 5rem;
             order: 2;
         }
 
@@ -427,7 +427,7 @@
 
         .libro-image {
             position: sticky;
-            top: 2rem;
+            top: 5rem;
         }
 
         .libro-image-placeholder {
@@ -685,121 +685,6 @@
             transform: translateY(0) scale(0.98);
         }
 
-        /* Modal de agradecimiento */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            padding: 2rem;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 16px;
-            padding: 3rem;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--color-text-light);
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background: var(--color-light);
-            color: var(--color-primary);
-        }
-
-        .modal-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .modal-content h3 {
-            font-size: 1.8rem;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        .modal-content p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--color-text);
-            margin-bottom: 1.2rem;
-            text-align: center;
-        }
-
-        .modal-checklist {
-            background: var(--color-light);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .modal-checklist p {
-            text-align: left;
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-            font-size: 0.95rem;
-        }
-
-        .modal-checklist p::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-            font-weight: bold;
-        }
 
         .contacto {
             background: linear-gradient(135deg, rgba(107, 116, 96, 0.05), rgba(168, 159, 145, 0.05));
@@ -1186,7 +1071,7 @@
                     Pago seguro
                 </span>
             </p>
-            <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button" onclick="showThankYouModal(event)">Agendar sesión</a>
+            <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button">Agendar sesión</a>
         </div>
 
         <div class="servicio-card">
@@ -1209,7 +1094,7 @@
                     Pago seguro
                 </span>
             </p>
-            <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button" onclick="showThankYouModal(event)">Agendar proceso</a>
+            <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button">Agendar proceso</a>
         </div>
 
         <div class="servicio-card">
@@ -1227,7 +1112,7 @@
                     Pago seguro
                 </span>
             </p>
-            <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button" onclick="showThankYouModal(event)">Unirme al círculo</a>
+            <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button">Unirme al círculo</a>
         </div>
     </section>
 
@@ -1270,31 +1155,7 @@
         <p>© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎</p>
     </footer>
 
-    <!-- Modal de agradecimiento -->
-    <div class="modal-overlay" id="thankYouModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeThankYouModal()">×</button>
-            <div class="modal-icon">✓</div>
-            <h3>Gracias por tu confianza</h3>
-            <p>Tu decisión de trabajar en ti mism@ es un acto de valentía y amor propio. Honro profundamente tu compromiso con tu proceso de transformación.</p>
-            
-            <div class="modal-checklist">
-                <p><strong>Recibirás 2 correos electrónicos:</strong></p>
-                <p>Confirmación de tu reserva con todos los detalles</p>
-                <p>Enlace de Google Meet para nuestra sesión</p>
-            </div>
-
-            <p style="margin-top: 1.5rem;">Para nuestro encuentro solo necesitas:</p>
-            <div class="modal-checklist">
-                <p>Estar disponible el día y hora acordados</p>
-                <p>Un espacio privado donde te sientas cómodo</p>
-                <p>Computador o teléfono conectado a internet</p>
-                <p>Permitirte estar presente con lo que surja</p>
-            </div>
-
-            <p style="margin-top: 1.5rem; font-style: italic; color: var(--color-text-light);">No hay nada más que hacer. Nos vemos pronto en nuestro espacio de encuentro.</p>
-        </div>
-    </div>
+    
 
     <script>
         // Fade-in al hacer scroll
@@ -1353,36 +1214,6 @@
             lastScroll = scrolled;
         });
 
-        // Modal de agradecimiento
-        function showThankYouModal(event) {
-            // No prevenir default para que el link funcione
-            // El modal se mostrará mientras se carga Setmore
-            setTimeout(() => {
-                const modal = document.getElementById('thankYouModal');
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }, 500);
-        }
-
-        function closeThankYouModal() {
-            const modal = document.getElementById('thankYouModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Cerrar modal al hacer clic fuera
-        document.getElementById('thankYouModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeThankYouModal();
-            }
-        });
-
-        // Cerrar modal con tecla ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeThankYouModal();
-            }
-        });
     </script>
 </body>
 </html>
