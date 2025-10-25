@@ -966,6 +966,7 @@
             .libro-image {
                 position: relative;
                 top: auto;
+                max-width: 280px;
                 margin: 0 auto 2rem;
             }
 
@@ -1040,59 +1041,8 @@
             }
 
             .libro-image {
-		 		max-width: 240px;               
+                max-width: 240px;
             }
-
-			.libro-image {
-    width: 100%;
-    max-width: 280px;    /* Igual que .sobre-mi-image para móvil */
-    margin: 0 auto 2rem; /* Centrado y con espacio abajo */
-    position: relative;  /* Igual que ya tenías */
-}
-
-.libro-portada-img {
-    width: 100%;         /* La imagen ocupa todo el ancho del contenedor */
-    height: auto;        /* Mantiene la proporción */
-    border-radius: 8px;  /* Esquinas redondeadas */
-    display: block;      /* Para que no deje huecos extra */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.12); /* Opcional: sombra igual que antes */
-    border: 1px solid rgba(139, 126, 106, 0.2); /* Igual que antes */
-}
-@media (max-width: 480px) {
-  section {
-    padding: 2.2rem 1rem;
-  }
-  .contacto {
-    padding: 2.5rem 1rem;
-  }
-  .section-separator {
-    padding: 1.2rem 0;
-  }
-  .quote {
-    margin: 2rem 0;
-    padding: 1.3rem;
-  }
-}
-@media (max-width: 480px) {
-  .hero-image-circle {
-    width: 120px;
-    height: 120px;
-    padding: 1rem;
-    font-size: 0.85rem;
-  }
-  .hero h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
-  }
-  .hero h2 {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    word-break: break-word;    /* Permite saltar palabra si no cabe */
-    line-height: 1.3;
-    text-align: center;
-  }
-}
-
 
             .sobre-mi-image {
                 max-width: 280px;
@@ -1177,10 +1127,9 @@
     <section class="libro fade-in-section" id="libro">
         <h2>Mi Libro</h2>
         <div class="libro-container">
-           <div class="libro-image">
-  <img src="portada-libro.jpg" alt="Portada del libro" class="libro-portada-img" id="libro-parallax">
-</div>
-
+            <div class="libro-image">
+                <div class="libro-image-placeholder" id="libro-parallax"></div>
+            </div>
             <div class="libro-content">
                 <h3>La Profecía del Eneagrama</h3>
                 <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
