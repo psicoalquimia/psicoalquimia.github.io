@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias - Javier Gómez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #ebe8e1, #faf8f5);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: #3a3a3a;
+        }
+
+        .container {
+            max-width: 650px;
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #6b7460, #a89f91);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #5a6350;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .checklist {
+            background: #faf8f5;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .checklist p {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .checklist p::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #5a6350;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #5a6350;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #6b7460;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(90, 99, 80, 0.3);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">✓</div>
+        <h1>Gracias por tu confianza</h1>
+        <p>Tu decisión de trabajar en ti mism@ es un acto de valentía y amor propio. Honro profundamente tu compromiso con tu proceso de transformación.</p>
+        
+        <div class="checklist">
+            <p><strong>Recibirás 2 correos electrónicos:</strong></p>
+            <p>Confirmación de tu reserva con todos los detalles</p>
+            <p>Enlace de Google Meet para nuestra sesión</p>
+        </div>
+
+        <p>Para nuestro encuentro solo necesitas:</p>
+        <div class="checklist">
+            <p>Estar disponible el día y hora acordados</p>
+            <p>Un espacio privado donde te sientas cómodo</p>
+            <p>Computador o teléfono conectado a internet</p>
+            <p>Permitirte estar presente con lo que surja</p>
+        </div>
+
+        <p style="font-style: italic; color: #6b6b6b; margin-top: 2rem;">No hay nada más que hacer. Nos vemos pronto en nuestro espacio de encuentro.</p>
+
+        <a href="index.html" class="cta-button">Volver al inicio</a>
+    </div>
+</body>
+</html>
