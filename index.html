@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ3QHR5RFS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      
-      // Verificar consentimiento antes de inicializar
-      if(localStorage.getItem('cookieConsent') === 'accepted') {
-        gtag('js', new Date());
-        gtag('config', 'G-LQ3QHR5RFS');
-      }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acompaño procesos de transformación interior. Psicoterapeuta y explorador de la consciencia. Descubre sesiones, procesos y mi libro 'La Profecía del Eneagrama'.">
 
-    <meta name="description" content="Acompaño procesos de transformación interior. Psicoterapeuta y explorador de la consciencia. Descubre sesiones, procesos y mi libro 'La Profecía del Eneagrama'.">
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <title>Javier Gómez - Psicoterapeuta • Explorador de la Consciencia</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javier Gómez - Psicoterapeuta • Explorador de la Consciencia</title>
-    <style>
+  <!-- Íconos -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ3QHR5RFS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if(localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('js', new Date());
+      gtag('config', 'G-LQ3QHR5RFS');
+    }
+  </script>
+
+  <!-- Estilos -->
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -1051,6 +1052,46 @@
             .sobre-mi-image-rect {
                 height: 380px;
             }
+
+/* --- AJUSTES PERSONALIZADOS PARA MÓVILES --- */
+@media (max-width: 768px) {
+  /* Portada del libro más grande y proporcionada */
+  .libro-image {
+    max-width: 90vw;
+    margin: 0 auto 2rem;
+  }
+  .libro-image-placeholder {
+    aspect-ratio: 2/3;
+    background-size: contain;
+    background-position: center;
+  }
+
+  /* Menos espacio entre secciones */
+  section {
+    padding: 3rem 1.5rem;
+  }
+  .section-separator {
+    padding: 2rem 0;
+  }
+
+  /* Imagen del encabezado más equilibrada */
+  .hero-image-circle {
+    width: 60vw;
+    height: 60vw;
+    max-width: 260px;
+  }
+}
+
+/* Ajustes extra para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .libro-image {
+    max-width: 85vw;
+  }
+  .hero-image-circle {
+    width: 65vw;
+    height: 65vw;
+  }
+}
         }
     </style>
 </head>
