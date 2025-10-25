@@ -1179,6 +1179,81 @@
     font-size: 0.85rem;
   }
 }
+	 /* --- AJUSTES AVANZADOS DE VERSIÓN MÓVIL --- */
+@media (max-width: 768px) {
+
+  /* --- HERO: subtítulo más ordenado --- */
+  .hero h2 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    max-width: 100%;
+    margin: 0.8rem auto 2rem;
+    white-space: normal;
+    display: block;
+  }
+
+  /* Si quieres forzar dos líneas exactas: una por frase */
+  .hero h2 br {
+    display: block;
+  }
+
+  /* --- LIBRO: portada más grande --- */
+  .libro-container {
+    grid-template-columns: 1fr;
+  }
+
+  .libro-image {
+    position: relative !important;
+    top: auto !important;
+    max-width: 95vw !important;
+    margin: 0 auto 2rem !important;
+  }
+
+  .libro-image-placeholder {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 2/3;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  }
+
+  /* --- SERVICIOS: texto introductorio más compacto --- */
+  .servicios-intro {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    max-width: 85%;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+  }
+
+  section#servicios {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* --- FOOTER (por si algo se movió) --- */
+  footer {
+    padding: 1.5rem 1rem;
+  }
+  footer p:first-of-type {
+    white-space: nowrap;
+  }
+  footer p:last-of-type {
+    margin-top: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .libro-image {
+    max-width: 92vw !important;
+  }
+  .libro-image-placeholder {
+    width: 100% !important;
+  }
+}
  </style>
 </head>
 <body>
