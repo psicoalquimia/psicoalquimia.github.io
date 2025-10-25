@@ -27,9 +27,12 @@
             background: var(--color-light);
             overflow-x: hidden;
             font-size: 17px;
+            /* Textura más visible de papel */
             background-image: 
-                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(107, 116, 96, 0.015) 2px, rgba(107, 116, 96, 0.015) 4px),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(107, 116, 96, 0.015) 2px, rgba(107, 116, 96, 0.015) 4px);
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>'),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(107, 116, 96, 0.02) 2px, rgba(107, 116, 96, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 126, 106, 0.02) 2px, rgba(139, 126, 106, 0.02) 4px);
+            background-color: #faf8f5;
         }
 
         html {
@@ -47,12 +50,21 @@
             transform: translateY(0);
         }
 
+        /* Separador orgánico entre secciones */
         .section-separator {
             text-align: center;
             padding: 3rem 0;
             color: var(--color-accent);
-            font-size: 1.5rem;
-            opacity: 0.4;
+            font-size: 0.8rem;
+            opacity: 0;
+            animation: fadeInSeparator 1.5s ease forwards;
+            letter-spacing: 1rem;
+        }
+
+        @keyframes fadeInSeparator {
+            to {
+                opacity: 0.3;
+            }
         }
 
         .hero {
@@ -127,7 +139,7 @@
         .hero h2 {
             font-size: 1.25rem;
             font-weight: 300;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             color: var(--color-secondary);
             letter-spacing: 0.5px;
         }
@@ -141,7 +153,7 @@
 
         .hero-bullets p {
             margin: 0.6rem 0;
-            padding-left: 1.8rem;
+            padding-left: 1.5rem;
             position: relative;
         }
 
@@ -149,12 +161,12 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 0.4rem;
-            width: 8px;
-            height: 8px;
+            top: 0.6rem;
+            width: 7px;
+            height: 7px;
             background: var(--color-accent);
             border-radius: 50%;
-            box-shadow: 0 0 0 3px rgba(139, 126, 106, 0.2);
+            box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
         }
 
         .cta-button {
@@ -166,7 +178,7 @@
             border-radius: 50px;
             font-size: 0.95rem;
             border: 1.5px solid var(--color-primary);
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, transform 0.1s ease;
             margin-top: 1rem;
             letter-spacing: 0.5px;
             position: relative;
@@ -198,6 +210,10 @@
             box-shadow: 0 4px 15px rgba(107, 116, 96, 0.2);
         }
 
+        .cta-button:active {
+            transform: translateY(0) scale(0.98);
+        }
+
         section {
             padding: 5rem 2rem;
             max-width: 900px;
@@ -215,15 +231,17 @@
             padding-bottom: 1.5rem;
         }
 
+        /* Línea sutil bajo títulos */
         section h2::after {
-            content: '✦';
+            content: '';
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--color-accent);
-            opacity: 0.4;
-            font-size: 1rem;
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+            opacity: 0.3;
         }
 
         .sobre-mi {
@@ -365,7 +383,7 @@
 
         .libro-content li {
             margin-bottom: 1rem;
-            padding-left: 1.8rem;
+            padding-left: 1.5rem;
             position: relative;
         }
 
@@ -373,7 +391,7 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 0.5rem;
+            top: 0.6rem;
             width: 6px;
             height: 6px;
             background: var(--color-accent);
@@ -451,7 +469,7 @@
 
         .servicio-card li {
             margin-bottom: 0.7rem;
-            padding-left: 1.5rem;
+            padding-left: 1.3rem;
             position: relative;
             font-size: 1rem;
         }
@@ -460,7 +478,7 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 0.6rem;
+            top: 0.65rem;
             width: 5px;
             height: 5px;
             background: var(--color-accent);
@@ -497,7 +515,7 @@
             text-decoration: none;
             border-radius: 50px;
             margin-top: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, transform 0.1s ease;
             border: 1.5px solid var(--color-primary);
             font-size: 0.95rem;
             position: relative;
@@ -526,6 +544,10 @@
         .servicio-button:hover {
             color: white;
             transform: translateY(-1px);
+        }
+
+        .servicio-button:active {
+            transform: translateY(0) scale(0.98);
         }
 
         .contacto {
@@ -626,6 +648,7 @@
             }
         }
 
+        /* Responsive - MEJORADO */
         @media (max-width: 768px) {
             .hero-container {
                 flex-direction: column;
@@ -634,8 +657,8 @@
             }
 
             .hero-image-circle {
-                width: 220px;
-                height: 220px;
+                width: 200px;
+                height: 200px;
             }
 
             .hero h1 {
@@ -646,20 +669,27 @@
                 font-size: 1.1rem;
             }
 
+            /* FIX: Sobre mí en móvil */
             .sobre-mi-container {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+                gap: 2rem;
             }
 
             .sobre-mi-image {
                 position: relative;
                 order: 1;
                 margin: 0 auto 2rem;
-                max-width: 300px;
+                width: 100%;
+                max-width: 100%;
             }
 
             .sobre-mi-image-rect {
-                height: 380px;
+                width: 100%;
+                height: 0;
+                padding-bottom: 125%;
+                position: relative;
+                background-size: cover;
+                background-position: center;
             }
 
             .sobre-mi-content {
@@ -667,22 +697,25 @@
             }
 
             .sobre-mi-content p {
-                text-align: left;
+                text-align: justify;
+                margin-bottom: 2rem;
             }
 
+            /* FIX: Libro en móvil */
             .libro-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
             }
 
             .libro-image {
                 position: relative;
-                max-width: 280px;
+                max-width: 240px;
                 margin: 0 auto;
             }
 
             .libro-content p {
-                text-align: left;
+                text-align: justify;
+                margin-bottom: 2rem;
             }
 
             section {
@@ -690,7 +723,11 @@
             }
 
             .servicio-card {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .servicio-card p {
+                margin-bottom: 1.5rem;
             }
 
             section h2 {
@@ -698,7 +735,13 @@
             }
 
             .section-separator {
-                font-size: 1.2rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.8rem;
+            }
+
+            /* Espaciado generoso en móvil */
+            body {
+                line-height: 1.9;
             }
         }
 
@@ -711,6 +754,11 @@
                 font-size: 1.9rem;
             }
 
+            .hero-image-circle {
+                width: 180px;
+                height: 180px;
+            }
+
             .social-links {
                 gap: 2rem;
             }
@@ -718,6 +766,11 @@
             .social-icon {
                 width: 55px;
                 height: 55px;
+            }
+
+            .sobre-mi-content p,
+            .libro-content p {
+                margin-bottom: 1.8rem;
             }
         }
     </style>
@@ -740,7 +793,7 @@
         </div>
     </section>
 
-    <div class="section-separator">✦ ✦ ✦</div>
+    <div class="section-separator">· · ·</div>
 
     <section class="sobre-mi fade-in-section" id="sobre-mi">
         <h2>Sobre Mí</h2>
@@ -763,7 +816,7 @@
         </div>
     </section>
 
-    <div class="section-separator">✦ ✦ ✦</div>
+    <div class="section-separator">· · ·</div>
 
     <section class="libro fade-in-section" id="libro">
         <h2>Mi Libro</h2>
@@ -809,7 +862,7 @@
         </div>
     </section>
 
-    <div class="section-separator">✦ ✦ ✦</div>
+    <div class="section-separator">· · ·</div>
 
     <section class="servicios fade-in-section" id="servicios">
         <h2>Cómo Trabajamos Juntos</h2>
@@ -827,10 +880,10 @@
             </ul>
             <div class="servicio-details">
                 <strong>Modalidad:</strong> Online (Zoom) o presencial<br>
-                <strong>Duración:</strong> 90 minutos
+                <strong>Duración:</strong> 75 minutos
             </div>
             <p class="servicio-precio">Inversión: 65€</p>
-            <a href="https://calendly.com" target="_blank" class="servicio-button">Agendar sesión</a>
+            <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button">Agendar sesión</a>
         </div>
 
         <div class="servicio-card">
@@ -845,49 +898,28 @@
             </ul>
             <div class="servicio-details">
                 <strong>Modalidad:</strong> Online<br>
-                <strong>Duración:</strong> 4 sesiones de 90 minutos
+                <strong>Duración:</strong> 4 sesiones de 75 minutos
             </div>
             <p class="servicio-precio">Inversión: 240€ (ahorro de 20€)</p>
-            <a href="https://calendly.com" target="_blank" class="servicio-button">Agendar proceso</a>
+            <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button">Agendar proceso</a>
         </div>
 
         <div class="servicio-card">
-            <h3>Círculo Mensual "El Umbral"</h3>
+            <h3>Círculo Mensual "La Práctica"</h3>
             <p>Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
-            <p><strong>Cada encuentro incluye:</strong></p>
-            <ul>
-                <li>Meditación guiada y apertura del espacio sagrado</li>
-                <li>Círculo de palabra desde la vulnerabilidad</li>
-                <li>Integración colectiva</li>
+    
             </ul>
             <div class="servicio-details">
                 <strong>Modalidad:</strong> Online<br>
-                <strong>Frecuencia:</strong> Último jueves del mes, 19:00-21:00h<br>
+                <strong>Frecuencia:</strong> Por confirmar<br>
                 <strong>Grupo:</strong> Máximo 10 personas
             </div>
-            <p class="servicio-precio">Inversión: 25€ por sesión</p>
-            <a href="https://calendly.com" target="_blank" class="servicio-button">Unirme al círculo</a>
-        </div>
-
-        <div class="servicio-card">
-            <h3>Sesión de Profundización: El Eneagrama Sagrado</h3>
-            <p>Sesión de 60 minutos para profundizar en los temas de "La Profecía del Eneagrama".</p>
-            <p><strong>Esta sesión es para ti si:</strong></p>
-            <ul>
-                <li>Has leído el libro y quieres profundizar personalmente</li>
-                <li>Te interesa el eneagrama como mapa de transformación espiritual</li>
-                <li>Buscas entender tu tipo como camino de despertar</li>
-            </ul>
-            <div class="servicio-details">
-                <strong>Modalidad:</strong> Online<br>
-                <strong>Duración:</strong> 60 minutos
-            </div>
-            <p class="servicio-precio">Inversión: 50€</p>
-            <a href="https://calendly.com" target="_blank" class="servicio-button">Agendar sesión</a>
+            <p class="servicio-precio">Inversión: 10€ por sesión</p>
+            <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button">Unirme al círculo</a>
         </div>
     </section>
 
-    <div class="section-separator">✦ ✦ ✦</div>
+    <div class="section-separator">· · ·</div>
 
     <section class="contacto fade-in-section" id="contacto">
         <h2>Conecta Conmigo</h2>
@@ -895,7 +927,7 @@
         <p>También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.</p>
         
         <div class="social-links">
-            <a href="mailto:tu@email.com" class="social-link">
+            <a href="mailto:psicoalquimia.co@gmail.com" class="social-link">
                 <div class="social-icon">
                     <svg viewBox="0 0 24 24" fill="#6b7460">
                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -903,7 +935,7 @@
                 </div>
                 <span class="social-label">Email</span>
             </a>
-            <a href="https://instagram.com/tuusuario" target="_blank" class="social-link">
+            <a href="https://instagram.com/psicoalquimia.co" target="_blank" class="social-link">
                 <div class="social-icon">
                     <svg viewBox="0 0 24 24" fill="#6b7460">
                         <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
@@ -911,7 +943,7 @@
                 </div>
                 <span class="social-label">Instagram</span>
             </a>
-            <a href="https://tiktok.com/@tuusuario" target="_blank" class="social-link">
+            <a href="https://tiktok.com/@psicoalquimia" target="_blank" class="social-link">
                 <div class="social-icon">
                     <svg viewBox="0 0 24 24" fill="#6b7460">
                         <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
@@ -923,8 +955,7 @@
     </section>
 
     <footer>
-        <p>© 2025 Javier Gómez • Psicoterapeuta y Explorador de la Consciencia</p>
-        <p>Creado con presencia y dedicación</p>
+        <p>© 2025 Javier Gómez • Creado con presencia y dedicación</p>
     </footer>
 
     <script>
