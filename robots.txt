@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://psicoalquimia.github.io/sitemap.xml
