@@ -1040,8 +1040,25 @@
             }
 
             .libro-image {
-               
+		 		max-width: 240px;               
             }
+
+			.libro-image {
+    width: 100%;
+    max-width: 280px;    /* Igual que .sobre-mi-image para móvil */
+    margin: 0 auto 2rem; /* Centrado y con espacio abajo */
+    position: relative;  /* Igual que ya tenías */
+}
+
+.libro-portada-img {
+    width: 100%;         /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;        /* Mantiene la proporción */
+    border-radius: 8px;  /* Esquinas redondeadas */
+    display: block;      /* Para que no deje huecos extra */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12); /* Opcional: sombra igual que antes */
+    border: 1px solid rgba(139, 126, 106, 0.2); /* Igual que antes */
+}
+
 
             .sobre-mi-image {
                 max-width: 280px;
@@ -1126,9 +1143,10 @@
     <section class="libro fade-in-section" id="libro">
         <h2>Mi Libro</h2>
         <div class="libro-container">
-            <div class="libro-image">
-                <div class="libro-image-placeholder" id="libro-parallax"></div>
-            </div>
+           <div class="libro-image">
+  <img src="portada-libro.jpg" alt="Portada del libro" class="libro-portada-img" id="libro-parallax">
+</div>
+
             <div class="libro-content">
                 <h3>La Profecía del Eneagrama</h3>
                 <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
