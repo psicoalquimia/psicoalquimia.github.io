@@ -1359,6 +1359,17 @@
     margin-top: -2rem !important;
   }
 }
+	 /* --- EFECTO SUAVE EN TÍTULOS --- */
+section h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
  </style>
 </head>
 <body>
@@ -1620,6 +1631,19 @@
 
         // Fade-in al hacer scroll
         const fadeElements = document.querySelectorAll('.fade-in-section');
+
+		// Efecto de aparición en los títulos
+const sections = document.querySelectorAll('section');
+
+const titleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(sec => titleObserver.observe(sec));
         
         const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
