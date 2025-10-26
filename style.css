@@ -1,0 +1,441 @@
+/* =========================================
+   RESET & VARIABLES
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #5a6350;
+  --color-primary-light: #6b7460;
+  --color-accent: #8b7e6a;
+  --color-light: #faf8f5;
+  --color-bg-hero: #ebe8e1;
+  --color-text: #3a3a3a;
+  --color-text-light: #6b6b6b;
+  --transition-base: 0.3s ease;
+  --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+[data-theme="dark"] {
+  --color-primary: #9fa793;
+  --color-primary-light: #aeb7a1;
+  --color-accent: #9b8e7a;
+  --color-light: #1a1a1a;
+  --color-bg-hero: #252525;
+  --color-text: #e0e0e0;
+  --color-text-light: #a0a0a0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Crimson Pro', serif;
+  background: var(--color-light);
+  color: var(--color-text);
+  line-height: 1.8;
+  overflow-x: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139,126,106,0.1);
+  z-index: 1000;
+}
+
+[data-theme="dark"] .nav-fixed {
+  background: rgba(26,26,26,0.95);
+}
+
+.nav-fixed a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transition-base);
+}
+
+.nav-fixed a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--transition-base);
+}
+
+.nav-fixed a:hover::after {
+  width: 100%;
+}
+
+.theme-toggle {
+  background: var(--color-light);
+  border: 1.5px solid rgba(139,126,106,0.2);
+  border-radius: 50px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--color-bg-hero) 0%, var(--color-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo animado con patrón simbólico */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('pattern.svg');
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  opacity: 0.15;
+  animation: movePattern 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes movePattern {
+  0% { background-position: 0 0; }
+  100% { background-position: 500px 500px; }
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1000px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-image: url('foto-perfil.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(139,126,106,0.2);
+  transition: transform var(--transition-base);
+}
+
+.hero-image-circle:hover {
+  transform: scale(1.02);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.hero-bullets p {
+  margin: 0.5rem 0;
+  color: var(--color-text-light);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  margin-top: 1.5rem;
+}
+
+.cta-button:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   SECCIONES GENERALES
+========================================= */
+section {
+  padding: 6rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+}
+
+/* =========================================
+   SOBRE MÍ
+========================================= */
+.sobre-mi-container {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+}
+
+.sobre-mi-image-rect {
+  width: 100%;
+  height: 420px;
+  border-radius: 12px;
+  background-image: url('tu-foto-sobre-mi.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+}
+
+.sobre-mi-content p {
+  margin-bottom: 1.8rem;
+  text-align: justify;
+  color: var(--color-text);
+}
+
+/* =========================================
+   LIBRO
+========================================= */
+.libro-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.libro-image-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background-image: url('portada-libro.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+}
+
+.libro-content h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.libro-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.libro-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* =========================================
+   SERVICIOS
+========================================= */
+.servicios-intro {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.servicio-card {
+  background: rgba(250, 248, 245, 0.6);
+  border: 1px solid rgba(139,126,106,0.15);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.servicio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.servicio-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 1.2rem;
+}
+
+.servicio-card p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.servicio-precio {
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-top: 1rem;
+}
+
+.servicio-button {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.8rem 2rem;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.servicio-button:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* =========================================
+   CONTACTO
+========================================= */
+.contacto {
+  background: linear-gradient(135deg, rgba(107,116,96,0.05), rgba(168,159,145,0.05));
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.social-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.social-link:hover {
+  color: var(--color-accent);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  background: var(--color-primary);
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-image-circle {
+    width: 65vw;
+    height: 65vw;
+  }
+
+  .libro-container {
+    grid-template-columns: 1fr;
+  }
+
+  .libro-image-placeholder {
+    max-width: 80vw;
+    margin: 0 auto 2rem;
+  }
+
+  .sobre-mi-container {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
