@@ -260,6 +260,38 @@
   pointer-events: none;
   z-index: 0;
 }
+	 /* --- PATRÓN ENEAGRAMA REPETIDO --- */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('pattern-eneagrama.svg');
+  background-repeat: repeat;            /* <-- hace que se repita */
+  background-size: 220px;               /* tamaño del tile */
+  background-position: 0 0;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Ajustes responsive --- */
+@media (max-width: 1024px) {
+  .hero::before {
+    background-size: 180px;             /* un poco más pequeño */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero::before {
+    background-size: 140px;             /* reduce para móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero::before {
+    background-size: 100px;             /* aún más pequeño */
+  }
+}
         .hero::after {
             content: '';
             position: absolute;
