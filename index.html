@@ -189,6 +189,27 @@
     .theme-toggle:hover svg {
       transform: rotate(20deg);
     }
+.theme-toggle {
+  position: static;
+  margin-left: 1.5rem;
+  margin-right: 0;
+  padding: 0.3rem 0.8rem;
+  min-height: unset;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  /* AJUSTA ESTA LÍNEA para subir el botón */
+  transform: translateY(-6px);
+}
+
+/* Responsive: igual, pero menor desplazamiento si lo necesitas */
+@media (max-width: 768px) {
+  .theme-toggle {
+    height: 36px;
+    padding: 0.2rem 0.5rem;
+    transform: translateY(-3px);
+  }
+}
 
     /* =================================
        COOKIE BANNER
