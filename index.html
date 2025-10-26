@@ -1,143 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Javier Gómez - Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación interior desde un enfoque integrativo." />
-  <meta name="keywords" content="psicoterapia, eneagrama, consciencia, espiritualidad, transformación interior, trauma, gestalt" />
   <meta name="author" content="Javier Gómez" />
-
   <title>Javier Gómez - Psicoterapeuta • Explorador de la Consciencia</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- favicon -->
+  <link rel="icon" href="favicon-32x32.png" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Schema / Open Graph (preserva lo esencial) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
+  <meta property="og:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
+  <meta property="og:image" content="https://tudominio.com/foto-perfil.jpg">
 </head>
-
 <body>
-  <!-- Barra de progreso -->
-  <div class="progress-bar" id="progressBar"></div>
+  <!-- Skip link -->
+  <a class="skip-to-main" href="#main">Saltar al contenido principal</a>
 
-  <!-- Navegación fija -->
-  <nav class="nav-fixed" id="navFixed">
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#libro">Libro</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-      <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zM18.364 5.636l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
-      </svg>
-      <svg id="iconDark" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
-        <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7z"/>
-      </svg>
-    </button>
-  </nav>
+  <!-- Progress bar -->
+  <div id="progressBar" class="progress-bar" aria-hidden="true"></div>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-container">
-      <div class="hero-image">
-        <div class="hero-image-circle" id="heroParallax" role="img" aria-label="Foto de perfil de Javier Gómez"></div>
+  <!-- NAV (toggle incluido) -->
+  <header>
+    <nav id="navFixed" class="nav-fixed" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#libro">Libro</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+
+        <!-- theme toggle integrated into nav -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+          <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"></path></svg>
+          <svg id="iconDark" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path></svg>
+        </button>
       </div>
-      <div class="hero-content">
-        <h1>Javier Gómez</h1>
-        <h2>Psicoterapeuta • Explorador de la Consciencia</h2>
-        <div class="hero-bullets">
-          <p>Acompaño procesos de transformación interior</p>
-          <p>Puente entre misticismo y transformación social</p>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-label="Hero - Javier Gómez">
+      <div class="hero-container">
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-image-circle" role="img" aria-label="Foto de perfil de Javier Gómez"></div>
         </div>
-        <a href="#servicios" class="cta-button">Explorar servicios</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE MÍ -->
-  <section class="sobre-mi" id="sobre-mi">
-    <h2>Sobre Mí</h2>
-    <div class="sobre-mi-container">
-      <div class="sobre-mi-content">
-        <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
-        <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
-        <p>Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras herramientas de sanación, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora acompaño procesos virtuales desde cualquier lugar del mundo.</p>
-        <p>Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
-      </div>
-      <div class="sobre-mi-image">
-        <div class="sobre-mi-image-rect" role="img" aria-label="Foto de Javier Gómez"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIBRO -->
-  <section class="libro" id="libro">
-    <h2>Mi Libro</h2>
-    <div class="libro-container">
-      <div class="libro-image">
-        <div class="libro-image-placeholder" id="libroParallax"></div>
-      </div>
-      <div class="libro-content">
-        <h3>La Profecía del Eneagrama</h3>
-        <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
-        <p>Este libro revela el eneagrama más allá de la personalidad: un mapa sagrado hacia la verdadera naturaleza espiritual del ser humano.</p>
-        <p>Una invitación a volver al corazón y recordar lo que siempre hemos sido.</p>
-        <div class="libro-cta">
-          <a href="https://www.amazon.com" target="_blank" class="cta-button">Conseguir el libro</a>
+        <div class="hero-content">
+          <h1>Javier Gómez</h1>
+          <h2 class="hero-subtitle">Psicoterapeuta • Explorador de la Consciencia</h2>
+          <div class="hero-bullets">
+            <p>Acompaño procesos de transformación interior</p>
+            <p>Puente entre misticismo y transformación social</p>
+          </div>
+          <a href="#servicios" class="cta-button">Explorar servicios</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICIOS -->
-  <section class="servicios" id="servicios">
-    <h2>Cómo Trabajamos Juntos</h2>
-    <p class="servicios-intro">“El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos.”</p>
+    <div class="section-separator">· · ·</div>
 
-    <div class="servicio-card">
-      <h3>Sesión Individual</h3>
-      <p>Sesión de 75 minutos para explorar procesos de transformación interior, integración de experiencias o transiciones vitales.</p>
-      <p class="servicio-precio">65€</p>
-      <a href="https://psicoalquimia.setmore.com" target="_blank" class="servicio-button">Agendar sesión</a>
-    </div>
+    <!-- SOBRE MÍ -->
+    <section class="sobre-mi" id="sobre-mi">
+      <h2>Sobre Mí</h2>
+      <div class="sobre-mi-container">
+        <div class="sobre-mi-content">
+          <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
+          <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
+          <p>Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.</p>
+          <p>Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
+          <p>Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
+          <p>Soy autor de <strong>La Profecía del Eneagrama</strong> y viajo acompañando a personas en procesos de presencia y sanación.</p>
+        </div>
 
-    <div class="servicio-card">
-      <h3>Proceso Profundo</h3>
-      <p>Cuatro sesiones para procesos que requieren acompañamiento continuado y profundidad terapéutica.</p>
-      <p class="servicio-precio">240€</p>
-      <a href="https://psicoalquimia.setmore.com" target="_blank" class="servicio-button">Iniciar proceso</a>
-    </div>
+        <!-- IMAGE (parallax target) -->
+        <div class="sobre-mi-image">
+          <div id="sobreMiParallax" class="sobre-mi-image-rect" role="img" aria-label="Foto de Javier Gómez en contexto terapéutico"></div>
+        </div>
+      </div>
 
-    <div class="servicio-card">
-      <h3>Círculo Mensual “La Práctica”</h3>
-      <p>Espacio grupal mensual online para quienes buscan comunidad en el camino de transformación.</p>
-      <p class="servicio-precio">10€</p>
-      <a href="https://psicoalquimia.setmore.com" target="_blank" class="servicio-button">Unirme</a>
-    </div>
-  </section>
+      <div class="quote">
+        Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.
+      </div>
+    </section>
 
-  <!-- CONTACTO -->
-  <section class="contacto" id="contacto">
-    <h2>Conecta Conmigo</h2>
-    <p>Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme o sígueme en redes.</p>
+    <div class="section-separator">· · ·</div>
 
-    <div class="social-links">
-      <a href="mailto:psicoalquimia.co@gmail.com" class="social-link">Email</a>
-      <a href="https://instagram.com/psicoalquimia.co" target="_blank" class="social-link">Instagram</a>
-      <a href="https://tiktok.com/@psicoalquimia" target="_blank" class="social-link">TikTok</a>
-    </div>
-  </section>
+    <!-- LIBRO -->
+    <section class="libro" id="libro">
+      <h2>Mi Libro</h2>
+      <div class="libro-container">
+        <div class="libro-image">
+          <div id="libroParallax" class="libro-image-placeholder" role="img" aria-label="Portada del libro La Profecía del Eneagrama"></div>
+        </div>
+        <div class="libro-content">
+          <h3>La Profecía del Eneagrama</h3>
+          <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
+          <p>En un mundo donde todo se ha convertido en mercancía —incluso lo más sagrado—, este libro revela el eneagrama más allá de su uso superficial como herramienta de personalidad y lo devuelve a su esencia más pura: <strong>un mapa sagrado hacia la verdadera naturaleza espiritual de la humanidad.</strong></p>
+          <p>Es una invitación para quienes buscan una espiritualidad auténtica y una práctica de vida coherente con el corazón.</p>
+
+          <div class="libro-cta">
+            <a href="https://www.amazon.com" target="_blank" rel="noopener" class="cta-button">Conseguir el libro</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
+    <!-- SERVICIOS -->
+    <section class="servicios" id="servicios">
+      <h2>Cómo Trabajamos Juntos</h2>
+      <p class="servicios-intro">“El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos.”</p>
+
+      <div class="servicio-card">
+        <h3>Sesión Individual de Acompañamiento Terapéutico</h3>
+        <p>Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas y trabajo con patrones inconscientes.</p>
+        <div class="servicio-details">
+          <strong>Modalidad:</strong> Virtual • <strong>Duración:</strong> 75 minutos
+        </div>
+        <p class="servicio-precio">Inversión: 65€</p>
+        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button">Agendar sesión</a>
+      </div>
+
+      <div class="servicio-card">
+        <h3>Proceso de Acompañamiento Profundo (4 sesiones)</h3>
+        <p>Acompañamiento continuado para procesos que requieren más tiempo y profundidad.</p>
+        <div class="servicio-details">
+          <strong>Modalidad:</strong> Virtual • <strong>Duración:</strong> 4 sesiones de 75 minutos
+        </div>
+        <p class="servicio-precio">Inversión: 240€</p>
+        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button">Iniciar proceso</a>
+      </div>
+
+      <div class="servicio-card">
+        <h3>Círculo Mensual "La Práctica"</h3>
+        <p>Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
+        <div class="servicio-details">
+          <strong>Modalidad:</strong> Virtual • <strong>Grupo:</strong> Máximo 10 personas
+        </div>
+        <p class="servicio-precio">Inversión: 10€</p>
+        <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button">Unirme al círculo</a>
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+      <h2>Conecta Conmigo</h2>
+      <p>Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
+      <p>Puedes seguirme en redes para contenido sobre consciencia y transformación.</p>
+
+      <div class="social-links">
+        <a href="mailto:psicoalquimia.co@gmail.com" class="social-link">Email</a>
+        <a href="https://instagram.com/psicoalquimia.co" target="_blank" rel="noopener" class="social-link">Instagram</a>
+        <a href="https://tiktok.com/@psicoalquimia" target="_blank" rel="noopener" class="social-link">TikTok</a>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎</p>
-    <p><a href="privacidad.html">Política de Privacidad</a></p>
+    <p><a href="privacidad.html">Política de Privacidad y Cookies</a></p>
   </footer>
 
-  <!-- Script -->
+  <!-- JS externo -->
   <script src="script.js"></script>
 </body>
 </html>
