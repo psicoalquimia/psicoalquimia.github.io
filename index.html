@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Javier Gómez - Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación interior desde un enfoque integrativo." />
-  <meta name="author" content="Javier Gómez" />
-  <title>Javier Gómez - Psicoterapeuta • Explorador de la Consciencia</title>
-
-  <!-- favicon -->
-  <link rel="icon" href="favicon-32x32.png" />
-
-  <!-- CSS externo --><!DOCTYPE html>
-<html lang="es">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Javier Gómez - Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación interior desde un enfoque integrativo. Sesiones online, procesos profundos y círculo mensual 'La Práctica'. Autor de 'La Profecía del Eneagrama'.">
@@ -169,34 +157,39 @@
     /* =================================
        THEME TOGGLE
        ================================= */
-   .theme-toggle {
-  background: transparent;
-  border: 1.5px solid rgba(139, 126, 106, 0.2);
-  border-radius: 50px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all var(--transition-base);
-  min-height: 44px;
-}
+    .theme-toggle {
+      position: fixed;
+      top: 1.5rem;
+      right: 2rem;
+      z-index: 9998;
+      background: var(--color-white);
+      border: 1.5px solid rgba(139, 126, 106, 0.2);
+      border-radius: 50px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-sm);
+      min-height: 44px;
+    }
 
-.theme-toggle:hover {
-  background: rgba(90, 99, 80, 0.1);
-  transform: scale(1.05);
-}
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
 
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  transition: transform var(--transition-base);
-  fill: var(--color-primary);
-}
+    .theme-toggle svg {
+      width: 20px;
+      height: 20px;
+      transition: transform var(--transition-base);
+    }
 
-.theme-toggle:hover svg {
-  transform: rotate(20deg);
-}
+    .theme-toggle:hover svg {
+      transform: rotate(20deg);
+    }
+
     /* =================================
        COOKIE BANNER
        ================================= */
@@ -406,18 +399,18 @@
       overflow: hidden;
     }
 
-   /* Flor de la Vida animada de fondo */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='152' cy='100' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='48' cy='100' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='126' cy='145' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='74' cy='145' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='126' cy='55' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='74' cy='55' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
-  background-size: 300px 300px;
-  opacity: 0.4;
-  animation: flowOfLife 60s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
+    /* Flor de la Vida animada de fondo */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><g id="circle"><circle cx="100" cy="100" r="30" fill="none" stroke="%235a6350" stroke-width="0.5" opacity="0.15"/></g></defs><use href="%23circle"/><use href="%23circle" transform="translate(52,0)"/><use href="%23circle" transform="translate(-52,0)"/><use href="%23circle" transform="translate(26,45)"/><use href="%23circle" transform="translate(-26,45)"/><use href="%23circle" transform="translate(26,-45)"/><use href="%23circle" transform="translate(-26,-45)"/></svg>');
+      background-size: 300px 300px;
+      opacity: 0.3;
+      animation: flowOfLife 60s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
 
     @keyframes flowOfLife {
       0% { background-position: 0 0; }
@@ -534,6 +527,31 @@
       box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
     }
 
+    /* Trust badges */
+    .trust-badges {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      padding: 0.5rem 1rem;
+      background: rgba(90, 99, 80, 0.05);
+      border-radius: 50px;
+      border: 1px solid rgba(139, 126, 106, 0.15);
+    }
+
+    .badge svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--color-accent);
+    }
 
     /* =================================
        BUTTONS
@@ -1303,7 +1321,10 @@
         display: none;
       }
 
-  
+      .trust-badges {
+        justify-content: center;
+      }
+
       .sobre-mi-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -1332,19 +1353,20 @@
         gap: 3rem;
       }
 
- .libro-image {
-  position: relative;
-  top: auto;
-  max-width: 280px;
-  margin: 0 auto 2rem;
-}
+      .libro-image {
+        position: relative;
+        top: auto;
+        max-width: 95vw;
+        margin: 0 auto 2rem;
+      }
 
-.libro-image-placeholder {
-  width: 100%;
-  aspect-ratio: 2/3;
-  background-size: cover;
-  background-position: center;
-}
+      .libro-image-placeholder {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2/3;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
 
       .libro-image-float {
         max-width: 280px;
@@ -1464,7 +1486,8 @@
   <!-- Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
 
-<!-- Theme Toggle (movido dentro del nav) -->
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
     <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
     </svg>
@@ -1487,21 +1510,13 @@
     </div>
   </div>
 
- <!-- Fixed Navigation -->
-<nav class="nav-fixed" id="navFixed" role="navigation">
-  <a href="#sobre-mi">Sobre mí</a>
-  <a href="#libro">Libro</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#contacto">Contacto</a>
-  <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-    <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
-    </svg>
-    <svg id="iconDark" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
-      <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
-    </svg>
-  </button>
-</nav>
+  <!-- Fixed Navigation -->
+  <nav class="nav-fixed" id="navFixed" role="navigation">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#libro">Libro</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
   <!-- Sticky CTA Mobile -->
   <div class="sticky-cta" id="stickyCta">
@@ -1542,8 +1557,17 @@
             <p>Acompaño procesos de transformación interior</p>
             <p>Puente entre misticismo y transformación social</p>
           </div>
-        
-<a href="#servicios" class="cta-button">Explorar servicios</a>
+          <div class="trust-badges">
+            <div class="badge">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+              Formación internacional
+            </div>
+            <div class="badge">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              7+ años de experiencia
+            </div>
+          </div>
+          <button class="cta-button" onclick="openModal()">Explorar servicios</button>
         </div>
       </div>
     </section>
@@ -1959,167 +1983,3 @@
     }
 
     .servicio-car
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Schema / Open Graph (preserva lo esencial) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
-  <meta property="og:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
-  <meta property="og:image" content="https://tudominio.com/foto-perfil.jpg">
-</head>
-<body>
-  <!-- Skip link -->
-  <a class="skip-to-main" href="#main">Saltar al contenido principal</a>
-
-  <!-- Progress bar -->
-  <div id="progressBar" class="progress-bar" aria-hidden="true"></div>
-
-  <!-- NAV (toggle incluido) -->
-  <header>
-    <nav id="navFixed" class="nav-fixed" role="navigation" aria-label="Navegación principal">
-      <div class="nav-inner">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#libro">Libro</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
-
-        <!-- theme toggle integrated into nav -->
-        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
-          <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"></path></svg>
-          <svg id="iconDark" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path></svg>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero" id="hero" aria-label="Hero - Javier Gómez">
-      <div class="hero-container">
-        <div class="hero-image" aria-hidden="true">
-          <div class="hero-image-circle" role="img" aria-label="Foto de perfil de Javier Gómez"></div>
-        </div>
-        <div class="hero-content">
-          <h1>Javier Gómez</h1>
-          <h2 class="hero-subtitle">Psicoterapeuta • Explorador de la Consciencia</h2>
-          <div class="hero-bullets">
-            <p>Acompaño procesos de transformación interior</p>
-            <p>Puente entre misticismo y transformación social</p>
-          </div>
-          <a href="#servicios" class="cta-button">Explorar servicios</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-separator">· · ·</div>
-
-    <!-- SOBRE MÍ -->
-    <section class="sobre-mi" id="sobre-mi">
-      <h2>Sobre Mí</h2>
-      <div class="sobre-mi-container">
-        <div class="sobre-mi-content">
-          <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
-          <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
-          <p>Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.</p>
-          <p>Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
-          <p>Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
-          <p>Soy autor de <strong>La Profecía del Eneagrama</strong> y viajo acompañando a personas en procesos de presencia y sanación.</p>
-        </div>
-
-        <!-- IMAGE (parallax target) -->
-        <div class="sobre-mi-image">
-          <div id="sobreMiParallax" class="sobre-mi-image-rect" role="img" aria-label="Foto de Javier Gómez en contexto terapéutico"></div>
-        </div>
-      </div>
-
-      <div class="quote">
-        Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.
-      </div>
-    </section>
-
-    <div class="section-separator">· · ·</div>
-
-    <!-- LIBRO -->
-    <section class="libro" id="libro">
-      <h2>Mi Libro</h2>
-      <div class="libro-container">
-        <div class="libro-image">
-          <div id="libroParallax" class="libro-image-placeholder" role="img" aria-label="Portada del libro La Profecía del Eneagrama"></div>
-        </div>
-        <div class="libro-content">
-          <h3>La Profecía del Eneagrama</h3>
-          <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
-          <p>En un mundo donde todo se ha convertido en mercancía —incluso lo más sagrado—, este libro revela el eneagrama más allá de su uso superficial como herramienta de personalidad y lo devuelve a su esencia más pura: <strong>un mapa sagrado hacia la verdadera naturaleza espiritual de la humanidad.</strong></p>
-          <p>Es una invitación para quienes buscan una espiritualidad auténtica y una práctica de vida coherente con el corazón.</p>
-
-          <div class="libro-cta">
-            <a href="https://www.amazon.com" target="_blank" rel="noopener" class="cta-button">Conseguir el libro</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-separator">· · ·</div>
-
-    <!-- SERVICIOS -->
-    <section class="servicios" id="servicios">
-      <h2>Cómo Trabajamos Juntos</h2>
-      <p class="servicios-intro">“El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos.”</p>
-
-      <div class="servicio-card">
-        <h3>Sesión Individual de Acompañamiento Terapéutico</h3>
-        <p>Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas y trabajo con patrones inconscientes.</p>
-        <div class="servicio-details">
-          <strong>Modalidad:</strong> Virtual • <strong>Duración:</strong> 75 minutos
-        </div>
-        <p class="servicio-precio">Inversión: 65€</p>
-        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button">Agendar sesión</a>
-      </div>
-
-      <div class="servicio-card">
-        <h3>Proceso de Acompañamiento Profundo (4 sesiones)</h3>
-        <p>Acompañamiento continuado para procesos que requieren más tiempo y profundidad.</p>
-        <div class="servicio-details">
-          <strong>Modalidad:</strong> Virtual • <strong>Duración:</strong> 4 sesiones de 75 minutos
-        </div>
-        <p class="servicio-precio">Inversión: 240€</p>
-        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button">Iniciar proceso</a>
-      </div>
-
-      <div class="servicio-card">
-        <h3>Círculo Mensual "La Práctica"</h3>
-        <p>Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
-        <div class="servicio-details">
-          <strong>Modalidad:</strong> Virtual • <strong>Grupo:</strong> Máximo 10 personas
-        </div>
-        <p class="servicio-precio">Inversión: 10€</p>
-        <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button">Unirme al círculo</a>
-      </div>
-    </section>
-
-    <div class="section-separator">· · ·</div>
-
-    <!-- CONTACTO -->
-    <section class="contacto" id="contacto">
-      <h2>Conecta Conmigo</h2>
-      <p>Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
-      <p>Puedes seguirme en redes para contenido sobre consciencia y transformación.</p>
-
-      <div class="social-links">
-        <a href="mailto:psicoalquimia.co@gmail.com" class="social-link">Email</a>
-        <a href="https://instagram.com/psicoalquimia.co" target="_blank" rel="noopener" class="social-link">Instagram</a>
-        <a href="https://tiktok.com/@psicoalquimia" target="_blank" rel="noopener" class="social-link">TikTok</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎</p>
-    <p><a href="privacidad.html">Política de Privacidad y Cookies</a></p>
-  </footer>
-
-  <!-- JS externo -->
-  <script src="script.js"></script>
-</body>
-</html>
