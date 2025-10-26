@@ -1518,6 +1518,36 @@
         display: none;
       }
     }
+    @media (max-width: 768px) {
+  .libro-container {
+    display: block !important;      /* Elimina el grid en móvil para que los bloques se apilen uno debajo del otro */
+    max-width: 95vw;
+    padding: 0;
+    gap: 0;
+  }
+
+  .libro-image {
+    position: static;               /* Ya no es sticky en móvil, para que no cause problemas de superposición */
+    margin: 0 auto 2rem auto;
+    width: 90vw;
+    max-width: 340px;
+    display: block;
+  }
+
+  .libro-image-placeholder {
+    width: 90vw !important;        /* Aprovecha el ancho del móvil */
+    max-width: 340px !important;
+    aspect-ratio: 2/3;
+    min-height: 220px;
+    padding: 0.5rem;
+    margin: 2rem auto 1.5rem auto;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow-md);
+  }
+}
+
   </style>
 </head>
 <body>
