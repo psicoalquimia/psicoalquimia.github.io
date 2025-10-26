@@ -1,93 +1,100 @@
-/* =========================================
-   THEME TOGGLE (Dark / Light Mode)
-========================================= */
-const themeToggle = document.getElementById("themeToggle");
-const iconLight = document.getElementById("iconLight");
-const iconDark = document.getElementById("iconDark");
+/* ============================
+   Theme toggle (persistente)
+   ============================ */
+const themeToggle = document.getElementById('themeToggle');
+const iconLight = document.getElementById('iconLight');
+const iconDark = document.getElementById('iconDark');
 
-// Cargar preferencia previa
-if (localStorage.getItem("theme") === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-  iconLight.style.display = "none";
-  iconDark.style.display = "block";
+function setTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    iconLight.style.display = 'none';
+    iconDark.style.display = 'block';
+    localStorage.setItem('siteTheme', 'dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    iconLight.style.display = 'block';
+    iconDark.style.display = 'none';
+    localStorage.removeItem('siteTheme');
+  }
 }
 
-// Alternar tema
-themeToggle.addEventListener("click", () => {
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-  if (currentTheme === "dark") {
-    document.documentElement.removeAttribute("data-theme");
-    localStorage.removeItem("theme");
-    iconLight.style.display = "block";
-    iconDark.style.display = "none";
-  } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-    iconLight.style.display = "none";
-    iconDark.style.display = "block";
-  }
+const savedTheme = localStorage.getItem('siteTheme');
+if (savedTheme === 'dark') setTheme('dark');
+else setTheme('light');
+
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  setTheme(isDark ? 'light' : 'dark');
 });
 
-/* =========================================
-   PROGRESS BAR (scroll progress)
-========================================= */
-window.addEventListener("scroll", () => {
-  const progressBar = document.getElementById("progressBar");
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = (scrollTop / docHeight) * 100;
-  progressBar.style.width = progress + "%";
+/* ============================
+   Progress bar
+   ============================ */
+const progressBar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const pct = (scrollTop / docHeight) * 100;
+  progressBar.style.width = pct + '%';
+
+  // toggle nav shadow
+  const nav = document.getElementById('navFixed');
+  if (scrollTop > 80) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
 });
 
-/* =========================================
-   ANIMACIÓN DE SECCIONES AL APARECER
-========================================= */
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  },
-  { threshold: 0.1 }
-);
+/* ============================
+   Intersection Observer (sections)
+   ============================ */
+const sections = document.querySelectorAll('main section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
 
-document.querySelectorAll("section").forEach(section => {
-  observer.observe(section);
-});
+sections.forEach(s => observer.observe(s));
 
-/* =========================================
-   PARALLAX EFFECT
-========================================= */
-const heroImage = document.getElementById("heroParallax");
-const libroImage = document.getElementById("libroParallax");
+/* ============================
+   Parallax for Sobre Mi & Libro images
+   ============================ */
+const sobreMiParallax = document.getElementById('sobreMiParallax');
+const libroParallax = document.getElementById('libroParallax');
 
-window.addEventListener("scroll", () => {
+function applyParallax() {
   const scrollY = window.scrollY;
-  if (heroImage) heroImage.style.transform = `translateY(${scrollY * 0.1}px)`;
-  if (libroImage) libroImage.style.transform = `translateY(${scrollY * 0.05}px)`;
-});
+  // sobre-mi image: slight vertical parallax when in view
+  if (sobreMiParallax) {
+    const rect = sobreMiParallax.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const rate = (window.innerHeight - rect.top) * 0.02;
+      sobreMiParallax.style.transform = `translateY(${rate}px)`;
+    }
+  }
+  // libro image: similar but smaller rate
+  if (libroParallax) {
+    const rectL = libroParallax.getBoundingClientRect();
+    if (rectL.top < window.innerHeight && rectL.bottom > 0) {
+      const rateL = (window.innerHeight - rectL.top) * 0.015;
+      libroParallax.style.transform = `translateY(${rateL}px)`;
+    }
+  }
+}
 
-/* =========================================
-   SCROLL SUAVE A ENLACES INTERNOS
-========================================= */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+window.addEventListener('scroll', applyParallax);
+window.addEventListener('resize', applyParallax);
+document.addEventListener('DOMContentLoaded', applyParallax);
+
+/* ============================
+   Smooth internal links (anchors)
+   ============================ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    if (href.length > 1) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
     }
   });
-});
-
-/* =========================================
-   NAVBAR SHADOW AL HACER SCROLL
-========================================= */
-const nav = document.getElementById("navFixed");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    nav.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
-  } else {
-    nav.style.boxShadow = "none";
-  }
 });
