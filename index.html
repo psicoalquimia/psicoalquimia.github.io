@@ -10,7 +10,1955 @@
   <!-- favicon -->
   <link rel="icon" href="favicon-32x32.png" />
 
-  <!-- CSS externo -->
+  <!-- CSS externo --><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Javier Gómez - Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación interior desde un enfoque integrativo. Sesiones online, procesos profundos y círculo mensual 'La Práctica'. Autor de 'La Profecía del Eneagrama'.">
+  <meta name="keywords" content="psicoterapia, transformación interior, eneagrama, consciencia, terapia gestalt, trauma, medicina ancestral, espiritualidad">
+  <meta name="author" content="Javier Gómez">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tudominio.com/">
+  <meta property="og:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
+  <meta property="og:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
+  <meta property="og:image" content="https://tudominio.com/foto-perfil.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://tudominio.com/">
+  <meta property="twitter:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
+  <meta property="twitter:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
+  <meta property="twitter:image" content="https://tudominio.com/foto-perfil.jpg">
+
+  <!-- Schema.org markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Javier Gómez",
+    "jobTitle": "Psicoterapeuta",
+    "description": "Psicoterapeuta y explorador de la consciencia especializado en transformación interior y trabajo informado en trauma",
+    "url": "https://tudominio.com",
+    "image": "https://tudominio.com/foto-perfil.jpg",
+    "sameAs": [
+      "https://instagram.com/psicoalquimia.co",
+      "https://tiktok.com/@psicoalquimia"
+    ],
+    "knowsAbout": ["Psicoterapia", "Eneagrama", "Terapia Gestalt", "Trauma", "Espiritualidad"],
+    "alumniOf": "Formación en Terapia Gestalt Integrativa",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virtual - Internacional"
+    }
+  }
+  </script>
+
+  <title>Javier Gómez - Psicoterapeuta • Explorador de la Consciencia</title>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://psicoalquimia.setmore.com">
+  
+  <!-- Íconos -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ3QHR5RFS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if(localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('js', new Date());
+      gtag('config', 'G-LQ3QHR5RFS');
+    }
+  </script>
+
+  <style>
+    /* =================================
+       VARIABLES Y RESET
+       ================================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-primary: #5a6350;
+      --color-primary-light: #6b7460;
+      --color-primary-dark: #4a5240;
+      --color-secondary: #a89f91;
+      --color-accent: #8b7e6a;
+      --color-light: #faf8f5;
+      --color-bg-hero: #ebe8e1;
+      --color-text: #3a3a3a;
+      --color-text-light: #6b6b6b;
+      --color-white: #ffffff;
+      --transition-base: 0.3s ease;
+      --transition-slow: 0.6s ease;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Dark mode variables */
+    [data-theme="dark"] {
+      --color-primary: #7a8870;
+      --color-primary-light: #8a9880;
+      --color-primary-dark: #6a7860;
+      --color-secondary: #b8af9f;
+      --color-accent: #9b8e7a;
+      --color-light: #1a1a1a;
+      --color-bg-hero: #252525;
+      --color-text: #e0e0e0;
+      --color-text-light: #a0a0a0;
+      --color-white: #2a2a2a;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.8;
+      color: var(--color-text);
+      background: var(--color-light);
+      overflow-x: hidden;
+      font-size: 17px;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    /* Skip to main content for accessibility */
+    .skip-to-main {
+      position: absolute;
+      left: -9999px;
+      z-index: 999;
+      padding: 1em;
+      background: var(--color-primary);
+      color: white;
+      text-decoration: none;
+    }
+
+    .skip-to-main:focus {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+    }
+
+    /* =================================
+       PROGRESS BAR
+       ================================= */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+
+    /* =================================
+       THEME TOGGLE
+       ================================= */
+   .theme-toggle {
+  background: transparent;
+  border: 1.5px solid rgba(139, 126, 106, 0.2);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-base);
+  min-height: 44px;
+}
+
+.theme-toggle:hover {
+  background: rgba(90, 99, 80, 0.1);
+  transform: scale(1.05);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-base);
+  fill: var(--color-primary);
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(20deg);
+}
+    /* =================================
+       COOKIE BANNER
+       ================================= */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      padding: 1.5rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+      z-index: 10000;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      border-top: 2px solid var(--color-accent);
+    }
+
+    .cookie-banner.show {
+      transform: translateY(0);
+    }
+
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cookie-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .cookie-text p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .cookie-text a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cookie-btn {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      min-height: 44px;
+    }
+
+    .cookie-btn-accept {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .cookie-btn-accept:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+
+    .cookie-btn-reject {
+      background: transparent;
+      color: var(--color-primary);
+      border: 1.5px solid var(--color-primary);
+    }
+
+    .cookie-btn-reject:hover {
+      background: var(--color-light);
+    }
+
+    /* =================================
+       NAVIGATION
+       ================================= */
+    .nav-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      z-index: 1000;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease, background 0.5s ease;
+      box-shadow: var(--shadow-sm);
+      border-bottom: 1px solid rgba(139, 126, 106, 0.1);
+    }
+
+    [data-theme="dark"] .nav-fixed {
+      background: rgba(26, 26, 26, 0.95);
+    }
+
+    .nav-fixed.visible {
+      transform: translateY(0);
+    }
+
+    .nav-fixed a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      transition: color var(--transition-base);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-fixed a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transition: width var(--transition-base);
+    }
+
+    .nav-fixed a:hover::after {
+      width: 100%;
+    }
+
+    .nav-fixed a:hover {
+      color: var(--color-accent);
+    }
+
+    /* =================================
+       STICKY CTA (Mobile)
+       ================================= */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      padding: 0.8rem 1rem;
+      box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+      z-index: 999;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      display: none;
+      border-top: 2px solid var(--color-accent);
+    }
+
+    .sticky-cta.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-cta-content {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .sticky-cta-btn {
+      flex: 1;
+      padding: 0.8rem 1.2rem;
+      background: var(--color-primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      text-align: center;
+      transition: all var(--transition-base);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sticky-cta-btn:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+
+    /* =================================
+       HERO SECTION
+       ================================= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, var(--color-bg-hero) 0%, var(--color-light) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+   /* Flor de la Vida animada de fondo */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='152' cy='100' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='48' cy='100' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='126' cy='145' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='74' cy='145' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='126' cy='55' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='74' cy='55' r='30' fill='none' stroke='%235a6350' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  opacity: 0.4;
+  animation: flowOfLife 60s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+    @keyframes flowOfLife {
+      0% { background-position: 0 0; }
+      100% { background-position: 300px 300px; }
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="%23faf8f5" opacity="0.3"/></svg>');
+      background-size: cover;
+      background-position: bottom;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1000px;
+      animation: fadeInHero 1.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeInHero {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-image {
+      flex-shrink: 0;
+    }
+
+    .hero-image-circle {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4cfc4, #e8e4dc);
+      background-image: url('foto-perfil.jpg');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(139, 126, 106, 0.2);
+      background-size: cover;
+      background-position: center;
+      transform: translateZ(0);
+      will-change: transform;
+      transition: transform var(--transition-slow);
+    }
+
+    .hero-image-circle:hover {
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      color: var(--color-primary);
+      letter-spacing: 1px;
+    }
+
+    .hero h2 {
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      color: var(--color-secondary);
+      letter-spacing: 0.5px;
+    }
+
+    .hero-bullets {
+      margin: 2rem 0;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--color-text-light);
+    }
+
+    .hero-bullets p {
+      margin: 0.6rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .hero-bullets p::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 7px;
+      height: 7px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
+    }
+
+
+    /* =================================
+       BUTTONS
+       ================================= */
+    .cta-button {
+      display: inline-block;
+      padding: 0.95rem 2.5rem;
+      background: transparent;
+      color: var(--color-primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      border: 1.5px solid var(--color-primary);
+      transition: all var(--transition-base);
+      margin-top: 1rem;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: var(--color-primary);
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+      z-index: -1;
+    }
+
+    .cta-button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .cta-button:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* =================================
+       SECTIONS
+       ================================= */
+    section {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      color: var(--color-primary);
+      margin-bottom: 3.5rem;
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      opacity: 0.4;
+    }
+
+    .section-separator {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--color-accent);
+      font-size: 0.8rem;
+      opacity: 0.3;
+      letter-spacing: 1rem;
+    }
+
+    /* =================================
+       SOBRE MÍ
+       ================================= */
+    .sobre-mi {
+      background: var(--color-white);
+      padding: 6rem 2rem;
+    }
+
+    .sobre-mi-container {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 3.5rem;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .sobre-mi-image {
+      position: sticky;
+      top: 5rem;
+      order: 2;
+    }
+
+    .sobre-mi-image-rect {
+      width: 100%;
+      height: 420px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d4cfc4, #e8e4dc);
+      background-image: url('tu-foto-sobre-mi.jpg');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(139, 126, 106, 0.15);
+      background-size: cover;
+      background-position: center;
+      transition: transform var(--transition-slow);
+    }
+
+    .sobre-mi-image-rect:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sobre-mi-content {
+      order: 1;
+    }
+
+    .sobre-mi-content p {
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.9;
+      color: var(--color-text);
+      text-align: justify;
+    }
+
+    .quote {
+      background: linear-gradient(135deg, rgba(107, 116, 96, 0.08), rgba(168, 159, 145, 0.08));
+      padding: 2.5rem;
+      margin: 4rem 0;
+      border-radius: 12px;
+      text-align: center;
+      color: var(--color-text);
+      font-size: 1.15rem;
+      line-height: 1.9;
+      font-style: italic;
+      border-left: 3px solid var(--color-accent);
+      position: relative;
+    }
+
+    .quote::before {
+      content: '"';
+      position: absolute;
+      top: -0.5rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      color: var(--color-accent);
+      opacity: 0.2;
+      font-style: normal;
+    }
+
+    /* =================================
+       LIBRO
+       ================================= */
+    .libro {
+      background: var(--color-light);
+    }
+
+    .libro-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .libro-image {
+      position: sticky;
+      top: 5rem;
+    }
+
+    .libro-image-placeholder {
+      width: 100%;
+      aspect-ratio: 2/3;
+      background: linear-gradient(135deg, #d4cfc4, #c9c2b6);
+      background-image: url('portada-libro.jpg');
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(74, 74, 74, 0.5);
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(139, 126, 106, 0.2);
+      background-size: cover;
+      background-position: center;
+      transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    .libro-image-placeholder:hover {
+      transform: translateY(-8px) rotate(-2deg);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    }
+
+    .libro-content h3 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+      font-weight: 400;
+    }
+
+    .libro-content p, .libro-content ul {
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    .libro-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .libro-content li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .libro-content li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 6px;
+      height: 6px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
+    }
+
+    .libro-image-float {
+      width: 100%;
+      max-width: 400px;
+      margin: 3rem auto;
+      display: block;
+      opacity: 0.95;
+      transition: opacity var(--transition-base), transform var(--transition-base);
+      border-radius: 8px;
+    }
+
+    .libro-image-float:hover {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+
+    .libro-cta {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .libro-cta .cta-button {
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+    }
+
+    .libro-cta .cta-button::before {
+      background: var(--color-secondary);
+    }
+
+    .libro-cta .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* =================================
+       SERVICIOS
+       ================================= */
+    .servicios {
+      background: var(--color-white);
+    }
+
+    .servicios-intro {
+      text-align: center;
+      font-size: 1.15rem;
+      color: var(--color-text-light);
+      margin-bottom: 4.5rem;
+      font-style: italic;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .servicio-card:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+      border-left-width: 5px;
+    }
+
+    .servicio-card h3 {
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .servicio-card p {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .servicio-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 1.5rem 0;
+    }
+
+    .servicio-card li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.3rem;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .servicio-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65rem;
+      width: 5px;
+      height: 5px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+
+    .servicio-details {
+      background: var(--color-white);
+      padding: 1.3rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      border: 1px solid rgba(139, 126, 106, 0.15);
+    }
+
+    .servicio-details strong {
+      color: var(--color-primary);
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+
+    .servicio-precio {
+      font-size: 1.25rem;
+      color: var(--color-primary);
+      font-weight: bold;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .stripe-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      font-weight: normal;
+      background: var(--color-white);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 126, 106, 0.15);
+    }
+
+    .stripe-badge svg {
+      height: 14px;
+      width: auto;
+    }
+
+    .servicio-button {
+      display: inline-block;
+      padding: 0.95rem 2.2rem;
+      background: transparent;
+      color: var(--color-primary);
+      text-decoration: none;
+      border-radius: 50px;
+      margin-top: 1rem;
+      transition: all var(--transition-base);
+      border: 1.5px solid var(--color-primary);
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .servicio-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: var(--color-primary);
+      transform: translate(-50%, -50%);
+      transition: width 0.4s, height 0.4s;
+      z-index: -1;
+    }
+
+    .servicio-button:hover::before {
+      width: 250px;
+      height: 250px;
+    }
+
+    .servicio-button:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .servicio-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* =================================
+       CONTACTO
+       ================================= */
+    .contacto {
+      background: linear-gradient(135deg, rgba(107, 116, 96, 0.05), rgba(168, 159, 145, 0.05));
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .contacto h2 {
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+    }
+
+    .contacto p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.9;
+      color: var(--color-text-light);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: all var(--transition-base);
+      min-width: 44px;
+    }
+
+    .social-link:hover {
+      transform: translateY(-5px);
+    }
+
+    .social-icon {
+      width: 60px;
+      height: 60px;
+      min-height: 44px;
+      border-radius: 50%;
+      background: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+      border: 1px solid rgba(139, 126, 106, 0.15);
+    }
+
+    .social-icon svg {
+      width: 28px;
+      height: 28px;
+      transition: all var(--transition-base);
+    }
+
+    .social-link:hover .social-icon {
+      background: var(--color-primary);
+      box-shadow: var(--shadow-md);
+      transform: scale(1.1);
+    }
+
+    .social-link:hover .social-icon svg {
+      fill: white;
+    }
+
+    .social-label {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+    }
+
+    /* =================================
+       FOOTER
+       ================================= */
+    footer {
+      background: var(--color-primary);
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 0.3rem 0;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: underline;
+      transition: color var(--transition-base);
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* =================================
+       MODAL CTA
+       ================================= */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition-base);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: var(--color-white);
+      padding: 2.5rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      transform: scale(0.9);
+      transition: transform var(--transition-base);
+      position: relative;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--color-text-light);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all var(--transition-base);
+    }
+
+    .modal-close:hover {
+      background: rgba(139, 126, 106, 0.1);
+      color: var(--color-text);
+    }
+
+    .modal-content h3 {
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+    .modal-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .modal-option {
+      padding: 1.2rem;
+      border: 1.5px solid rgba(139, 126, 106, 0.2);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: all var(--transition-base);
+      display: block;
+    }
+
+    .modal-option:hover {
+      border-color: var(--color-primary);
+      background: rgba(90, 99, 80, 0.05);
+      transform: translateX(5px);
+    }
+
+    .modal-option strong {
+      display: block;
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+
+    .modal-option span {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+    }
+
+    /* =================================
+       ANIMATIONS
+       ================================= */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* =================================
+       RESPONSIVE
+       ================================= */
+    @media (max-width: 768px) {
+      .theme-toggle {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .nav-fixed {
+        gap: 1.5rem;
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .sticky-cta {
+        display: block;
+      }
+
+      .cookie-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cookie-buttons {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .cookie-btn {
+        width: 100%;
+      }
+
+      .hero-container {
+        flex-direction: column;
+        gap: 2.5rem;
+        text-align: center;
+      }
+
+      .hero-image-circle {
+        width: 60vw;
+        height: 60vw;
+        max-width: 260px;
+        max-height: 260px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.05rem;
+        line-height: 1.4;
+        max-width: 100%;
+        margin: 0.8rem auto 2rem;
+      }
+
+      .hero-bullets {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .hero-bullets p {
+        margin: 0.5rem 0;
+        padding-left: 0;
+        text-align: center;
+      }
+
+      .hero-bullets p::before {
+        display: none;
+      }
+
+  
+      .sobre-mi-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .sobre-mi-image {
+        position: relative;
+        top: auto;
+        order: 1;
+        margin: 0 auto 2rem;
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .sobre-mi-image-rect {
+        width: 100%;
+        height: 450px;
+      }
+
+      .sobre-mi-content {
+        order: 2;
+      }
+
+      .libro-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+ .libro-image {
+  position: relative;
+  top: auto;
+  max-width: 280px;
+  margin: 0 auto 2rem;
+}
+
+.libro-image-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background-size: cover;
+  background-position: center;
+}
+
+      .libro-image-float {
+        max-width: 280px;
+      }
+
+      section {
+        padding: 3rem 1.5rem;
+      }
+
+      .section-separator {
+        padding: 2rem 0;
+        font-size: 0.7rem;
+        letter-spacing: 0.8rem;
+      }
+
+      .servicios-intro {
+        font-size: 1.05rem;
+        max-width: 85%;
+      }
+
+      .servicio-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .servicio-precio {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      section h2 {
+        font-size: 1.8rem;
+      }
+
+      .modal-content {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 16px;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .hero h2 {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+
+      .hero-bullets p {
+        font-size: 0.95rem;
+      }
+
+      .hero-image-circle {
+        width: 65vw;
+        height: 65vw;
+      }
+
+      .social-links {
+        gap: 2rem;
+      }
+
+      .social-icon {
+        width: 55px;
+        height: 55px;
+      }
+
+      .libro-image {
+        max-width: 92vw;
+      }
+
+      .sobre-mi-image {
+        max-width: 280px;
+      }
+
+      .sobre-mi-image-rect {
+        height: 380px;
+      }
+    }
+
+    /* =================================
+       FOCUS STATES (Accessibility)
+       ================================= */
+    *:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    button:focus,
+    a:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* =================================
+       PRINT STYLES
+       ================================= */
+    @media print {
+      .nav-fixed,
+      .theme-toggle,
+      .sticky-cta,
+      .cookie-banner,
+      .progress-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to main content -->
+  <a href="#main" class="skip-to-main">Saltar al contenido principal</a>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+<!-- Theme Toggle (movido dentro del nav) -->
+    <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+    </svg>
+    <svg id="iconDark" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+      <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
+    </svg>
+  </button>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <p><strong>Utilizamos cookies</strong> para mejorar tu experiencia. Usamos Google Analytics para analizar el tráfico del sitio.</p>
+        <p>Al aceptar, consientes el uso de cookies de terceros. <a href="privacidad.html">Política de Privacidad y Cookies</a></p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceptar</button>
+        <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+ <!-- Fixed Navigation -->
+<nav class="nav-fixed" id="navFixed" role="navigation">
+  <a href="#sobre-mi">Sobre mí</a>
+  <a href="#libro">Libro</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto">Contacto</a>
+  <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+    <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+    </svg>
+    <svg id="iconDark" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+      <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
+    </svg>
+  </button>
+</nav>
+
+  <!-- Sticky CTA Mobile -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta-content">
+      <button class="sticky-cta-btn" onclick="openModal()">Agendar sesión</button>
+    </div>
+  </div>
+
+  <!-- Modal CTA -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
+      <h3>¿Qué tipo de acompañamiento buscas?</h3>
+      <div class="modal-options">
+        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="modal-option">
+          <strong>Sesión Individual</strong>
+          <span>75 minutos • 65€</span>
+        </a>
+        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="modal-option">
+          <strong>Proceso Profundo</strong>
+          <span>4 sesiones • 240€</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-image">
+          <div class="hero-image-circle" id="heroParallax" role="img" aria-label="Foto de perfil de Javier Gómez"></div>
+        </div>
+        <div class="hero-content">
+          <h1>Javier Gómez</h1>
+          <h2>Psicoterapeuta • Explorador de la Consciencia</h2>
+          <div class="hero-bullets">
+            <p>Acompaño procesos de transformación interior</p>
+            <p>Puente entre misticismo y transformación social</p>
+          </div>
+        
+<a href="#servicios" class="cta-button">Explorar servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
+    <!-- Sobre Mí Section -->
+    <section class="sobre-mi" id="sobre-mi">
+      <h2>Sobre Mí</h2>
+      <div class="sobre-mi-container">
+        <div class="sobre-mi-content">
+          <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
+          <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
+          <p>Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.</p>
+          <p>Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
+          <p>Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
+          <p>También podría decir que soy un eterno estudiante de la meditación y del sufismo, y que encuentro en la escritura una forma profunda de exploración y expresión. Soy autor de 'La Profecía del Eneagrama', un libro que revela el eneagrama como un mapa sagrado hacia nuestra verdadera naturaleza espiritual</p>
+          <p>Lo que hago está dirigido a quienes buscan no solo sanar heridas, sino recordarse a sí mism@s, despertar su presencia y vivir en coherencia con su corazón</p>
+        </div>
+        <div class="sobre-mi-image">
+          <div class="sobre-mi-image-rect" role="img" aria-label="Foto de Javier Gómez en sesión terapéutica"></div>
+        </div>
+      </div>
+      <div class="quote">
+        Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
+    <!-- Libro Section -->
+    <section class="libro" id="libro">
+      <h2>Mi Libro</h2>
+      <div class="libro-container">
+        <div class="libro-image">
+          <div class="libro-image-placeholder" id="libroParallax" role="img" aria-label="Portada del libro La Profecía del Eneagrama"></div>
+        </div>
+        <div class="libro-content">
+          <h3>La Profecía del Eneagrama</h3>
+          <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
+          <p>En un mundo donde todo se ha convertido en mercancía —incluso lo más sagrado—, este libro revela el eneagrama más allá de su uso superficial como herramienta de personalidad y lo devuelve a su esencia más pura: <strong>un mapa sagrado hacia la verdadera naturaleza espiritual de la humanidad.</strong></p>
+          <h3>Un viaje iniciático hacia el corazón de lo que somos</h3>
+          <p><em>La Profecía del Eneagrama</em> no es un manual de autoayuda ni una clasificación de tipos psicológicos. Es <strong>una experiencia de despertar</strong>, narrada a través de los apuntes y las notas de campo de un buscador del espíritu, que funcionan como un verdadero ritual de autodescubrimiento.</p>
+          <p>Este libro te adentrará en las profundidades de la experiencia mística para revelar:</p>
+          <ul>
+            <li>La realidad profundamente espiritual de la simbología del eneagrama</li>
+            <li><strong>La herida fundamental</strong> que nos mantiene desconectados de nuestra esencia</li>
+            <li>Las puertas de <strong>acceso a la experiencia mística</strong></li>
+            <li>Las posibilidades de <strong>construcción social a partir de la integración de la experiencia espiritual</strong></li>
+          </ul>
+          <p>Pero sobre todo, te enseñará <strong>a volver al corazón</strong>: a reconectar con la fuente de amor, sabiduría y verdad que siempre ha habitado en ti.</p>
+          <img src="libros-bocabajo.png" alt="Diferentes ángulos del libro La Profecía del Eneagrama" class="libro-image-float">
+          <h3>Más que teoría: una herramienta espiritual de transformación profunda</h3>
+          <ul>
+            <li><strong>Una visión revolucionaria del eneagrama</strong> como ciencia espiritual viva</li>
+            <li><strong>Una lectura como meditación contemplativa</strong> que funciona como portales hacia estados profundos de consciencia</li>
+            <li><strong>Un abordaje lúcido</strong> a los fenómenos que nos alejan de nuestra esencia</li>
+            <li><strong>Un lenguaje que mezcla la razón y el corazón</strong></li>
+          </ul>
+          <h3>Una invitación urgente a practicar espiritualidad verdadera</h3>
+          <p>Es un testimonio vivo para quienes:</p>
+          <ul>
+            <li>Buscan una espiritualidad auténtica, no diseñada para el mercado</li>
+            <li>Sienten el llamado a despertar de la ilusión colectiva</li>
+            <li>Están list@s para emprender el viaje de regreso a sí mism@s</li>
+            <li>Intuyen que la revolución interior es inseparable de la transformación del mundo</li>
+          </ul>
+          <p style="font-style: italic; margin-top: 2rem;">"La Profecía del Eneagrama es una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método."</p>
+          <p><strong>Para los que aún pueden oír, en medio del ruido, el murmullo de lo sagrado.</strong></p>
+          <div class="libro-cta">
+            <a href="https://www.amazon.com" target="_blank" class="cta-button">Conseguir el libro</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
+    <!-- Servicios Section -->
+    <section class="servicios" id="servicios">
+      <h2>Cómo Trabajamos Juntos</h2>
+      <p class="servicios-intro">"El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos."</p>
+
+      <div class="servicio-card">
+        <h3>Sesión Individual de Acompañamiento Terapéutico</h3>
+        <p>Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas (psicodélicas, místicas, traumáticas), trabajo con patrones inconscientes y desarrollo de capacidades.</p>
+        <p><strong>Este espacio es para ti si:</strong></p>
+        <ul>
+          <li>Estás atravesando una crisis existencial o transición vital</li>
+          <li>Has tenido experiencias que necesitas integrar</li>
+          <li>Sientes que necesitas ayuda para transitar cualquiera que sea tu experiencia actual</li>
+        </ul>
+        <div class="servicio-details">
+          <strong>Modalidad:</strong> Virtual<br>
+          <strong>Duración:</strong> 75 minutos
+        </div>
+        <p class="servicio-precio">
+          Inversión: 65€
+          <span class="stripe-badge">
+            <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
+            Pago seguro
+          </span>
+        </p>
+        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button">Agendar sesión</a>
+      </div>
+
+      <div class="servicio-card">
+        <h3>Proceso de Acompañamiento Profundo (4 Sesiones)</h3>
+        <p>Acompañamiento continuado para procesos que requieren más tiempo y profundidad.</p>
+        <p><strong>Este proceso es para ti si:</strong></p>
+        <ul>
+          <li>Estás comprometid@ con tu proceso terapéutico y sientes que una sesión no es suficiente</li>
+          <li>Necesitas acompañamiento continuado en una transición vital</li>
+          <li>Buscas transformación real, no solo alivio sintomático</li>
+        </ul>
+        <div class="servicio-details">
+          <strong>Modalidad:</strong> Virtual<br>
+          <strong>Duración:</strong> 4 sesiones de 75 minutos
+        </div>
+        <p class="servicio-precio">
+          Inversión: 240€ (ahorro de 20€)
+          <span class="stripe-badge">
+            <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
+            Pago seguro
+          </span>
+        </p>
+        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button">Agendar proceso</a>
+      </div>
+
+      <div class="servicio-card">
+        <h3>Círculo Mensual "La Práctica"</h3>
+        <p>Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
+        <div class="servicio-details">
+          <strong>Modalidad:</strong> Virtual<br>
+          <strong>Frecuencia:</strong> Por confirmar<br>
+          <strong>Grupo:</strong> Máximo 10 personas
+        </div>
+        <p class="servicio-precio">
+          Inversión: 10€ por sesión
+          <span class="stripe-badge">
+            <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
+            Pago seguro
+          </span>
+        </p>
+        <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button">Unirme al círculo</a>
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
+    <!-- Contacto Section -->
+    <section class="contacto" id="contacto">
+      <h2>Conecta Conmigo</h2>
+      <p>Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
+      <p>También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.</p>
+      
+      <div class="social-links">
+        <a href="mailto:psicoalquimia.co@gmail.com" class="social-link" aria-label="Enviar email">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <span class="social-label">Email</span>
+        </a>
+        <a href="https://instagram.com/psicoalquimia.co" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+            </svg>
+          </div>
+          <span class="social-label">Instagram</span>
+        </a>
+        <a href="https://tiktok.com/@psicoalquimia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
+            </svg>
+          </div>
+          <span class="social-label">TikTok</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎</p>
+    <p><a href="privacidad.html">Política de Privacidad y Cookies</a></p>
+  </footer>
+
+  <script>
+    // ==========================================
+    // COOKIES MANAGEMENT
+    // ==========================================
+    window.onload = function() {
+      const consent = localStorage.getItem('cookieConsent');
+      if (!consent) {
+        setTimeout(() => {
+          document.getElementById('cookieBanner').classList.add('show');
+        }, 1000);
+      } else if (consent === 'accepted') {
+        loadGoogleAnalytics();
+      }
+    };
+
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookieBanner').classList.remove('show');
+      loadGoogleAnalytics();
+    }
+
+    function rejectCookies() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+
+    function loadGoogleAnalytics() {
+      if (typeof gtag === 'function') {
+        gtag('js', new Date());
+        gtag('config', 'G-LQ3QHR5RFS');
+      }
+    }
+
+    // ==========================================
+    // THEME TOGGLE
+    // ==========================================
+    const themeToggle = document.getElementById('themeToggle');
+    const iconLight = document.getElementById('iconLight');
+    const iconDark = document.getElementById('iconDark');
+    const html = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        iconLight.style.display = 'none';
+        iconDark.style.display = 'block';
+      } else {
+        iconLight.style.display = 'block';
+        iconDark.style.display = 'none';
+      }
+    }
+
+    // ==========================================
+    // PROGRESS BAR
+    // ==========================================
+    const progressBar = document.getElementById('progressBar');
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+
+    // ==========================================
+    // NAVIGATION & STICKY CTA
+    // ==========================================
+    const navFixed = document.getElementById('navFixed');
+    const stickyCta = document.getElementById('stickyCta');
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      
+      // Show fixed navigation
+      if (scrolled > 100) {
+        navFixed.classList.add('visible');
+      } else {
+        navFixed.classList.remove('visible');
+      }
+
+      // Show sticky CTA on mobile after scrolling past hero
+      if (window.innerWidth <= 768) {
+        if (scrolled > window.innerHeight * 0.5) {
+          stickyCta.classList.add('visible');
+        } else {
+          stickyCta.classList.remove('visible');
+        }
+      }
+    });
+
+    // ==========================================
+    // MODAL CTA
+    // ==========================================
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    function openModal() {
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(event) {
+      if (!event || event.target === modalOverlay) {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close modal with ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // ==========================================
+    // INTERSECTION OBSERVER (Fade-in animations)
+    // ==========================================
+    const sections = document.querySelectorAll('section');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { 
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // ==========================================
+    // PARALLAX EFFECTS
+    // ==========================================
+    const heroParallax = document.getElementById('heroParallax');
+    const libroParallax = document.getElementById('libroParallax');
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+
+      // Hero parallax
+      if (heroParallax && scrolled < window.innerHeight) {
+        const rate = scrolled * 0.05;
+        heroParallax.style.transform = `translateY(${rate}px)`;
+      }
+
+      // Libro parallax
+      if (libroParallax) {
+        const libroSection = libroParallax.closest('section');
+        const rect = libroSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const rate = (window.innerHeight - rect.top) * 0.02;
+          libroParallax.style.transform = `translateY(${rate}px)`;
+        }
+      }
+    });
+
+    // ==========================================
+    // SMOOTH SCROLL FOR NAVIGATION LINKS
+    // ==========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // ==========================================
+    // ANALYTICS EVENT TRACKING
+    // ==========================================
+    document.querySelectorAll('.cta-button, .servicio-button').forEach(button => {
+      button.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click', {
+            'event_category': 'CTA',
+            'event_label': this.textContent.trim()
+          });
+        }
+      });
+    });
+
+    document.querySelectorAll('.social-link').forEach(link => {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click', {
+            'event_category': 'Social',
+            'event_label': this.querySelector('.social-label').textContent
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+        d {
+      background: rgba(250, 248, 245, 0.6);
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      border-radius: 12px;
+      border-left: 3px solid var(--color-accent);
+      transition: all var(--transition-base);
+    }
+
+    .servicio-car
   <link rel="stylesheet" href="style.css">
 
   <!-- Schema / Open Graph (preserva lo esencial) -->
