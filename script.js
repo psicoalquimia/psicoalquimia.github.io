@@ -1,5 +1,5 @@
 /* ============================
-   Theme toggle (persistente)
+   Theme toggle (persistente) 
    ============================ */
 const themeToggle = document.getElementById('themeToggle');
 const iconLight = document.getElementById('iconLight');
