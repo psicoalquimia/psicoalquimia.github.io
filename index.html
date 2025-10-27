@@ -456,22 +456,24 @@
       overflow: hidden;
     }
 
-    /* Flor de la Vida animada de fondo */
+    /* Árbol de la Vida de fondo */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><g id="circle"><circle cx="100" cy="100" r="30" fill="none" stroke="%235a6350" stroke-width="0.5" opacity="0.15"/></g></defs><use href="%23circle"/><use href="%23circle" transform="translate(52,0)"/><use href="%23circle" transform="translate(-52,0)"/><use href="%23circle" transform="translate(26,45)"/><use href="%23circle" transform="translate(-26,45)"/><use href="%23circle" transform="translate(26,-45)"/><use href="%23circle" transform="translate(-26,-45)"/></svg>');
-      background-size: 300px 300px;
-      opacity: 0.3;
-      animation: flowOfLife 60s linear infinite;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='500'%3E%3Cline x1='150' y1='50' x2='100' y2='120' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='150' y1='50' x2='200' y2='120' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='100' y1='120' x2='150' y2='190' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='200' y1='120' x2='150' y2='190' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='150' y1='190' x2='100' y2='260' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='150' y1='190' x2='200' y2='260' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='100' y1='260' x2='150' y2='330' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='200' y1='260' x2='150' y2='330' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Cline x1='150' y1='330' x2='150' y2='420' stroke='%235a6350' stroke-width='0.8' opacity='0.15'/%3E%3Ccircle cx='150' cy='50' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='100' cy='120' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='200' cy='120' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='150' cy='190' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='100' cy='260' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='200' cy='260' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='150' cy='330' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='100' cy='400' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='200' cy='400' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3Ccircle cx='150' cy='420' r='18' fill='none' stroke='%235a6350' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E");
+      background-size: 350px 550px;
+      background-position: center;
+      background-repeat: repeat;
+      opacity: 0.6;
+      animation: treeOfLife 120s linear infinite;
       pointer-events: none;
       z-index: 0;
     }
 
-    @keyframes flowOfLife {
-      0% { background-position: 0 0; }
-      100% { background-position: 300px 300px; }
+    @keyframes treeOfLife {
+      0% { background-position: center 0; }
+      100% { background-position: center 550px; }
     }
 
     .hero::after {
