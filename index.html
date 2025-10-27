@@ -156,6 +156,7 @@
   .progress-bar {
     height: 4px; /* ligeramente más gruesa en móvil */
     z-index: 90001 !important;
+    isolation: isolate;
   }
 }
 
@@ -1573,6 +1574,28 @@
     to   { opacity: 1; }
   }
 }
+    .progress-bar {
+  will-change: transform;
+  position: fixed;
+  top: 0; left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 99999 !important;
+  transition: width 0.1s ease;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .progress-bar {
+    height: 4px;
+    z-index: 99999 !important;
+    opacity: 1 !important;
+    display: block !important;
+    will-change: transform;
+    isolation: isolate;   /* ESTA LÍNEA soluciona stacking context en móvil moderno */
+  }
+}
+
 
   </style>
 </head>
@@ -1925,6 +1948,10 @@
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   progressBar.style.width = scrolled + '%';
+});
+// Solución extra: fuerza repaint en móvil al hacer scroll
+window.addEventListener('scroll', () => {
+  progressBar.style.transform = 'translateY(0px)';
 });
 
 // Solución Webkit/iOS para forzar visibilidad tras scroll
