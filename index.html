@@ -1552,8 +1552,17 @@
   background: rgba(139, 126, 106, 0.08);
   color: var(--color-primary);
 }
+
 @media (max-width: 900px) {
-  .progress-bar { display: block !important; z-index: 99999 !important; opacity: 1 !important; }
+  .progress-bar {
+    display: block !important;
+    z-index: 99999 !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
 }
 
   </style>
@@ -1909,6 +1918,13 @@
   progressBar.style.width = scrolled + '%';
 });
 
+// Solución Webkit/iOS para forzar visibilidad tras scroll
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function() {
+    progressBar.style.display = 'block';
+    progressBar.style.opacity = '1';
+  }, 200);
+});
 
     // ==========================================
     // NAVIGATION & STICKY CTA
