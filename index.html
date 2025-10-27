@@ -144,15 +144,22 @@
        PROGRESS BAR
        ================================= */
     .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-      width: 0%;
-      z-index: 10000;
-      transition: width 0.1s ease;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 9999 !important;
+  transition: width 0.1s ease;
+}
+@media (max-width: 768px) {
+  .progress-bar {
+    height: 4px; /* ligeramente más gruesa en móvil */
+    z-index: 10001 !important;
+  }
+}
+
 
     /* =================================
        THEME TOGGLE
@@ -161,7 +168,7 @@
       position: static;
       top: 0;
       right: 0;
-      z-index: 9998;
+      z-index: 9000;
       background: var(--color-white);
       border: 1.5px solid rgba(139, 126, 106, 0.2);
       border-radius: 50px;
