@@ -150,13 +150,13 @@
   width: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  z-index: 9999 !important;
+  z-index: 20001 !important;
   transition: width 0.1s ease;
 }
 @media (max-width: 768px) {
   .progress-bar {
     height: 4px; /* ligeramente más gruesa en móvil */
-    z-index: 10001 !important;
+    z-index: 20001 !important;
   }
 }
 
@@ -1501,13 +1501,12 @@
        PRINT STYLES
        ================================= */
     @media print {
+       .progress-bar,
       .nav-fixed,
       .theme-toggle,
       .sticky-cta,
       .cookie-banner,
-      .progress-bar {
-        display: block !important;
-  }
+     
     }
     @media (max-width: 768px) {
   .libro-container {
