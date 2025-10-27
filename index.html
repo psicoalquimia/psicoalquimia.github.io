@@ -1908,30 +1908,25 @@
     // ==========================================
     // PROGRESS BAR
     // ==========================================
-    const progressBar = document.getElementById('progressBar');
-
-       window.addEventListener('scroll', () => {
-  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+   const progressBar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const winScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  const height =
+    document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   progressBar.style.width = scrolled + '%';
-  // Fuerza repaint (fix para iOS/Safari)
+  // obligatorio para WebKit/iOS y algunos Android, repinta SIEMPRE
+  progressBar.style.webkitTransform = 'translateZ(0)';
+  progressBar.style.transform = 'translateZ(0)';
+});
+document.addEventListener('DOMContentLoaded', () => {
+  progressBar.style.display = 'block';
+  progressBar.style.opacity = 1;
   progressBar.style.webkitTransform = 'translateZ(0)';
   progressBar.style.transform = 'translateZ(0)';
 });
 
-// Solución extra: fuerza repaint en móvil al hacer scroll
-window.addEventListener('scroll', () => {
-  progressBar.style.transform = 'translateY(0px)';
-});
-
-// Solución Webkit/iOS para forzar visibilidad tras scroll
-document.addEventListener('DOMContentLoaded', function () {
-  setTimeout(function() {
-    progressBar.style.display = 'block';
-    progressBar.style.opacity = '1';
-  }, 200);
-});
 
     // ==========================================
     // NAVIGATION & STICKY CTA
