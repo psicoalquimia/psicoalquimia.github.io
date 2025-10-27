@@ -1547,6 +1547,22 @@
     box-shadow: var(--shadow-md);
   }
 }
+.sticky-cta-close {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.2em 0.6em;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.sticky-cta-close:hover {
+  background: rgba(139, 126, 106, 0.08);
+  color: var(--color-primary);
+}
 
   </style>
 </head>
@@ -1593,10 +1609,12 @@
 
   <!-- Sticky CTA Mobile -->
   <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-cta-content">
-      <button class="sticky-cta-btn" onclick="openModal()">Agendar sesión</button>
-    </div>
+  <div class="sticky-cta-content">
+    <button class="sticky-cta-btn" onclick="openModal()">Agendar sesión</button>
+    <button class="sticky-cta-close" onclick="closeStickyCta()" aria-label="Cerrar CTA">&times;</button>
   </div>
+</div>
+
 
   <!-- Modal CTA -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
@@ -1925,6 +1943,11 @@
         }
       }
     });
+
+    function closeStickyCta() {
+  document.getElementById('stickyCta').style.display = 'none';
+}
+
 
     // ==========================================
     // MODAL CTA
