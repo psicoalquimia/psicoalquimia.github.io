@@ -143,20 +143,19 @@
     /* =================================
        PROGRESS BAR
        ================================= */
-    .progress-bar {
+   .progress-bar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  z-index: 20001 !important;
+  z-index: 90001 !important; /* muy superior al nav */
   transition: width 0.1s ease;
 }
 @media (max-width: 768px) {
   .progress-bar {
     height: 4px; /* ligeramente más gruesa en móvil */
-    z-index: 20001 !important;
+    z-index: 90001 !important;
   }
 }
 
@@ -1552,6 +1551,9 @@
 .sticky-cta-close:hover {
   background: rgba(139, 126, 106, 0.08);
   color: var(--color-primary);
+}
+@media (max-width: 900px) {
+  .progress-bar { display: block !important; z-index: 99999 !important; opacity: 1 !important; }
 }
 
   </style>
