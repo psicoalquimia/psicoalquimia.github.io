@@ -456,24 +456,24 @@
       overflow: hidden;
     }
 
-   /* Eneagramas de fondo */
+/* Círculos con triángulos equiláteros de fondo */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cg opacity='0.22'%3E%3Ccircle cx='100' cy='100' r='45' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3Cline x1='100' y1='55' x2='127' y2='122' stroke='%235a6350' stroke-width='0.5'/%3E%3Cline x1='127' y1='122' x2='73' y2='122' stroke='%235a6350' stroke-width='0.5'/%3E%3Cline x1='73' y1='122' x2='100' y2='55' stroke='%235a6350' stroke-width='0.5'/%3E%3Cline x1='100' y1='55' x2='138.5' y2='82.5' stroke='%235a6350' stroke-width='0.4'/%3E%3Cline x1='138.5' y1='82.5' x2='112.5' y2='135' stroke='%235a6350' stroke-width='0.4'/%3E%3Cline x1='112.5' y1='135' x2='61.5' y2='82.5' stroke='%235a6350' stroke-width='0.4'/%3E%3Cline x1='61.5' y1='82.5' x2='138.5' y2='117.5' stroke='%235a6350' stroke-width='0.4'/%3E%3Cline x1='138.5' y1='117.5' x2='87.5' y2='135' stroke='%235a6350' stroke-width='0.4'/%3E%3Cline x1='87.5' y1='135' x2='61.5' y2='117.5' stroke='%235a6350' stroke-width='0.4'/%3E%3Cline x1='61.5' y1='117.5' x2='100' y2='55' stroke='%235a6350' stroke-width='0.4'/%3E%3Ccircle cx='100' cy='55' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='138.5' cy='82.5' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='138.5' cy='117.5' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='112.5' cy='135' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='87.5' cy='135' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='61.5' cy='117.5' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='61.5' cy='82.5' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='73' cy='122' r='2.5' fill='%235a6350'/%3E%3Ccircle cx='127' cy='122' r='2.5' fill='%235a6350'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 200px 200px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cg opacity='0.28'%3E%3Ccircle cx='75' cy='75' r='35' fill='none' stroke='%235a6350' stroke-width='0.8'/%3E%3Cpolygon points='75,45 100.31,90 49.69,90' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 150px 150px;
       background-position: center;
       background-repeat: repeat;
-      opacity: 0.8;
-      animation: enneagramFlow 100s linear infinite;
+      opacity: 0.85;
+      animation: circleTriangleFlow 90s linear infinite;
       pointer-events: none;
       z-index: 0;
     }
 
-    @keyframes enneagramFlow {
+    @keyframes circleTriangleFlow {
       0% { background-position: 0 0; }
-      100% { background-position: 200px 200px; }
+      100% { background-position: 150px 150px; }
     }
 
     .hero::after {
