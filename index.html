@@ -1595,6 +1595,24 @@
     isolation: isolate;   /* ESTA LÍNEA soluciona stacking context en móvil moderno */
   }
 }
+@media only screen and (max-width: 900px) {
+  .progress-bar {
+    position: fixed !important;
+    will-change: transform;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0;
+    display: block !important;
+    opacity: 1 !important;
+    z-index: 99999 !important;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    /* Agrega esto */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
 
 
   </style>
@@ -1943,12 +1961,16 @@
     // ==========================================
     const progressBar = document.getElementById('progressBar');
 
-    window.addEventListener('scroll', () => {
+       window.addEventListener('scroll', () => {
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   progressBar.style.width = scrolled + '%';
+  // Fuerza repaint (fix para iOS/Safari)
+  progressBar.style.webkitTransform = 'translateZ(0)';
+  progressBar.style.transform = 'translateZ(0)';
 });
+
 // Solución extra: fuerza repaint en móvil al hacer scroll
 window.addEventListener('scroll', () => {
   progressBar.style.transform = 'translateY(0px)';
