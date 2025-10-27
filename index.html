@@ -1564,6 +1564,15 @@
     left: 0 !important;
   }
 }
+@media (max-width: 900px) {
+  .progress-bar {
+    animation: fixbar 0.2s;
+  }
+  @keyframes fixbar {
+    from { opacity: .99; }
+    to   { opacity: 1; }
+  }
+}
 
   </style>
 </head>
