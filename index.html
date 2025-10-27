@@ -456,25 +456,7 @@
       overflow: hidden;
     }
 
-/* Teselación de triángulos equiláteros con círculos */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='173.2' height='150'%3E%3Cg opacity='0.3'%3E%3Ccircle cx='86.6' cy='50' r='28.87' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3Cpolygon points='86.6,25 111.6,75 61.6,75' fill='none' stroke='%235a6350' stroke-width='0.8'/%3E%3Ccircle cx='28.87' cy='100' r='28.87' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3Cpolygon points='28.87,75 53.87,125 3.87,125' fill='none' stroke='%235a6350' stroke-width='0.8'/%3E%3Ccircle cx='144.33' cy='100' r='28.87' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3Cpolygon points='144.33,75 169.33,125 119.33,125' fill='none' stroke='%235a6350' stroke-width='0.8'/%3E%3Ccircle cx='28.87' cy='0' r='28.87' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3Cpolygon points='53.87,25 28.87,-25 3.87,25' fill='none' stroke='%235a6350' stroke-width='0.8'/%3E%3Ccircle cx='144.33' cy='0' r='28.87' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3Cpolygon points='169.33,25 144.33,-25 119.33,25' fill='none' stroke='%235a6350' stroke-width='0.8'/%3E%3Ccircle cx='86.6' cy='150' r='28.87' fill='none' stroke='%235a6350' stroke-width='0.7'/%3E%3Cpolygon points='111.6,125 86.6,175 61.6,125' fill='none' stroke='%235a6350' stroke-width='0.8'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 173.2px 150px;
-      background-position: center;
-      background-repeat: repeat;
-      opacity: 0.85;
-      animation: circleTriangleFlow 90s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
 
-    @keyframes circleTriangleFlow {
-      0% { background-position: 0 0; }
-      100% { background-position: 150px 150px; }
-    }
 
     .hero::after {
       content: '';
