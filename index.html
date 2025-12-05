@@ -202,69 +202,6 @@
     .theme-toggle:hover svg {
       transform: rotate(20deg);
     }
-    /* Language Globe Toggle */
-.language-toggle {
-  position: static;
-  margin-left: 1rem;
-  margin-right: 0;
-  padding: 0.3rem 0.8rem;
-  min-height: unset;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: transparent;
-  border: 1.5px solid rgba(139, 126, 106, 0.2);
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all var(--transition-base);
-}
-
-.language-toggle:hover {
-  background: rgba(90, 99, 80, 0.1);
-  transform: scale(1.05);
-}
-
-.language-toggle svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--color-primary);
-  transition: transform 0.6s ease;
-}
-
-.language-toggle.rotating svg {
-  animation: globeRotate 0.6s ease;
-}
-
-@keyframes globeRotate {
-  0% { transform: rotateY(0deg); }
-  50% { transform: rotateY(180deg); }
-  100% { transform: rotateY(360deg); }
-}
-
-.language-toggle span {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.5px;
-}
-
-@media (max-width: 768px) {
-  .language-toggle {
-    padding: 0.2rem 0.5rem;
-    height: 36px;
-    margin-left: 0.5rem;
-  }
-  
-  .language-toggle svg {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .language-toggle span {
-    font-size: 0.8rem;
-  }
-}
 .theme-toggle {
   position: static;
   margin-left: 1.5rem;
@@ -1697,12 +1634,6 @@ footer p, .footer-text, .footer-copyright {
   </div>
 </nav>
 
-  <button class="language-toggle" id="languageToggle" aria-label="Cambiar idioma">
-  <svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-  </svg>
-  <span id="currentLang">ES</span>
-</button>
 
   <!-- Sticky CTA Mobile -->
   <div class="sticky-cta" id="stickyCta">
@@ -1740,16 +1671,16 @@ footer p, .footer-text, .footer-copyright {
         </div>
         <div class="hero-content">
           <h1>Javier Gómez</h1>
-          <h2><span data-es="Psicoterapeuta • Explorador de la Consciencia" data-en="Psychotherapist • Consciousness Explorer">Psicoterapeuta • Explorador de la Consciencia</span></h2>
+          <h2>Psicoterapeuta • Explorador de la Consciencia</h2>
           <div class="hero-bullets">
             <p>Acompaño procesos de transformación interior</p>
             <p>Puente entre misticismo y transformación social</p>
           </div>
           <button class="cta-button" onclick="openModal()">Explorar servicios</button>
-        <p data-es="Acompaño procesos de transformación interior" data-en="I accompany inner transformation processes">Acompaño procesos de transformación interior</p>
-      <p data-es="Puente entre misticismo y transformación social" data-en="Bridge between mysticism and social transformation">Puente entre misticismo y transformación social</p>
+        </div>
+      </div>
     </section>
-<button class="cta-button" onclick="openModal()" data-es="Explorar servicios" data-en="Explore services">Explorar servicios</button>
+
     <div class="section-separator">· · ·</div>
 
     <!-- Sobre Mí Section -->
@@ -1757,8 +1688,8 @@ footer p, .footer-text, .footer-copyright {
       <h2>Sobre Mí</h2>
       <div class="sobre-mi-container">
         <div class="sobre-mi-content">
-          <p data-es="Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo." data-en="I accompany self-knowledge and inner transformation processes from an integrative approach that brings together psychology, spirituality, and the body.">Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
-          <h2>Sobre M  <h2><span data-es="Sobre Mí" data-en="About Me">Sobre Mí</span></h2>
+          <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
+          <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
           <p>Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.</p>
           <p>Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
           <p>Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
@@ -2189,47 +2120,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-    
-    // ==========================================
-// LANGUAGE TOGGLE
-// ==========================================
-const languageToggle = document.getElementById('languageToggle');
-const currentLangSpan = document.getElementById('currentLang');
-
-// Load saved language
-const savedLang = localStorage.getItem('language') || 'es';
-setLanguage(savedLang);
-
-languageToggle.addEventListener('click', () => {
-  const currentLang = localStorage.getItem('language') || 'es';
-  const newLang = currentLang === 'es' ? 'en' : 'es';
-  
-  // Add rotation animation
-  languageToggle.classList.add('rotating');
-  setTimeout(() => {
-    languageToggle.classList.remove('rotating');
-  }, 600);
-  
-  setLanguage(newLang);
-  localStorage.setItem('language', newLang);
-});
-
-function setLanguage(lang) {
-  // Update all elements with data-es and data-en attributes
-  document.querySelectorAll('[data-es][data-en]').forEach(element => {
-    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-      element.placeholder = element.getAttribute(`data-${lang}`);
-    } else {
-      element.textContent = element.getAttribute(`data-${lang}`);
-    }
-  });
-  
-  // Update language indicator
-  currentLangSpan.textContent = lang.toUpperCase();
-  
-  // Update HTML lang attribute for SEO
-  document.documentElement.setAttribute('lang', lang);
-}
   </script>
 </body>
 </html>
