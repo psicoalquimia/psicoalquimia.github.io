@@ -1926,8 +1926,13 @@ footer p, .footer-text, .footer-copyright {
     // ==========================================
     // LANGUAGE MANAGEMENT
     // ==========================================
-    let currentLang = localStorage.getItem('language') || 'es';
-    
+let currentLang = localStorage.getItem('language') || 'es';
+
+// Force Spanish on first load
+if (!localStorage.getItem('language')) {
+  localStorage.setItem('language', 'es');
+  currentLang = 'es';
+}    
     function setLanguage(lang) {
       currentLang = lang;
       localStorage.setItem('language', lang);
