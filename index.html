@@ -13,14 +13,12 @@
   <meta property="og:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
   <meta property="og:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
   <meta property="og:image" content="https://psicoalquimia.github.io/foto-perfil.jpg">
-
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://psicoalquimia.github.io/">
   <meta property="twitter:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
   <meta property="twitter:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
   <meta property="twitter:image" content="https://psicoalquimia.github.io/foto-perfil.jpg">
-
   <!-- Schema.org markup -->
   <script type="application/ld+json">
   {
@@ -43,9 +41,7 @@
     }
   }
   </script>
-
   <title>Javier Gómez - Psicoterapeuta • Explorador de la Consciencia</title>
-
   <!-- Preconnect -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://psicoalquimia.setmore.com">
@@ -55,7 +51,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ3QHR5RFS"></script>
   <script>
@@ -66,7 +61,6 @@
       gtag('config', 'G-LQ3QHR5RFS');
     }
   </script>
-
   <style>
     /* =================================
        VARIABLES Y RESET
@@ -76,7 +70,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     :root {
       --color-primary: #5a6350;
       --color-primary-light: #6b7460;
@@ -94,7 +87,6 @@
       --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
       --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
     }
-
     /* Dark mode variables */
     [data-theme="dark"] {
       --color-primary: #7a8870;
@@ -108,11 +100,9 @@
       --color-text-light: #a0a0a0;
       --color-white: #2a2a2a;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
       line-height: 1.8;
@@ -122,7 +112,6 @@
       font-size: 17px;
       transition: background 0.5s ease, color 0.5s ease;
     }
-
     /* Skip to main content for accessibility */
     .skip-to-main {
       position: absolute;
@@ -133,13 +122,11 @@
       color: white;
       text-decoration: none;
     }
-
     .skip-to-main:focus {
       left: 50%;
       transform: translateX(-50%);
       top: 0;
     }
-
     /* =================================
        PROGRESS BAR
        ================================= */
@@ -148,12 +135,12 @@
   top: 0; left: 0; right: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, #d6854b, #713a84); /* Usa tus variables si prefieres */
-  z-index: 2147483647 !important;   /* valor máximo permitido */
+  background: linear-gradient(90deg, #d6854b, #713a84);
+  z-index: 2147483647 !important;
   transition: width 0.1s linear;
   will-change: width, transform;
   pointer-events: none !important;
-  isolation: isolate; /* Por si acaso */
+  isolation: isolate;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -164,9 +151,6 @@
     display: block !important;
   }
 }
-
-
-
     /* =================================
        THEME TOGGLE
        ================================= */
@@ -187,35 +171,29 @@
       box-shadow: var(--shadow-sm);
       min-height: 44px;
     }
-
     .theme-toggle:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
-
     .theme-toggle svg {
       width: 20px;
       height: 20px;
       transition: transform var(--transition-base);
     }
-
     .theme-toggle:hover svg {
       transform: rotate(20deg);
     }
 .theme-toggle {
   position: static;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   margin-right: 0;
   padding: 0.3rem 0.8rem;
   min-height: unset;
   height: 44px;
   display: flex;
   align-items: center;
-  /* AJUSTA ESTA LÍNEA para subir el botón */
   transform: translateY(-3px);
 }
-
-/* Responsive: igual, pero menor desplazamiento si lo necesitas */
 @media (max-width: 768px) {
   .theme-toggle {
     height: 36px;
@@ -223,7 +201,70 @@
     transform: translateY(-3px);
   }
 }
-
+    /* =================================
+       LANGUAGE TOGGLE
+       ================================= */
+    .language-toggle {
+      position: static;
+      background: var(--color-white);
+      border: 1.5px solid rgba(139, 126, 106, 0.2);
+      border-radius: 50px;
+      padding: 0.3rem 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-sm);
+      height: 44px;
+      margin-left: 1rem;
+      transform: translateY(-3px);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      letter-spacing: 0.5px;
+    }
+    .language-toggle:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .globe-icon {
+      width: 22px;
+      height: 22px;
+      transition: transform 0.5s ease;
+    }
+    .language-toggle:hover .globe-icon {
+      transform: rotate(180deg);
+    }
+    .language-toggle.active .globe-icon {
+      transform: rotate(360deg);
+    }
+    @media (max-width: 768px) {
+      .language-toggle {
+        height: 36px;
+        padding: 0.2rem 0.6rem;
+        margin-left: 0.8rem;
+        font-size: 0.8rem;
+      }
+      .globe-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    /* =================================
+       FADE TRANSITION FOR CONTENT
+       ================================= */
+    .fade-transition {
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
     /* =================================
        COOKIE BANNER
        ================================= */
@@ -240,11 +281,9 @@
       transition: transform 0.4s ease;
       border-top: 2px solid var(--color-accent);
     }
-
     .cookie-banner.show {
       transform: translateY(0);
     }
-
     .cookie-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -253,30 +292,25 @@
       gap: 2rem;
       flex-wrap: wrap;
     }
-
     .cookie-text {
       flex: 1;
       min-width: 250px;
     }
-
     .cookie-text p {
       font-size: 0.95rem;
       line-height: 1.6;
       color: var(--color-text);
       margin-bottom: 0.5rem;
     }
-
     .cookie-text a {
       color: var(--color-primary);
       text-decoration: underline;
     }
-
     .cookie-buttons {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
-
     .cookie-btn {
       padding: 0.7rem 1.5rem;
       border: none;
@@ -287,27 +321,22 @@
       transition: all var(--transition-base);
       min-height: 44px;
     }
-
     .cookie-btn-accept {
       background: var(--color-primary);
       color: white;
     }
-
     .cookie-btn-accept:hover {
       background: var(--color-primary-light);
       transform: translateY(-2px);
     }
-
     .cookie-btn-reject {
       background: transparent;
       color: var(--color-primary);
       border: 1.5px solid var(--color-primary);
     }
-
     .cookie-btn-reject:hover {
       background: var(--color-light);
     }
-
     /* =================================
        NAVIGATION
        ================================= */
@@ -330,10 +359,9 @@
     }
     .nav-row {
   display: flex;
-  align-items: center; /* Alinea el botón con los enlaces */
+  align-items: center;
   gap: 2.5rem;
 }
-
 .nav-row a {
   color: var(--color-primary);
   text-decoration: none;
@@ -342,10 +370,9 @@
   transition: color var(--transition-base);
   padding-bottom: 4px;
 }
-
 .theme-toggle {
   position: static;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   margin-right: 0;
   padding: 0.3rem 0.8rem;
   min-height: unset;
@@ -353,7 +380,6 @@
   display: flex;
   align-items: center;
 }
-
 @media (max-width: 768px) {
   .nav-row {
     gap: 1.2rem;
@@ -363,16 +389,12 @@
     height: 36px;
   }
 }
-
-
     [data-theme="dark"] .nav-fixed {
       background: rgba(26, 26, 26, 0.95);
     }
-
     .nav-fixed.visible {
       transform: translateY(0);
     }
-
     .nav-fixed a {
       color: var(--color-primary);
       text-decoration: none;
@@ -382,7 +404,6 @@
       position: relative;
       padding-bottom: 4px;
     }
-
     .nav-fixed a::after {
       content: '';
       position: absolute;
@@ -393,15 +414,12 @@
       background: var(--color-accent);
       transition: width var(--transition-base);
     }
-
     .nav-fixed a:hover::after {
       width: 100%;
     }
-
     .nav-fixed a:hover {
       color: var(--color-accent);
     }
-
     /* =================================
        STICKY CTA (Mobile)
        ================================= */
@@ -419,18 +437,15 @@
       display: none;
       border-top: 2px solid var(--color-accent);
     }
-
     .sticky-cta.visible {
       transform: translateY(0);
     }
-
     .sticky-cta-content {
       max-width: 500px;
       margin: 0 auto;
       display: flex;
       gap: 0.8rem;
     }
-
     .sticky-cta-btn {
       flex: 1;
       padding: 0.8rem 1.2rem;
@@ -449,12 +464,10 @@
       align-items: center;
       justify-content: center;
     }
-
     .sticky-cta-btn:hover {
       background: var(--color-primary-light);
       transform: translateY(-2px);
     }
-
     /* =================================
        HERO SECTION
        ================================= */
@@ -468,9 +481,6 @@
       position: relative;
       overflow: hidden;
     }
-
-
-
 .hero::after {
   content: '';
   position: absolute;
@@ -482,9 +492,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   pointer-events: none;
   z-index: 0;
 }
-
-
-
     .hero-container {
       display: flex;
       align-items: center;
@@ -494,7 +501,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       position: relative;
       z-index: 1;
     }
-
     @keyframes fadeInHero {
       from {
         opacity: 0;
@@ -505,11 +511,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         transform: translateY(0);
       }
     }
-
     .hero-image {
       flex-shrink: 0;
     }
-
     .hero-image-circle {
       width: 280px;
       height: 280px;
@@ -531,15 +535,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       will-change: transform;
       transition: transform var(--transition-slow);
     }
-
     .hero-image-circle:hover {
       transform: scale(1.02);
     }
-
     .hero-content {
       flex: 1;
     }
-
     .hero h1 {
       font-size: 3rem;
       font-weight: 400;
@@ -547,7 +548,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       color: var(--color-primary);
       letter-spacing: 1px;
     }
-
     .hero h2 {
       font-size: 1.25rem;
       font-weight: 300;
@@ -555,20 +555,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       color: var(--color-secondary);
       letter-spacing: 0.5px;
     }
-
     .hero-bullets {
       margin: 2rem 0;
       font-size: 1.05rem;
       line-height: 1.9;
       color: var(--color-text-light);
     }
-
     .hero-bullets p {
       margin: 0.6rem 0;
       padding-left: 1.5rem;
       position: relative;
     }
-
     .hero-bullets p::before {
       content: '';
       position: absolute;
@@ -580,7 +577,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       border-radius: 50%;
       box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
     }
-
     /* =================================
        BUTTONS
        ================================= */
@@ -604,7 +600,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       align-items: center;
       justify-content: center;
     }
-
     .cta-button::before {
       content: '';
       position: absolute;
@@ -618,22 +613,18 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: width 0.5s, height 0.5s;
       z-index: -1;
     }
-
     .cta-button:hover::before {
       width: 300px;
       height: 300px;
     }
-
     .cta-button:hover {
       color: white;
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
-
     .cta-button:active {
       transform: translateY(0) scale(0.98);
     }
-
     /* =================================
        SECTIONS
        ================================= */
@@ -645,12 +636,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transform: translateY(30px);
       transition: opacity 0.9s ease, transform 0.9s ease;
     }
-
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     section h2 {
       font-size: 2.2rem;
       color: var(--color-primary);
@@ -661,7 +650,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       position: relative;
       padding-bottom: 1.5rem;
     }
-
     section h2::after {
       content: '';
       position: absolute;
@@ -673,7 +661,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
       opacity: 0.4;
     }
-
     .section-separator {
       text-align: center;
       padding: 1.5rem 0 !important;
@@ -682,7 +669,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       opacity: 0.3;
       letter-spacing: 1rem;
     }
-
     /* =================================
        SOBRE MÍ
        ================================= */
@@ -690,7 +676,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       background: var(--color-white);
       padding: 6rem 2rem;
     }
-
     .sobre-mi-container {
       display: grid;
       grid-template-columns: 1fr 320px;
@@ -699,13 +684,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       max-width: 1000px;
       margin: 0 auto;
     }
-
     .sobre-mi-image {
       position: sticky;
       top: 5rem;
       order: 2;
     }
-
     .sobre-mi-image-rect {
       width: 100%;
       height: 420px;
@@ -725,16 +708,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       background-position: center;
       transition: transform var(--transition-slow);
     }
-
     .sobre-mi-image-rect:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
     }
-
     .sobre-mi-content {
       order: 1;
     }
-
     .sobre-mi-content p {
       font-size: 1.05rem;
       margin-bottom: 1.8rem;
@@ -742,7 +722,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       color: var(--color-text);
       text-align: justify;
     }
-
     .quote {
       background: linear-gradient(135deg, rgba(107, 116, 96, 0.08), rgba(168, 159, 145, 0.08));
       padding: 2.5rem;
@@ -756,7 +735,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       border-left: 3px solid var(--color-accent);
       position: relative;
     }
-
     .quote::before {
       content: '"';
       position: absolute;
@@ -767,14 +745,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       opacity: 0.2;
       font-style: normal;
     }
-
     /* =================================
        LIBRO
        ================================= */
     .libro {
       background: var(--color-light);
     }
-
     .libro-container {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -783,12 +759,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       max-width: 1000px;
       margin: 0 auto;
     }
-
     .libro-image {
       position: sticky;
       top: 5rem;
     }
-
     .libro-image-placeholder {
       width: 100%;
       aspect-ratio: 2/3;
@@ -810,12 +784,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transform: translateZ(0);
       will-change: transform;
     }
-
     .libro-image-placeholder:hover {
       transform: translateY(-8px) rotate(-2deg);
       box-shadow: 0 20px 60px rgba(0,0,0,0.18);
     }
-
     .libro-content h3 {
       font-size: 1.6rem;
       margin-top: 2rem;
@@ -823,25 +795,21 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       color: var(--color-primary);
       font-weight: 400;
     }
-
     .libro-content p, .libro-content ul {
       font-size: 1.05rem;
       margin-bottom: 1.8rem;
       line-height: 1.9;
       text-align: justify;
     }
-
     .libro-content ul {
       list-style: none;
       padding-left: 0;
     }
-
     .libro-content li {
       margin-bottom: 1rem;
       padding-left: 1.5rem;
       position: relative;
     }
-
     .libro-content li::before {
       content: '';
       position: absolute;
@@ -853,7 +821,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       border-radius: 50%;
       box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
     }
-
     .libro-image-float {
       width: 100%;
       max-width: 400px;
@@ -863,17 +830,14 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: opacity var(--transition-base), transform var(--transition-base);
       border-radius: 8px;
     }
-
     .libro-image-float:hover {
       opacity: 1;
       transform: scale(1.02);
     }
-
     .libro-cta {
       margin-top: 3rem;
       text-align: center;
     }
-
     .libro-cta .cta-button {
       background: var(--color-primary);
       color: white;
@@ -881,23 +845,19 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       padding: 1rem 2.5rem;
       font-size: 1rem;
     }
-
     .libro-cta .cta-button::before {
       background: var(--color-secondary);
     }
-
     .libro-cta .cta-button:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
-
     /* =================================
        SERVICIOS
        ================================= */
     .servicios {
       background: var(--color-white);
     }
-
     .servicios-intro {
       text-align: center;
       font-size: 1.15rem;
@@ -909,13 +869,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       margin-left: auto;
       margin-right: auto;
     }
-
     .servicio-card:hover {
       transform: translateX(8px);
       box-shadow: var(--shadow-md);
       border-left-width: 5px;
     }
-
      .servicio-card {
       background: rgba(250, 248, 245, 0.6);
       padding: 2.5rem;
@@ -924,34 +882,28 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       border-left: 3px solid var(--color-accent);
       transition: all var(--transition-base);
     }
-
-
     .servicio-card h3 {
       color: var(--color-primary);
       margin-bottom: 1.5rem;
       font-size: 1.5rem;
       font-weight: 400;
     }
-
     .servicio-card p {
       margin-bottom: 1.2rem;
       font-size: 1.05rem;
       line-height: 1.9;
     }
-
     .servicio-card ul {
       list-style: none;
       padding-left: 0;
       margin: 1.5rem 0;
     }
-
     .servicio-card li {
       margin-bottom: 0.8rem;
       padding-left: 1.3rem;
       position: relative;
       font-size: 1rem;
     }
-
     .servicio-card li::before {
       content: '';
       position: absolute;
@@ -962,7 +914,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       background: var(--color-accent);
       border-radius: 50%;
     }
-
     .servicio-details {
       background: var(--color-white);
       padding: 1.3rem;
@@ -971,13 +922,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       font-size: 0.95rem;
       border: 1px solid rgba(139, 126, 106, 0.15);
     }
-
     .servicio-details strong {
       color: var(--color-primary);
       display: inline-block;
       margin-right: 0.5rem;
     }
-
     .servicio-precio {
       font-size: 1.25rem;
       color: var(--color-primary);
@@ -987,7 +936,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       align-items: center;
       gap: 1rem;
     }
-
     .stripe-badge {
       display: inline-flex;
       align-items: center;
@@ -1000,12 +948,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       border-radius: 20px;
       border: 1px solid rgba(139, 126, 106, 0.15);
     }
-
     .stripe-badge svg {
       height: 14px;
       width: auto;
     }
-
     .servicio-button {
       display: inline-block;
       padding: 0.95rem 2.2rem;
@@ -1025,7 +971,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       align-items: center;
       justify-content: center;
     }
-
     .servicio-button::before {
       content: '';
       position: absolute;
@@ -1039,22 +984,18 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: width 0.4s, height 0.4s;
       z-index: -1;
     }
-
     .servicio-button:hover::before {
       width: 250px;
       height: 250px;
     }
-
     .servicio-button:hover {
       color: white;
       transform: translateY(-2px);
       box-shadow: var(--shadow-sm);
     }
-
     .servicio-button:active {
       transform: translateY(0) scale(0.98);
     }
-
     /* =================================
        CONTACTO
        ================================= */
@@ -1063,12 +1004,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       text-align: center;
       padding: 6rem 2rem;
     }
-
     .contacto h2 {
       color: var(--color-primary);
       margin-bottom: 2rem;
     }
-
     .contacto p {
       font-size: 1.1rem;
       max-width: 700px;
@@ -1076,7 +1015,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       line-height: 1.9;
       color: var(--color-text-light);
     }
-
     .social-links {
       display: flex;
       gap: 2.5rem;
@@ -1084,7 +1022,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       flex-wrap: wrap;
       margin-top: 3rem;
     }
-
     .social-link {
       display: flex;
       flex-direction: column;
@@ -1095,11 +1032,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: all var(--transition-base);
       min-width: 44px;
     }
-
     .social-link:hover {
       transform: translateY(-5px);
     }
-
     .social-icon {
       width: 60px;
       height: 60px;
@@ -1113,28 +1048,23 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: all var(--transition-base);
       border: 1px solid rgba(139, 126, 106, 0.15);
     }
-
     .social-icon svg {
       width: 28px;
       height: 28px;
       transition: all var(--transition-base);
     }
-
     .social-link:hover .social-icon {
       background: var(--color-primary);
       box-shadow: var(--shadow-md);
       transform: scale(1.1);
     }
-
     .social-link:hover .social-icon svg {
       fill: white;
     }
-
     .social-label {
       font-size: 0.95rem;
       color: var(--color-text-light);
     }
-
     /* =================================
        FOOTER
        ================================= */
@@ -1145,21 +1075,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       padding: 2rem;
       font-size: 0.9rem;
     }
-
     footer p {
       margin: 0.3rem 0;
     }
-
     footer a {
       color: rgba(255, 255, 255, 0.9);
       text-decoration: underline;
       transition: color var(--transition-base);
     }
-
     footer a:hover {
       color: white;
     }
-
     /* =================================
        MODAL CTA
        ================================= */
@@ -1175,12 +1101,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: opacity var(--transition-base);
       backdrop-filter: blur(4px);
     }
-
     .modal-overlay.active {
       display: flex;
       opacity: 1;
     }
-
     .modal-content {
       background: var(--color-white);
       padding: 2.5rem;
@@ -1194,11 +1118,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: transform var(--transition-base);
       position: relative;
     }
-
     .modal-overlay.active .modal-content {
       transform: scale(1);
     }
-
     .modal-close {
       position: absolute;
       top: 1rem;
@@ -1216,25 +1138,21 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       border-radius: 50%;
       transition: all var(--transition-base);
     }
-
     .modal-close:hover {
       background: rgba(139, 126, 106, 0.1);
       color: var(--color-text);
     }
-
     .modal-content h3 {
       color: var(--color-primary);
       margin-bottom: 1.5rem;
       font-size: 1.6rem;
       font-weight: 400;
     }
-
     .modal-options {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-
     .modal-option {
       padding: 1.2rem;
       border: 1.5px solid rgba(139, 126, 106, 0.2);
@@ -1244,39 +1162,24 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       transition: all var(--transition-base);
       display: block;
     }
-
     .modal-option:hover {
       border-color: var(--color-primary);
       background: rgba(90, 99, 80, 0.05);
       transform: translateX(5px);
     }
-
     .modal-option strong {
       display: block;
       color: var(--color-primary);
       margin-bottom: 0.3rem;
       font-size: 1.1rem;
     }
-
     .modal-option span {
       font-size: 0.9rem;
       color: var(--color-text-light);
     }
-
     /* =================================
        ANIMATIONS
        ================================= */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
@@ -1285,7 +1188,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         transform: scale(1.05);
       }
     }
-
     /* =================================
        RESPONSIVE
        ================================= */
@@ -1295,79 +1197,64 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         right: 1rem;
         padding: 0.4rem 0.8rem;
       }
-
       .nav-fixed {
         gap: 1.5rem;
         padding: 0.8rem 1rem;
         font-size: 0.85rem;
       }
-
       .sticky-cta {
         display: block;
       }
-
       .cookie-content {
         flex-direction: column;
         gap: 1rem;
       }
-
       .cookie-buttons {
         width: 100%;
         flex-direction: column;
       }
-
       .cookie-btn {
         width: 100%;
       }
-
       .hero-container {
         flex-direction: column;
         gap: 2.5rem;
         text-align: center;
       }
-
       .hero-image-circle {
         width: 60vw;
         height: 60vw;
         max-width: 260px;
         max-height: 260px;
       }
-
       .hero h1 {
         font-size: 2.2rem;
       }
-
       .hero h2 {
         font-size: 1.05rem;
         line-height: 1.4;
         max-width: 100%;
         margin: 0.8rem auto 2rem;
       }
-
       .hero-bullets {
         font-size: 1rem;
         line-height: 1.6;
       }
-
       .hero-bullets p {
         margin: 0.5rem 0;
         padding-left: 0;
         text-align: center;
       }
-
       .hero-bullets p::before {
         display: none;
       }
-
       .trust-badges {
         justify-content: center;
       }
-
       .sobre-mi-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
-
       .sobre-mi-image {
         position: relative;
         top: auto;
@@ -1376,28 +1263,23 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         width: 100%;
         max-width: 350px;
       }
-
       .sobre-mi-image-rect {
         width: 100%;
         height: 450px;
       }
-
       .sobre-mi-content {
         order: 2;
       }
-
       .libro-container {
         grid-template-columns: 1fr;
         gap: 3rem;
       }
-
       .libro-image {
         position: relative;
         top: auto;
         max-width: 95vw;
         margin: 0 auto 2rem;
       }
-
       .libro-image-placeholder {
         width: 100%;
         height: auto;
@@ -1405,90 +1287,71 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         background-size: contain;
         background-repeat: no-repeat;
       }
-
       .libro-image-float {
         max-width: 280px;
       }
-
       section {
         padding: 3rem 1.5rem;
       }
-
       .section-separator {
         padding: 2rem 0;
         font-size: 0.7rem;
         letter-spacing: 0.8rem;
       }
-
       .servicios-intro {
         font-size: 1.05rem;
         max-width: 85%;
       }
-
       .servicio-card {
         padding: 2rem 1.5rem;
       }
-
       .servicio-precio {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
       }
-
       section h2 {
         font-size: 1.8rem;
       }
-
       .modal-content {
         padding: 2rem 1.5rem;
       }
     }
-
     @media (max-width: 480px) {
       body {
         font-size: 16px;
       }
-
       .hero h1 {
         font-size: 1.9rem;
       }
-
       .hero h2 {
         font-size: 1rem;
         max-width: 90%;
       }
-
       .hero-bullets p {
         font-size: 0.95rem;
       }
-
       .hero-image-circle {
         width: 65vw;
         height: 65vw;
       }
-
       .social-links {
         gap: 2rem;
       }
-
       .social-icon {
         width: 55px;
         height: 55px;
       }
-
       .libro-image {
         max-width: 92vw;
       }
-
       .sobre-mi-image {
         max-width: 280px;
       }
-
       .sobre-mi-image-rect {
         height: 380px;
       }
     }
-
     /* =================================
        FOCUS STATES (Accessibility)
        ================================= */
@@ -1496,13 +1359,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       outline: 2px solid var(--color-accent);
       outline-offset: 2px;
     }
-
     button:focus,
     a:focus {
       outline: 2px solid var(--color-accent);
       outline-offset: 2px;
     }
-
     /* =================================
        PRINT STYLES
        ================================= */
@@ -1510,28 +1371,28 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
        .progress-bar,
       .nav-fixed,
       .theme-toggle,
+      .language-toggle,
       .sticky-cta,
-      .cookie-banner,
-     
+      .cookie-banner {
+        display: none;
+      }
     }
     @media (max-width: 768px) {
   .libro-container {
-    display: block !important;      /* Elimina el grid en móvil para que los bloques se apilen uno debajo del otro */
+    display: block !important;
     max-width: 95vw;
     padding: 0;
     gap: 0;
   }
-
   .libro-image {
-    position: static;               /* Ya no es sticky en móvil, para que no cause problemas de superposición */
+    position: static;
     margin: 0 auto 2rem auto;
     width: 90vw;
     max-width: 340px;
     display: block;
   }
-
   .libro-image-placeholder {
-    width: 90vw !important;        /* Aprovecha el ancho del móvil */
+    width: 90vw !important;
     max-width: 340px !important;
     aspect-ratio: 2/3;
     min-height: 220px;
@@ -1554,17 +1415,14 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   border-radius: 50%;
   transition: background 0.3s;
 }
-
 .sticky-cta-close:hover {
   background: rgba(139, 126, 106, 0.08);
   color: var(--color-primary);
 }
-
-
 footer p, .footer-text, .footer-copyright {
   white-space: nowrap;
   overflow-x: auto;
-  text-overflow: ellipsis; /* Opcional si el texto queda demasiado largo */
+  text-overflow: ellipsis;
 }
 @media (max-width: 500px) {
   footer p, .footer-text, .footer-copyright {
@@ -1577,7 +1435,7 @@ footer p, .footer-text, .footer-copyright {
     padding-top: 1.1rem;
     padding-bottom: 1.1rem;
     font-size: 0.98rem;
-    min-height: 48px;   /* Asegura suficiente alto */
+    min-height: 48px;
   }
   .nav-row {
     gap: 1rem;
@@ -1589,40 +1447,44 @@ footer p, .footer-text, .footer-copyright {
     padding-top: calc(1.1rem + env(safe-area-inset-top));
   }
 }
-
-
-
   </style>
 </head>
 <body>
   <!-- Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
-
   <!-- Skip to main content -->
-  <a href="#main" class="skip-to-main">Saltar al contenido principal</a>
-
+  <a href="#main" class="skip-to-main" data-translate="skip-main">Saltar al contenido principal</a>
   
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-content">
       <div class="cookie-text">
-        <p><strong>Utilizamos cookies</strong> para mejorar tu experiencia. Usamos Google Analytics para analizar el tráfico del sitio.</p>
-        <p>Al aceptar, consientes el uso de cookies de terceros. <a href="privacidad.html">Política de Privacidad y Cookies</a></p>
+        <p><strong data-translate="cookie-title">Utilizamos cookies</strong> <span data-translate="cookie-text">para mejorar tu experiencia. Usamos Google Analytics para analizar el tráfico del sitio.</span></p>
+        <p><span data-translate="cookie-consent">Al aceptar, consientes el uso de cookies de terceros.</span> <a href="privacidad.html" data-translate="cookie-policy">Política de Privacidad y Cookies</a></p>
       </div>
       <div class="cookie-buttons">
-        <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceptar</button>
-        <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rechazar</button>
+        <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()" data-translate="cookie-accept">Aceptar</button>
+        <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()" data-translate="cookie-reject">Rechazar</button>
       </div>
     </div>
   </div>
-
   <!-- Fixed Navigation -->
  <nav class="nav-fixed" id="navFixed" role="navigation">
   <div class="nav-row">
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#libro">Libro</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#sobre-mi" data-translate="nav-about">Sobre mí</a>
+    <a href="#libro" data-translate="nav-book">Libro</a>
+    <a href="#servicios" data-translate="nav-services">Servicios</a>
+    <a href="#contacto" data-translate="nav-contact">Contacto</a>
+    
+    <button class="language-toggle" id="languageToggle" aria-label="Cambiar idioma">
+      <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span id="langText">ES</span>
+    </button>
+    
     <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
       <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
@@ -1633,35 +1495,30 @@ footer p, .footer-text, .footer-copyright {
     </button>
   </div>
 </nav>
-
-
   <!-- Sticky CTA Mobile -->
   <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-content">
-    <button class="sticky-cta-btn" onclick="openModal()">Agendar sesión</button>
+    <button class="sticky-cta-btn" onclick="openModal()" data-translate="sticky-cta">Agendar sesión</button>
     <button class="sticky-cta-close" onclick="closeStickyCta()" aria-label="Cerrar CTA">&times;</button>
   </div>
 </div>
-
-
   <!-- Modal CTA -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
-      <h3>¿Qué tipo de acompañamiento buscas?</h3>
+      <h3 data-translate="modal-title">¿Qué tipo de acompañamiento buscas?</h3>
       <div class="modal-options">
         <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="modal-option">
-          <strong>Sesión Individual</strong>
-          <span>75 minutos • 65€</span>
+          <strong data-translate="modal-option1-title">Sesión Individual</strong>
+          <span data-translate="modal-option1-desc">75 minutos • 65€</span>
         </a>
         <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="modal-option">
-          <strong>Proceso Profundo</strong>
-          <span>4 sesiones • 240€</span>
+          <strong data-translate="modal-option2-title">Proceso Profundo</strong>
+          <span data-translate="modal-option2-desc">4 sesiones • 240€</span>
         </a>
       </div>
     </div>
   </div>
-
   <main id="main">
     <!-- Hero Section -->
     <section class="hero">
@@ -1671,192 +1528,164 @@ footer p, .footer-text, .footer-copyright {
         </div>
         <div class="hero-content">
           <h1>Javier Gómez</h1>
-          <h2>Psicoterapeuta • Explorador de la Consciencia</h2>
+          <h2 data-translate="hero-subtitle">Psicoterapeuta • Explorador de la Consciencia</h2>
           <div class="hero-bullets">
-            <p>Acompaño procesos de transformación interior</p>
-            <p>Puente entre misticismo y transformación social</p>
+            <p data-translate="hero-bullet1">Acompaño procesos de transformación interior</p>
+            <p data-translate="hero-bullet2">Puente entre misticismo y transformación social</p>
           </div>
-          <button class="cta-button" onclick="openModal()">Explorar servicios</button>
+          <button class="cta-button" onclick="openModal()" data-translate="hero-cta">Explorar servicios</button>
         </div>
       </div>
     </section>
-
     <div class="section-separator">· · ·</div>
-
     <!-- Sobre Mí Section -->
     <section class="sobre-mi" id="sobre-mi">
-      <h2>Sobre Mí</h2>
+      <h2 data-translate="about-title">Sobre Mí</h2>
       <div class="sobre-mi-container">
         <div class="sobre-mi-content">
-          <p>Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
-          <p>Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
-          <p>Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.</p>
-          <p>Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
-          <p>Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
-          <p>También podría decir que soy un eterno estudiante de la meditación y del sufismo, y que encuentro en la escritura una forma profunda de exploración y expresión. Soy autor de 'La Profecía del Eneagrama', un libro que revela el eneagrama como un mapa sagrado hacia nuestra verdadera naturaleza espiritual</p>
-          <p>Lo que hago está dirigido a quienes buscan no solo sanar heridas, sino recordarse a sí mism@s, despertar su presencia y vivir en coherencia con su corazón</p>
+          <p data-translate="about-p1">Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
+          <p data-translate="about-p2">Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
+          <p data-translate="about-p3">Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.</p>
+          <p data-translate="about-p4">Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
+          <p data-translate="about-p5">Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
+          <p data-translate="about-p6">También podría decir que soy un eterno estudiante de la meditación y del sufismo, y que encuentro en la escritura una forma profunda de exploración y expresión. Soy autor de 'La Profecía del Eneagrama', un libro que revela el eneagrama como un mapa sagrado hacia nuestra verdadera naturaleza espiritual</p>
+          <p data-translate="about-p7">Lo que hago está dirigido a quienes buscan no solo sanar heridas, sino recordarse a sí mism@s, despertar su presencia y vivir en coherencia con su corazón</p>
         </div>
         <div class="sobre-mi-image">
           <div class="sobre-mi-image-rect" role="img" aria-label="Foto de Javier Gómez en sesión terapéutica"></div>
         </div>
       </div>
       <div class="quote">
-        Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.
+        <span data-translate="about-quote">Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.</span>
       </div>
     </section>
-
     <div class="section-separator">· · ·</div>
-
 <!-- Libro Section -->
 <section class="libro" id="libro">
-  <h2>Mi Libro</h2>
+  <h2 data-translate="book-title">Mi Libro</h2>
   <div class="libro-container">
     <div class="libro-image">
       <div class="libro-image-placeholder" id="libroParallax" role="img" aria-label="Portada del libro La Profecía del Eneagrama"></div>
     </div>
     <div class="libro-content">
       <h3>La Profecía del Eneagrama</h3>
-
-      <p><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
-
-      <p>En un mundo donde todo se ha convertido en mercancía —incluso lo más sagrado—, este libro revela el eneagrama más allá de su uso superficial como herramienta de personalidad y lo devuelve a su esencia más pura: <strong>un mapa sagrado hacia la verdadera naturaleza espiritual de la humanidad</strong>.</p>
-
-      <h3>Un viaje iniciático hacia el corazón de lo que somos</h3>
-      <p><em>La Profecía del Eneagrama</em> no es un manual de autoayuda ni una clasificación de tipos psicológicos. Es <strong>una experiencia de despertar</strong>, narrada a través de los apuntes y las notas de campo de un buscador del espíritu, que funcionan como un verdadero ritual de autodescubrimiento.</p>
-
-      <p><strong>Este libro te guiará en un sendero progresivo a través de cuatro cuadernos de viaje espiritual para revelar:</strong></p>
-
+      <p data-translate="book-intro"><strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong></p>
+      <p data-translate="book-p1">En un mundo donde todo se ha convertido en mercancía —incluso lo más sagrado—, este libro revela el eneagrama más allá de su uso superficial como herramienta de personalidad y lo devuelve a su esencia más pura: <strong>un mapa sagrado hacia la verdadera naturaleza espiritual de la humanidad</strong>.</p>
+      <h3 data-translate="book-subtitle1">Un viaje iniciático hacia el corazón de lo que somos</h3>
+      <p data-translate="book-p2"><em>La Profecía del Eneagrama</em> no es un manual de autoayuda ni una clasificación de tipos psicológicos. Es <strong>una experiencia de despertar</strong>, narrada a través de los apuntes y las notas de campo de un buscador del espíritu, que funcionan como un verdadero ritual de autodescubrimiento.</p>
+      <p data-translate="book-p3"><strong>Este libro te guiará en un sendero progresivo a través de cuatro cuadernos de viaje espiritual para revelar:</strong></p>
       <ul>
-        <li>Una inmersión profunda en el eneagrama como ciencia espiritual viva, más allá de las miradas comerciales.</li>
-        <li>Una aproximación detallada de la experiencia mística a través del eneagrama como puerta de acceso a nuestra esencia.</li>
-        <li>La exploración de los pilares de la sociedad actual desde una mirada enraizada en la claridad mística.</li>
-        <li>Las posibilidades de <strong>construcción social a partir de la integración de la experiencia espiritual</strong></li>
+        <li data-translate="book-bullet1">Una inmersión profunda en el eneagrama como ciencia espiritual viva, más allá de las miradas comerciales.</li>
+        <li data-translate="book-bullet2">Una aproximación detallada de la experiencia mística a través del eneagrama como puerta de acceso a nuestra esencia.</li>
+        <li data-translate="book-bullet3">La exploración de los pilares de la sociedad actual desde una mirada enraizada en la claridad mística.</li>
+        <li data-translate="book-bullet4">Las posibilidades de <strong>construcción social a partir de la integración de la experiencia espiritual</strong></li>
       </ul>
-
-      <p>Pero sobre todo, te enseñará <strong>a volver al corazón</strong>: a reconectar con la fuente de amor, sabiduría y verdad que siempre ha habitado en ti.</p>
-
-      <p>Cada página trabaja sutilmente con tu consciencia, invitándote a recordar lo que siempre has sido pero que, quizás, habías olvidado.</p>
-
+      <p data-translate="book-p4">Pero sobre todo, te enseñará <strong>a volver al corazón</strong>: a reconectar con la fuente de amor, sabiduría y verdad que siempre ha habitado en ti.</p>
+      <p data-translate="book-p5">Cada página trabaja sutilmente con tu consciencia, invitándote a recordar lo que siempre has sido pero que, quizás, habías olvidado.</p>
       <img src="libros-bocabajo.png" alt="Diferentes ángulos del libro La Profecía del Eneagrama" class="libro-image-float">
-
-      <h3>Más que teoría: una herramienta espiritual de transformación profunda</h3>
-      <p>Esta obra trasciende lo psicológico para adentrarse en lo espiritual sin dejar de lado la realidad social y política de nuestro tiempo. Aquí encontrarás:</p>
-
-      <p>✦ <strong>Una visión revolucionaria del eneagrama</strong> como ciencia espiritual viva, no como clasificación de la personalidad<br>
+      <h3 data-translate="book-subtitle2">Más que teoría: una herramienta espiritual de transformación profunda</h3>
+      <p data-translate="book-p6">Esta obra trasciende lo psicológico para adentrarse en lo espiritual sin dejar de lado la realidad social y política de nuestro tiempo. Aquí encontrarás:</p>
+      <p data-translate="book-features">✦ <strong>Una visión revolucionaria del eneagrama</strong> como ciencia espiritual viva, no como clasificación de la personalidad<br>
       ✦ <strong>Una lectura como meditación contemplativa</strong> que funciona como portales hacia estados profundos de consciencia<br>
       ✦ <strong>Un abordaje crítico y enraizado</strong> que desvela los fenómenos que nos alejan de nuestra esencia<br>
       ✦ <strong>Prosa y poesía entretejidas</strong>, creando una experiencia única que toca las fibras más profundas del alma<br>
       ✦ <strong>Un puente entre misticismo y acción</strong>, que integra la experiencia espiritual con la construcción de realidades alternativas</p>
-
-      <h3 class>Una invitación urgente a practicar espiritualidad verdadera</h3>
-      <p>Este libro no ofrece respuestas fáciles ni soluciones instantáneas. En cambio, te invita a <strong>un ejercicio de consciencia profunda</strong>, a contemplar en lugar de interpretar, a escuchar el murmullo de lo esencial bajo el ruido del mundo anestesiado.</p>
-
-      <p>Es un testimonio vivo para quienes:</p>
-
+      <h3 data-translate="book-subtitle3">Una invitación urgente a practicar espiritualidad verdadera</h3>
+      <p data-translate="book-p7">Este libro no ofrece respuestas fáciles ni soluciones instantáneas. En cambio, te invita a <strong>un ejercicio de consciencia profunda</strong>, a contemplar en lugar de interpretar, a escuchar el murmullo de lo esencial bajo el ruido del mundo anestesiado.</p>
+      <p data-translate="book-p8">Es un testimonio vivo para quienes:</p>
       <ul>
-        <li>Buscan una espiritualidad auténtica, no diseñada para el mercado</li>
-        <li>Sienten el llamado a despertar de la ilusión colectiva</li>
-        <li>Están list@s para emprender el viaje de regreso a sí mism@s</li>
-        <li>Intuyen que la revolución interior es inseparable de la transformación del mundo</li>
-        <li>Desean profundizar en cómo construir comunidades alineadas con el espíritu</li>
+        <li data-translate="book-for1">Buscan una espiritualidad auténtica, no diseñada para el mercado</li>
+        <li data-translate="book-for2">Sienten el llamado a despertar de la ilusión colectiva</li>
+        <li data-translate="book-for3">Están list@s para emprender el viaje de regreso a sí mism@s</li>
+        <li data-translate="book-for4">Intuyen que la revolución interior es inseparable de la transformación del mundo</li>
+        <li data-translate="book-for5">Desean profundizar en cómo construir comunidades alineadas con el espíritu</li>
       </ul>
-
-      <h3>Un libro que no te deja igual</h3>
-      <p><em>"La Profecía del Eneagrama es una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método."</em></p>
-
-      <p>Es un mapa hacia la totalidad. Una invitación a recordar. Un llamado a volver a ser lo que somos.<br>
+      <h3 data-translate="book-subtitle4">Un libro que no te deja igual</h3>
+      <p data-translate="book-testimonial"><em>"La Profecía del Eneagrama es una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método."</em></p>
+      <p data-translate="book-closing">Es un mapa hacia la totalidad. Una invitación a recordar. Un llamado a volver a ser lo que somos.<br>
       <strong>Para los que aún pueden oír, en medio del ruido, el murmullo de lo sagrado.</strong></p>
-
       <div class="cta-subtitle" style="text-align: center; font-style: italic; margin-top: 2rem; font-size: 1.1rem; color: #d4a017;">
-        ✨ Disponible ahora ✨
+        <span data-translate="book-available">✨ Disponible ahora ✨</span>
       </div>
-
       <div class="libro-cta" style="text-align: center; margin-top: 1rem;">
-        <a href="https://mybook.to/LaProfeciaDelEneagrama" class="cta-button" target="_blank" rel="noopener noreferrer">Consigue tu ejemplar</a>
+        <a href="https://mybook.to/LaProfeciaDelEneagrama" class="cta-button" target="_blank" rel="noopener noreferrer" data-translate="book-cta">Consigue tu ejemplar</a>
       </div>
     </div>
   </div>
 </section>
-
     <div class="section-separator">· · ·</div>
-
     <!-- Servicios Section -->
     <section class="servicios" id="servicios">
-      <h2>Cómo Trabajamos Juntos</h2>
-      <p class="servicios-intro">"El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos."</p>
-
+      <h2 data-translate="services-title">Cómo Trabajamos Juntos</h2>
+      <p class="servicios-intro" data-translate="services-intro">"El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos."</p>
       <div class="servicio-card">
-        <h3>Sesión Individual de Acompañamiento Terapéutico</h3>
-        <p>Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas (psicodélicas, místicas, traumáticas), trabajo con patrones inconscientes y desarrollo de capacidades.</p>
-        <p><strong>Este espacio es para ti si:</strong></p>
+        <h3 data-translate="service1-title">Sesión Individual de Acompañamiento Terapéutico</h3>
+        <p data-translate="service1-desc">Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas (psicodélicas, místicas, traumáticas), trabajo con patrones inconscientes y desarrollo de capacidades.</p>
+        <p data-translate="service1-for"><strong>Este espacio es para ti si:</strong></p>
         <ul>
-          <li>Estás atravesando una crisis existencial o transición vital</li>
-          <li>Has tenido experiencias que necesitas integrar</li>
-          <li>Sientes que necesitas ayuda para transitar cualquiera que sea tu experiencia actual</li>
+          <li data-translate="service1-li1">Estás atravesando una crisis existencial o transición vital</li>
+          <li data-translate="service1-li2">Has tenido experiencias que necesitas integrar</li>
+          <li data-translate="service1-li3">Sientes que necesitas ayuda para transitar cualquiera que sea tu experiencia actual</li>
         </ul>
         <div class="servicio-details">
-          <strong>Modalidad:</strong> Virtual<br>
-          <strong>Duración:</strong> 75 minutos
+          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service-virtual">Virtual</span><br>
+          <strong data-translate="service-duration">Duración:</strong> 75 <span data-translate="service-minutes">minutos</span>
         </div>
         <p class="servicio-precio">
-          Inversión: 65€
+          <span data-translate="service-investment">Inversión:</span> 65€
           <span class="stripe-badge">
             <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
-            Pago seguro
+            <span data-translate="stripe-badge">Pago seguro</span>
           </span>
         </p>
-        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button">Agendar sesión</a>
+        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button" data-translate="service1-cta">Agendar sesión</a>
       </div>
-
       <div class="servicio-card">
-        <h3>Proceso de Acompañamiento Profundo (4 Sesiones)</h3>
-        <p>Acompañamiento continuado para procesos que requieren más tiempo y profundidad.</p>
-        <p><strong>Este proceso es para ti si:</strong></p>
+        <h3 data-translate="service2-title">Proceso de Acompañamiento Profundo (4 Sesiones)</h3>
+        <p data-translate="service2-desc">Acompañamiento continuado para procesos que requieren más tiempo y profundidad.</p>
+        <p data-translate="service2-for"><strong>Este proceso es para ti si:</strong></p>
         <ul>
-          <li>Estás comprometid@ con tu proceso terapéutico y sientes que una sesión no es suficiente</li>
-          <li>Necesitas acompañamiento continuado en una transición vital</li>
-          <li>Buscas transformación real, no solo alivio sintomático</li>
+          <li data-translate="service2-li1">Estás comprometid@ con tu proceso terapéutico y sientes que una sesión no es suficiente</li>
+          <li data-translate="service2-li2">Necesitas acompañamiento continuado en una transición vital</li>
+          <li data-translate="service2-li3">Buscas transformación real, no solo alivio sintomático</li>
         </ul>
         <div class="servicio-details">
-          <strong>Modalidad:</strong> Virtual<br>
-          <strong>Duración:</strong> 4 sesiones de 75 minutos
+          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service-virtual">Virtual</span><br>
+          <strong data-translate="service-duration">Duración:</strong> 4 <span data-translate="service-sessions">sesiones</span> <span data-translate="service-of">de</span> 75 <span data-translate="service-minutes">minutos</span>
         </div>
         <p class="servicio-precio">
-          Inversión: 240€ (ahorro de 20€)
+          <span data-translate="service-investment">Inversión:</span> 240€ (<span data-translate="service-save">ahorro de</span> 20€)
           <span class="stripe-badge">
             <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
-            Pago seguro
+            <span data-translate="stripe-badge">Pago seguro</span>
           </span>
         </p>
-        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button">Agendar proceso</a>
+        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button" data-translate="service2-cta">Agendar proceso</a>
       </div>
-
       <div class="servicio-card">
-        <h3>Círculo Mensual "La Práctica"</h3>
-        <p>Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
+        <h3 data-translate="service3-title">Círculo Mensual "La Práctica"</h3>
+        <p data-translate="service3-desc">Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
         <div class="servicio-details">
-          <strong>Modalidad:</strong> Virtual<br>
-          <strong>Frecuencia:</strong> Por confirmar<br>
-          <strong>Grupo:</strong> Máximo 10 personas
+          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service-virtual">Virtual</span><br>
+          <strong data-translate="service-frequency">Frecuencia:</strong> <span data-translate="service3-frequency">Por confirmar</span><br>
+          <strong data-translate="service-group">Grupo:</strong> <span data-translate="service3-group">Máximo 10 personas</span>
         </div>
         <p class="servicio-precio">
-          Inversión: 10€ por sesión
+          <span data-translate="service-investment">Inversión:</span> 10€ <span data-translate="service3-per">por sesión</span>
           <span class="stripe-badge">
             <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
-            Pago seguro
+            <span data-translate="stripe-badge">Pago seguro</span>
           </span>
         </p>
-        <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button">Unirme al círculo</a>
+        <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button" data-translate="service3-cta">Unirme al círculo</a>
       </div>
     </section>
-
     <div class="section-separator">· · ·</div>
-
     <!-- Contacto Section -->
     <section class="contacto" id="contacto">
-      <h2>Conecta Conmigo</h2>
-      <p>Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
-      <p>También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.</p>
+      <h2 data-translate="contact-title">Conecta Conmigo</h2>
+      <p data-translate="contact-p1">Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
+      <p data-translate="contact-p2">También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.</p>
       
       <div class="social-links">
         <a href="mailto:psicoalquimia.co@gmail.com" class="social-link" aria-label="Enviar email">
@@ -1886,14 +1715,258 @@ footer p, .footer-text, .footer-copyright {
       </div>
     </section>
   </main>
-
   <!-- Footer -->
   <footer>
-    <p>© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎</p>
-    <p><a href="privacidad.html">Política de Privacidad y Cookies</a></p>
+    <p data-translate="footer-text">© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎</p>
+    <p><a href="privacidad.html" data-translate="footer-privacy">Política de Privacidad y Cookies</a></p>
   </footer>
-
   <script>
+    // ==========================================
+    // TRANSLATIONS
+    // ==========================================
+    const translations = {
+      es: {
+        'skip-main': 'Saltar al contenido principal',
+        'cookie-title': 'Utilizamos cookies',
+        'cookie-text': 'para mejorar tu experiencia. Usamos Google Analytics para analizar el tráfico del sitio.',
+        'cookie-consent': 'Al aceptar, consientes el uso de cookies de terceros.',
+        'cookie-policy': 'Política de Privacidad y Cookies',
+        'cookie-accept': 'Aceptar',
+        'cookie-reject': 'Rechazar',
+        'nav-about': 'Sobre mí',
+        'nav-book': 'Libro',
+        'nav-services': 'Servicios',
+        'nav-contact': 'Contacto',
+        'sticky-cta': 'Agendar sesión',
+        'modal-title': '¿Qué tipo de acompañamiento buscas?',
+        'modal-option1-title': 'Sesión Individual',
+        'modal-option1-desc': '75 minutos • 65€',
+        'modal-option2-title': 'Proceso Profundo',
+        'modal-option2-desc': '4 sesiones • 240€',
+        'hero-subtitle': 'Psicoterapeuta • Explorador de la Consciencia',
+        'hero-bullet1': 'Acompaño procesos de transformación interior',
+        'hero-bullet2': 'Puente entre misticismo y transformación social',
+        'hero-cta': 'Explorar servicios',
+        'about-title': 'Sobre Mí',
+        'about-p1': 'Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.',
+        'about-p2': 'Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.',
+        'about-p3': 'Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.',
+        'about-p4': 'Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.',
+        'about-p5': 'Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.',
+        'about-p6': 'También podría decir que soy un eterno estudiante de la meditación y del sufismo, y que encuentro en la escritura una forma profunda de exploración y expresión. Soy autor de \'La Profecía del Eneagrama\', un libro que revela el eneagrama como un mapa sagrado hacia nuestra verdadera naturaleza espiritual',
+        'about-p7': 'Lo que hago está dirigido a quienes buscan no solo sanar heridas, sino recordarse a sí mism@s, despertar su presencia y vivir en coherencia con su corazón',
+        'about-quote': 'Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.',
+        'book-title': 'Mi Libro',
+        'book-intro': '<strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong>',
+        'book-p1': 'En un mundo donde todo se ha convertido en mercancía —incluso lo más sagrado—, este libro revela el eneagrama más allá de su uso superficial como herramienta de personalidad y lo devuelve a su esencia más pura: <strong>un mapa sagrado hacia la verdadera naturaleza espiritual de la humanidad</strong>.',
+        'book-subtitle1': 'Un viaje iniciático hacia el corazón de lo que somos',
+        'book-p2': '<em>La Profecía del Eneagrama</em> no es un manual de autoayuda ni una clasificación de tipos psicológicos. Es <strong>una experiencia de despertar</strong>, narrada a través de los apuntes y las notas de campo de un buscador del espíritu, que funcionan como un verdadero ritual de autodescubrimiento.',
+        'book-p3': '<strong>Este libro te guiará en un sendero progresivo a través de cuatro cuadernos de viaje espiritual para revelar:</strong>',
+        'book-bullet1': 'Una inmersión profunda en el eneagrama como ciencia espiritual viva, más allá de las miradas comerciales.',
+        'book-bullet2': 'Una aproximación detallada de la experiencia mística a través del eneagrama como puerta de acceso a nuestra esencia.',
+        'book-bullet3': 'La exploración de los pilares de la sociedad actual desde una mirada enraizada en la claridad mística.',
+        'book-bullet4': 'Las posibilidades de <strong>construcción social a partir de la integración de la experiencia espiritual</strong>',
+        'book-p4': 'Pero sobre todo, te enseñará <strong>a volver al corazón</strong>: a reconectar con la fuente de amor, sabiduría y verdad que siempre ha habitado en ti.',
+        'book-p5': 'Cada página trabaja sutilmente con tu consciencia, invitándote a recordar lo que siempre has sido pero que, quizás, habías olvidado.',
+        'book-subtitle2': 'Más que teoría: una herramienta espiritual de transformación profunda',
+        'book-p6': 'Esta obra trasciende lo psicológico para adentrarse en lo espiritual sin dejar de lado la realidad social y política de nuestro tiempo. Aquí encontrarás:',
+        'book-features': '✦ <strong>Una visión revolucionaria del eneagrama</strong> como ciencia espiritual viva, no como clasificación de la personalidad<br>✦ <strong>Una lectura como meditación contemplativa</strong> que funciona como portales hacia estados profundos de consciencia<br>✦ <strong>Un abordaje crítico y enraizado</strong> que desvela los fenómenos que nos alejan de nuestra esencia<br>✦ <strong>Prosa y poesía entretejidas</strong>, creando una experiencia única que toca las fibras más profundas del alma<br>✦ <strong>Un puente entre misticismo y acción</strong>, que integra la experiencia espiritual con la construcción de realidades alternativas',
+        'book-subtitle3': 'Una invitación urgente a practicar espiritualidad verdadera',
+        'book-p7': 'Este libro no ofrece respuestas fáciles ni soluciones instantáneas. En cambio, te invita a <strong>un ejercicio de consciencia profunda</strong>, a contemplar en lugar de interpretar, a escuchar el murmullo de lo esencial bajo el ruido del mundo anestesiado.',
+        'book-p8': 'Es un testimonio vivo para quienes:',
+        'book-for1': 'Buscan una espiritualidad auténtica, no diseñada para el mercado',
+        'book-for2': 'Sienten el llamado a despertar de la ilusión colectiva',
+        'book-for3': 'Están list@s para emprender el viaje de regreso a sí mism@s',
+        'book-for4': 'Intuyen que la revolución interior es inseparable de la transformación del mundo',
+        'book-for5': 'Desean profundizar en cómo construir comunidades alineadas con el espíritu',
+        'book-subtitle4': 'Un libro que no te deja igual',
+        'book-testimonial': '<em>"La Profecía del Eneagrama es una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método."</em>',
+        'book-closing': 'Es un mapa hacia la totalidad. Una invitación a recordar. Un llamado a volver a ser lo que somos.<br><strong>Para los que aún pueden oír, en medio del ruido, el murmullo de lo sagrado.</strong>',
+        'book-available': '✨ Disponible ahora ✨',
+        'book-cta': 'Consigue tu ejemplar',
+        'services-title': 'Cómo Trabajamos Juntos',
+        'services-intro': '"El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos."',
+        'service1-title': 'Sesión Individual de Acompañamiento Terapéutico',
+        'service1-desc': 'Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas (psicodélicas, místicas, traumáticas), trabajo con patrones inconscientes y desarrollo de capacidades.',
+        'service1-for': '<strong>Este espacio es para ti si:</strong>',
+        'service1-li1': 'Estás atravesando una crisis existencial o transición vital',
+        'service1-li2': 'Has tenido experiencias que necesitas integrar',
+        'service1-li3': 'Sientes que necesitas ayuda para transitar cualquiera que sea tu experiencia actual',
+        'service-modality': 'Modalidad:',
+        'service-virtual': 'Virtual',
+        'service-duration': 'Duración:',
+        'service-minutes': 'minutos',
+        'service-investment': 'Inversión:',
+        'stripe-badge': 'Pago seguro',
+        'service1-cta': 'Agendar sesión',
+        'service2-title': 'Proceso de Acompañamiento Profundo (4 Sesiones)',
+        'service2-desc': 'Acompañamiento continuado para procesos que requieren más tiempo y profundidad.',
+        'service2-for': '<strong>Este proceso es para ti si:</strong>',
+        'service2-li1': 'Estás comprometid@ con tu proceso terapéutico y sientes que una sesión no es suficiente',
+        'service2-li2': 'Necesitas acompañamiento continuado en una transición vital',
+        'service2-li3': 'Buscas transformación real, no solo alivio sintomático',
+        'service-sessions': 'sesiones',
+        'service-of': 'de',
+        'service-save': 'ahorro de',
+        'service2-cta': 'Agendar proceso',
+        'service3-title': 'Círculo Mensual "La Práctica"',
+        'service3-desc': 'Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.',
+        'service-frequency': 'Frecuencia:',
+        'service3-frequency': 'Por confirmar',
+        'service-group': 'Grupo:',
+        'service3-group': 'Máximo 10 personas',
+        'service3-per': 'por sesión',
+        'service3-cta': 'Unirme al círculo',
+        'contact-title': 'Conecta Conmigo',
+        'contact-p1': 'Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.',
+        'contact-p2': 'También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.',
+        'footer-text': '© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎',
+        'footer-privacy': 'Política de Privacidad y Cookies'
+      },
+      en: {
+        'skip-main': 'Skip to main content',
+        'cookie-title': 'We use cookies',
+        'cookie-text': 'to improve your experience. We use Google Analytics to analyze site traffic.',
+        'cookie-consent': 'By accepting, you consent to the use of third-party cookies.',
+        'cookie-policy': 'Privacy and Cookie Policy',
+        'cookie-accept': 'Accept',
+        'cookie-reject': 'Reject',
+        'nav-about': 'About',
+        'nav-book': 'Book',
+        'nav-services': 'Services',
+        'nav-contact': 'Contact',
+        'sticky-cta': 'Book a session',
+        'modal-title': 'What type of support are you seeking?',
+        'modal-option1-title': 'Individual Session',
+        'modal-option1-desc': '75 minutes • €65',
+        'modal-option2-title': 'In-depth Journey',
+        'modal-option2-desc': '4 sessions • €240',
+        'hero-subtitle': 'Psychotherapist • Consciousness Explorer',
+        'hero-bullet1': 'I accompany inner transformation processes',
+        'hero-bullet2': 'Bridge between mysticism and social transformation',
+        'hero-cta': 'Explore services',
+        'about-title': 'About Me',
+        'about-p1': 'I accompany self-knowledge and inner transformation processes from an integrative approach that unites psychology, spirituality, and body.',
+        'about-p2': 'My work is born from encounter: I don\'t seek to impose knowledge, but to accompany you in remembering your own. It\'s not about authority, but about shared presence, listening, and mutual discovery.',
+        'about-p3': 'I am a psychologist, therapist, and psychonaut. For seven years I lived in Colombia, where I trained in integrative gestalt therapy, trauma-informed work, somatic approaches and other techniques and tools, while learning from traditional healers and guardians of ancestral medicines. Now I live traveling, which allows me to continue learning constantly and work virtually from anywhere in the world, accompanying borderless processes.',
+        'about-p4': 'I integrate the rigor of contemporary psychology with the wisdom of ancient healing traditions, accompanying people in deep transformation processes, existential crises, and spiritual awakening.',
+        'about-p5': 'I believe that individual healing is inseparable from collective transformation. I practice a conscious and committed spirituality that doesn\'t flee from the world, but listens to it, questions it, and seeks to regenerate the living fabric of the human and the sacred.',
+        'about-p6': 'I could also say that I am an eternal student of meditation and Sufism, and that I find in writing a profound form of exploration and expression. I am the author of \'The Enneagram Prophecy\', a book that reveals the enneagram as a sacred map to our true spiritual nature',
+        'about-p7': 'What I do is aimed at those seeking not only to heal wounds, but to remember themselves, awaken their presence, and live in coherence with their heart',
+        'about-quote': 'I believe in <strong>human, integral, and compassionate</strong> therapy, where each person can <strong>reconnect with their truth, honor their story, and live closer to themselves</strong>.',
+        'book-title': 'My Book',
+        'book-intro': '<strong>What if the enneagram was never what you thought it was?</strong>',
+        'book-p1': 'In a world where everything has become a commodity—even the most sacred—this book reveals the enneagram beyond its superficial use as a personality tool and returns it to its purest essence: <strong>a sacred map toward humanity\'s true spiritual nature</strong>.',
+        'book-subtitle1': 'An initiatory journey to the heart of who we are',
+        'book-p2': '<em>The Enneagram Prophecy</em> is not a self-help manual nor a classification of psychological types. It is <strong>an awakening experience</strong>, narrated through the notes and field journals of a spirit seeker, functioning as a true ritual of self-discovery.',
+        'book-p3': '<strong>This book will guide you on a progressive path through four spiritual journey notebooks to reveal:</strong>',
+        'book-bullet1': 'A deep immersion into the enneagram as a living spiritual science, beyond commercial views.',
+        'book-bullet2': 'A detailed approach to mystical experience through the enneagram as a gateway to our essence.',
+        'book-bullet3': 'An exploration of today\'s society pillars from a perspective rooted in mystical clarity.',
+        'book-bullet4': 'The possibilities of <strong>social construction from the integration of spiritual experience</strong>',
+        'book-p4': 'But above all, it will teach you <strong>to return to the heart</strong>: to reconnect with the source of love, wisdom, and truth that has always dwelt within you.',
+        'book-p5': 'Each page subtly works with your consciousness, inviting you to remember what you have always been but perhaps had forgotten.',
+        'book-subtitle2': 'More than theory: a spiritual tool for deep transformation',
+        'book-p6': 'This work transcends the psychological to delve into the spiritual without leaving aside the social and political reality of our time. Here you will find:',
+        'book-features': '✦ <strong>A revolutionary vision of the enneagram</strong> as a living spiritual science, not as personality classification<br>✦ <strong>Reading as contemplative meditation</strong> functioning as portals to deep states of consciousness<br>✦ <strong>A critical and rooted approach</strong> that unveils phenomena that distance us from our essence<br>✦ <strong>Intertwined prose and poetry</strong>, creating a unique experience that touches the deepest fibers of the soul<br>✦ <strong>A bridge between mysticism and action</strong>, integrating spiritual experience with the construction of alternative realities',
+        'book-subtitle3': 'An urgent invitation to practice true spirituality',
+        'book-p7': 'This book doesn\'t offer easy answers or instant solutions. Instead, it invites you to <strong>an exercise in deep consciousness</strong>, to contemplate rather than interpret, to listen to the murmur of the essential beneath the noise of the anesthetized world.',
+        'book-p8': 'It is a living testimony for those who:',
+        'book-for1': 'Seek authentic spirituality, not designed for the market',
+        'book-for2': 'Feel the call to awaken from collective illusion',
+        'book-for3': 'Are ready to embark on the journey back to themselves',
+        'book-for4': 'Sense that the inner revolution is inseparable from world transformation',
+        'book-for5': 'Wish to deepen how to build communities aligned with spirit',
+        'book-subtitle4': 'A book that doesn\'t leave you the same',
+        'book-testimonial': '<em>"The Enneagram Prophecy is a profound spiritual work that questions power structures while embracing tenderness as method."</em>',
+        'book-closing': 'It is a map toward wholeness. An invitation to remember. A call to return to being what we are.<br><strong>For those who can still hear, amid the noise, the murmur of the sacred.</strong>',
+        'book-available': '✨ Available now ✨',
+        'book-cta': 'Get your copy',
+        'services-title': 'How We Work Together',
+        'services-intro': '"Accompaniment is a space of shared truth.<br>Not to be fixed, but to remember what we are."',
+        'service1-title': 'Individual Therapeutic Accompaniment Session',
+        'service1-desc': '75-minute trauma-informed space for deep inner transformation processes, existential crises, integration of significant experiences (psychedelic, mystical, traumatic), working with unconscious patterns and capacity development.',
+        'service1-for': '<strong>This space is for you if:</strong>',
+        'service1-li1': 'You are going through an existential crisis or life transition',
+        'service1-li2': 'You have had experiences you need to integrate',
+        'service1-li3': 'You feel you need help navigating whatever your current experience is',
+        'service-modality': 'Modality:',
+        'service-virtual': 'Virtual',
+        'service-duration': 'Duration:',
+        'service-minutes': 'minutes',
+        'service-investment': 'Investment:',
+        'stripe-badge': 'Secure payment',
+        'service1-cta': 'Book session',
+        'service2-title': 'In-depth Journey (4 Sessions)',
+        'service2-desc': 'Continued accompaniment for processes requiring more time and depth.',
+        'service2-for': '<strong>This process is for you if:</strong>',
+        'service2-li1': 'You are committed to your therapeutic process and feel one session isn\'t enough',
+        'service2-li2': 'You need continued accompaniment during a life transition',
+        'service2-li3': 'You seek real transformation, not just symptomatic relief',
+        'service-sessions': 'sessions',
+        'service-of': 'of',
+        'service-save': '€20 savings',
+        'service2-cta': 'Book journey',
+        'service3-title': 'Monthly Circle "The Practice"',
+        'service3-desc': 'Online group meeting once a month for those seeking community on the transformation path.',
+        'service-frequency': 'Frequency:',
+        'service3-frequency': 'To be confirmed',
+        'service-group': 'Group:',
+        'service3-group': 'Maximum 10 people',
+        'service3-per': 'per session',
+        'service3-cta': 'Join the circle',
+        'contact-title': 'Connect With Me',
+        'contact-p1': 'If you resonate with my work and feel the call to work together, write to me.',
+        'contact-p2': 'You can also follow me on social media for content about consciousness, transformation, and true spirituality.',
+        'footer-text': '© 2025 Javier Gómez • Created with presence and care ♥︎',
+        'footer-privacy': 'Privacy and Cookie Policy'
+      }
+    };
+
+    // ==========================================
+    // LANGUAGE MANAGEMENT
+    // ==========================================
+    let currentLang = localStorage.getItem('language') || 'es';
+    
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+      document.documentElement.lang = lang;
+      
+      // Update text
+      document.getElementById('langText').textContent = lang.toUpperCase();
+      
+      // Add fade effect
+      document.body.classList.add('fade-transition');
+      
+      // Translate all elements
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+      
+      // Remove fade after animation
+      setTimeout(() => {
+        document.body.classList.remove('fade-transition');
+      }, 500);
+    }
+    
+    // Initialize language on load
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+      
+      // Language toggle click
+      document.getElementById('languageToggle').addEventListener('click', function() {
+        this.classList.add('active');
+        setTimeout(() => this.classList.remove('active'), 500);
+        
+        const newLang = currentLang === 'es' ? 'en' : 'es';
+        setLanguage(newLang);
+      });
+    });
+
     // ==========================================
     // COOKIES MANAGEMENT
     // ==========================================
@@ -1907,25 +1980,21 @@ footer p, .footer-text, .footer-copyright {
         loadGoogleAnalytics();
       }
     };
-
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
       document.getElementById('cookieBanner').classList.remove('show');
       loadGoogleAnalytics();
     }
-
     function rejectCookies() {
       localStorage.setItem('cookieConsent', 'rejected');
       document.getElementById('cookieBanner').classList.remove('show');
     }
-
     function loadGoogleAnalytics() {
       if (typeof gtag === 'function') {
         gtag('js', new Date());
         gtag('config', 'G-LQ3QHR5RFS');
       }
     }
-
     // ==========================================
     // THEME TOGGLE
     // ==========================================
@@ -1933,12 +2002,9 @@ footer p, .footer-text, .footer-copyright {
     const iconLight = document.getElementById('iconLight');
     const iconDark = document.getElementById('iconDark');
     const html = document.documentElement;
-
-    // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
-
     themeToggle.addEventListener('click', () => {
       const currentTheme = html.getAttribute('data-theme');
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -1947,7 +2013,6 @@ footer p, .footer-text, .footer-copyright {
       localStorage.setItem('theme', newTheme);
       updateThemeIcon(newTheme);
     });
-
     function updateThemeIcon(theme) {
       if (theme === 'dark') {
         iconLight.style.display = 'none';
@@ -1957,7 +2022,6 @@ footer p, .footer-text, .footer-copyright {
         iconDark.style.display = 'none';
       }
     }
-
     // ==========================================
     // PROGRESS BAR
     // ==========================================
@@ -1969,7 +2033,6 @@ window.addEventListener('scroll', () => {
     document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   progressBar.style.width = scrolled + '%';
-  // obligatorio para WebKit/iOS y algunos Android, repinta SIEMPRE
   progressBar.style.webkitTransform = 'translateZ(0)';
   progressBar.style.transform = 'translateZ(0)';
 });
@@ -1979,25 +2042,19 @@ document.addEventListener('DOMContentLoaded', () => {
   progressBar.style.webkitTransform = 'translateZ(0)';
   progressBar.style.transform = 'translateZ(0)';
 });
-
-
     // ==========================================
     // NAVIGATION & STICKY CTA
     // ==========================================
     const navFixed = document.getElementById('navFixed');
     const stickyCta = document.getElementById('stickyCta');
-
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       
-      // Show fixed navigation
       if (scrolled > 100) {
         navFixed.classList.add('visible');
       } else {
         navFixed.classList.remove('visible');
       }
-
-      // Show sticky CTA on mobile after scrolling past hero
       if (window.innerWidth <= 768) {
         if (scrolled > window.innerHeight * 0.5) {
           stickyCta.classList.add('visible');
@@ -2006,41 +2063,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-
     function closeStickyCta() {
   document.getElementById('stickyCta').style.display = 'none';
 }
-
-
     // ==========================================
     // MODAL CTA
     // ==========================================
     const modalOverlay = document.getElementById('modalOverlay');
-
     function openModal() {
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeModal(event) {
       if (!event || event.target === modalOverlay) {
         modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
       }
     }
-
-    // Close modal with ESC key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
         closeModal();
       }
     });
-
     // ==========================================
-    // INTERSECTION OBSERVER (Fade-in animations)
+    // INTERSECTION OBSERVER
     // ==========================================
     const sections = document.querySelectorAll('section');
-
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2051,25 +2099,18 @@ document.addEventListener('DOMContentLoaded', () => {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     });
-
     sections.forEach(section => sectionObserver.observe(section));
-
     // ==========================================
     // PARALLAX EFFECTS
     // ==========================================
     const heroParallax = document.getElementById('heroParallax');
     const libroParallax = document.getElementById('libroParallax');
-
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
-
-      // Hero parallax
       if (heroParallax && scrolled < window.innerHeight) {
         const rate = scrolled * 0.05;
         heroParallax.style.transform = `translateY(${rate}px)`;
       }
-
-      // Libro parallax
       if (libroParallax) {
         const libroSection = libroParallax.closest('section');
         const rect = libroSection.getBoundingClientRect();
@@ -2079,9 +2120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-
     // ==========================================
-    // SMOOTH SCROLL FOR NAVIGATION LINKS
+    // SMOOTH SCROLL
     // ==========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -2095,7 +2135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-
     // ==========================================
     // ANALYTICS EVENT TRACKING
     // ==========================================
@@ -2109,7 +2148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-
     document.querySelectorAll('.social-link').forEach(link => {
       link.addEventListener('click', function() {
         if (typeof gtag === 'function') {
@@ -2123,4 +2161,3 @@ document.addEventListener('DOMContentLoaded', () => {
   </script>
 </body>
 </html>
-       
