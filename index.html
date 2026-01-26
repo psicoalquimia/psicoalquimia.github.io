@@ -1686,9 +1686,9 @@ footer p, .footer-text, .footer-copyright {
       <div class="cta-subtitle" style="text-align: center; font-style: italic; margin-top: 2rem; font-size: 1.1rem; color: #d4a017;">
         <span data-translate="book-available">✨ Disponible ahora ✨</span>
       </div>
-      <div class="libro-cta" style="text-align: center; margin-top: 1rem;">
-        <a href="https://mybook.to/LaProfeciaDelEneagrama" class="cta-button" target="_blank" rel="noopener noreferrer" data-translate="book-cta">Consigue tu ejemplar</a>
-      </div>
+     <div class="libro-cta" style="text-align: center; margin-top: 1rem;">
+  <a href="https://mybook.to/LaProfeciaDelEneagrama" id="bookLink" class="cta-button" target="_blank" rel="noopener noreferrer" data-translate="book-cta">Consigue tu ejemplar</a>
+</div>
     </div>
   </div>
 </section>
@@ -2013,29 +2013,37 @@ if (!localStorage.getItem('language')) {
   currentLang = 'es';
 }    
     function setLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('language', lang);
-      document.documentElement.lang = lang;
-      
-      // Update text
-      document.getElementById('langText').textContent = lang.toUpperCase();
-      
-      // Add fade effect
-      document.body.classList.add('fade-transition');
-      
-      // Translate all elements
-      document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang][key]) {
-          element.innerHTML = translations[lang][key];
-        }
-      });
-      
-      // Remove fade after animation
-      setTimeout(() => {
-        document.body.classList.remove('fade-transition');
-      }, 500);
+  currentLang = lang;
+  localStorage.setItem('language', lang);
+  document.documentElement.lang = lang;
+  
+  // Update text
+  document.getElementById('langText').textContent = lang.toUpperCase();
+  
+  // Update book link
+  const bookLink = document.getElementById('bookLink');
+  if (bookLink) {
+    bookLink.href = lang === 'es' 
+      ? 'https://mybook.to/LaProfeciaDelEneagrama'
+      : 'https://mybook.to/TheEnneagramProphecy';
+  }
+  
+  // Add fade effect
+  document.body.classList.add('fade-transition');
+  
+  // Translate all elements
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    if (translations[lang][key]) {
+      element.innerHTML = translations[lang][key];
     }
+  });
+  
+  // Remove fade after animation
+  setTimeout(() => {
+    document.body.classList.remove('fade-transition');
+  }, 500);
+}
     
     // Initialize language on load
     document.addEventListener('DOMContentLoaded', () => {
