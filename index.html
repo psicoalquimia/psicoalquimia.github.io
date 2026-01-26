@@ -2020,12 +2020,20 @@ if (!localStorage.getItem('language')) {
   // Update text
   document.getElementById('langText').textContent = lang.toUpperCase();
   
-  // Update book link
+  // Update book link and cover image
   const bookLink = document.getElementById('bookLink');
   if (bookLink) {
     bookLink.href = lang === 'es' 
       ? 'https://mybook.to/LaProfeciaDelEneagrama'
       : 'https://mybook.to/TheEnneagramProphecy';
+  }
+  
+  const bookCover = document.getElementById('libroParallax');
+  if (bookCover) {
+    const coverImage = lang === 'es' 
+      ? "url('portada-libro.jpg')" 
+      : "url('portada-libro-en.jpg')";
+    bookCover.style.backgroundImage = coverImage;
   }
   
   // Add fade effect
