@@ -580,7 +580,7 @@
                 <a href="#" class="cta-btn cta-apple" id="appleEs">📱 Comprar en Apple Books</a>
             </div>
             <div class="cta-section" style="margin-top: 1rem;">
-                <a href="https://flipbookpdf.net/web/site/8fba1682fbe0beeb5148a36bc6d945d797d1450d202602.pdf.html" class="cta-btn cta-secondary" id="previewEs">👁️ Leer Primer Capítulo</a>
+                <a href="https://flipbookpdf.net/web/site/8fba1682fbe0beeb5148a36bc6d945d797d1450d202602.pdf.html" class="cta-btn cta-secondary" id="previewEs" target="_blank">👁️ Leer Primer Capítulo</a>
             </div>
         </section>
 
@@ -686,7 +686,7 @@
                 <a href="#" class="buy-btn apple" id="appleEs2">
                     📱 Comprar en Apple Books
                 </a>
-                <a href="#" class="buy-btn preview" id="previewEs2">
+                <a href="https://www.flipbookpdf.net/web/site/8fba1682fbe0beeb5148a36bc6d945d797d1450d202602.pdf.html" class="buy-btn preview" id="previewEs2" target="_blank">
                     👁️ Leer Primer Capítulo Gratis
                 </a>
             </div>
@@ -709,7 +709,7 @@
                 <a href="https://books.apple.com/book/id6758346495" class="cta-btn cta-apple" target="_blank">📱 Buy on Apple Books</a>
             </div>
             <div class="cta-section" style="margin-top: 1rem;">
-                <a href="#" class="cta-btn cta-secondary" id="previewEn">👁️ Read First Chapter</a>
+                <a href="https://flipbookpdf.net/web/site/e29cf962f65539caeef1ba1d9f657a3d9638af6f202602.pdf.html" class="cta-btn cta-secondary" id="previewEn" target="_blank">👁️ Read First Chapter</a>
             </div>
         </section>
 
@@ -815,7 +815,7 @@
                 <a href="https://books.apple.com/book/id6758346495" class="buy-btn apple" target="_blank">
                     📱 Buy on Apple Books
                 </a>
-                <a href="https://flipbookpdf.net/web/site/e29cf962f65539caeef1ba1d9f657a3d9638af6f202602.pdf.html" class="buy-btn preview" id="previewEn2">
+                <a href="https://flipbookpdf.net/web/site/e29cf962f65539caeef1ba1d9f657a3d9638af6f202602.pdf.html" class="buy-btn preview" id="previewEn2" target="_blank">
                     👁️ Read First Chapter Free
                 </a>
             </div>
@@ -839,12 +839,6 @@
             document.getElementById('content-' + lang).classList.remove('hidden');
             updateLangSwitch();
             
-            const previewLinks = document.querySelectorAll('[id^="preview"]');
-            previewLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('Por favor, proporciona el enlace de Google Drive con el primer capítulo.\n\nPlease provide the Google Drive link with the first chapter.');
-                });
             });
         }
 
