@@ -831,40 +831,30 @@
     </footer>
 
     <script>
-        let currentLang = null;
+    let currentLang = null;
 
-        function selectLanguage(lang) {
-            currentLang = lang;
-            document.getElementById('languageModal').classList.add('hidden');
-            document.getElementById('content-' + lang).classList.remove('hidden');
-            updateLangSwitch();
-            
-            });
-        }
+    function selectLanguage(lang) {
+        currentLang = lang;
+        document.getElementById('languageModal').classList.add('hidden');
+        document.getElementById('content-' + lang).classList.remove('hidden');
+        updateLangSwitch();
+    }
 
-        function toggleLanguage() {
-            const newLang = currentLang === 'es' ? 'en' : 'es';
-            document.getElementById('content-' + currentLang).classList.add('hidden');
-            document.getElementById('content-' + newLang).classList.remove('hidden');
-            currentLang = newLang;
-            updateLangSwitch();
-            window.scrollTo(0, 0);
-        }
+    function toggleLanguage() {
+        const newLang = currentLang === 'es' ? 'en' : 'es';
+        document.getElementById('content-' + currentLang).classList.add('hidden');
+        document.getElementById('content-' + newLang).classList.remove('hidden');
+        currentLang = newLang;
+        updateLangSwitch();
+        window.scrollTo(0, 0);
+    }
 
-        function updateLangSwitch() {
-            const switchBtn = document.getElementById('langSwitch');
-            switchBtn.textContent = currentLang === 'es' ? '🇬🇧 English Edition' : '🇪🇸 Edición en Español';
-        }
+    function updateLangSwitch() {
+        const switchBtn = document.getElementById('langSwitch');
+        switchBtn.textContent = currentLang === 'es' ? 'English Edition' : 'Edición en Español';
+    }
+</script>
 
-        document.querySelectorAll('[id^="apple"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.href === window.location.href || this.href.endsWith('#')) {
-                    e.preventDefault();
-                    alert('Enlace de Apple Books para español próximamente disponible.\n\nApple Books Spanish link coming soon.');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
 
