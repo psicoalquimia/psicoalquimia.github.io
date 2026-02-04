@@ -26,6 +26,10 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+    scroll-behavior: smooth;
+}
+
 
         body {
             font-family: var(--font-sans);
@@ -301,10 +305,24 @@
             transform: translateY(-1px);
         }
 
+        .cta-primary {
+    animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% { box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3); }
+    50% { box-shadow: 0 6px 20px rgba(49, 130, 206, 0.5); }
+}
+
+.cta-primary:hover {
+    animation: none;
+}
+
+
         /* Content Sections */
         .section {
             max-width: 800px;
-            margin: 3rem auto;
+            margin: 4rem auto;
             padding: 0 1.5rem;
         }
 
@@ -550,6 +568,7 @@
                 transform: translateY(0);
             }
         }
+    
     </style>
 </head>
 <body>
@@ -835,6 +854,13 @@
         </section>
     </div>
 
+    <section class="section text-center" style="margin: 5rem auto; padding: 2rem; font-style: italic; color: var(--color-text-secondary); max-width: 600px; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <p style="font-size: 1.1rem; font-family: 'Garamond', Georgia, serif; line-height: 1.8;">
+        "El despertar no es un destino,<br>es recordar el camino de regreso a casa."
+    </p>
+</section>
+
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Javier Gómez. Todos los derechos reservados / All rights reserved.</p>
@@ -866,6 +892,24 @@
         const switchBtn = document.getElementById('langSwitch');
         switchBtn.textContent = currentLang === 'es' ? 'English Edition' : 'Edición en Español';
     }
+
+        // Efecto de aparición progresiva
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(section);
+});
+
 </script>
 
 </body>
