@@ -137,6 +137,8 @@
             text-decoration: none;
             transition: color 0.3s ease;
             letter-spacing: 0.02em;
+            display: flex;
+            flex-direction: column;
         }
 
         .logo:hover {
@@ -557,9 +559,11 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <a href="https://psicoalquimia.github.io/" class="logo" target="_blank">
-                <span class="author-name">Javier Gómez</span><span class="tagline"> ⎪ Misticismo • Transformación </span>
-            </a>
+            <a href="https://psicoalquimia.github.io/" class="logo" style="text-decoration: none;">
+    <span class="logo-name">Javier Gómez ⎪ </span>
+    <span class="logo-tagline">Misticismo • Transformación social</span>
+</a>
+            
             <button class="lang-switch" id="langSwitch" onclick="toggleLanguage()"></button>
         </div>
     </header>
