@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Javier Gómez - Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación interior desde un enfoque integrativo. Sesiones online, procesos profundos y círculo mensual 'La Práctica'. Autor de 'La Profecía del Eneagrama'.">
+  <meta name="description" content="Javier Gómez — Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación profunda en el cruce entre psicología, mística y consciencia. Sesiones online, procesos largos y trabajo con experiencias místicas. Autor de 'La Profecía del Eneagrama'.">
   <meta name="keywords" content="psicoterapia, transformación interior, eneagrama, consciencia, terapia gestalt, trauma, medicina ancestral, espiritualidad">
   <meta name="author" content="Javier Gómez">
   
@@ -11,13 +11,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://psicoalquimia.github.io/">
   <meta property="og:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
-  <meta property="og:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
+  <meta property="og:description" content="Javier Gómez — Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación profunda en el cruce entre psicología, mística y consciencia. Sesiones online, procesos largos y trabajo con experiencias místicas. Autor de 'La Profecía del Eneagrama'.">
   <meta property="og:image" content="https://psicoalquimia.github.io/foto-perfil.jpg">
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://psicoalquimia.github.io/">
   <meta property="twitter:title" content="Javier Gómez - Psicoterapeuta • Explorador de la Consciencia">
-  <meta property="twitter:description" content="Acompaño procesos de transformación interior. Psicoterapia integrativa, trabajo con trauma y espiritualidad consciente.">
+  <meta property="twitter:description" content="Javier Gómez — Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación profunda en el cruce entre psicología, mística y consciencia. Sesiones online, procesos largos y trabajo con experiencias místicas. Autor de 'La Profecía del Eneagrama'.">
   <meta property="twitter:image" content="https://psicoalquimia.github.io/foto-perfil.jpg">
   <!-- Schema.org markup -->
   <script type="application/ld+json">
@@ -26,7 +26,7 @@
     "@type": "Person",
     "name": "Javier Gómez",
     "jobTitle": "Psicoterapeuta",
-    "description": "Psicoterapeuta y explorador de la consciencia especializado en transformación interior y trabajo informado en trauma",
+    "description": "Psicoterapeuta y explorador de la consciencia. Acompaño procesos de transformación profunda en el cruce entre psicología, mística y consciencia.",
     "url": "https://psicoalquimia.github.io/",
     "image": "https://psicoalquimia.github.io/foto-perfil.jpg",
     "sameAs": [
@@ -652,6 +652,12 @@
       border-radius: 50%;
       box-shadow: 0 0 0 2px rgba(139, 126, 106, 0.2);
     }
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
     /* =================================
        BUTTONS
        ================================= */
@@ -699,6 +705,13 @@
     }
     .cta-button:active {
       transform: translateY(0) scale(0.98);
+    }
+    .cta-button-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+    .cta-button-primary::before {
+      background: var(--color-primary-dark);
     }
     /* =================================
        SECTIONS
@@ -927,6 +940,20 @@
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
+    .libro-bridge {
+      max-width: 700px;
+      margin: 4rem auto 0;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(139, 126, 106, 0.2);
+      text-align: center;
+    }
+    .libro-bridge p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--color-text-light);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
     /* =================================
        SERVICIOS
        ================================= */
@@ -935,14 +962,16 @@
     }
     .servicios-intro {
       text-align: center;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--color-text-light);
       margin-bottom: 4.5rem;
-      font-style: italic;
-      line-height: 1.7;
-      max-width: 600px;
+      line-height: 1.8;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
+    }
+    .servicios-intro em {
+      font-style: italic;
     }
     .servicio-card:hover {
       transform: translateX(8px);
@@ -1010,6 +1039,16 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+    .servicio-nota {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--color-text-light);
+      margin: 1.5rem 0;
+      padding: 1rem 1.2rem;
+      background: rgba(139, 126, 106, 0.06);
+      border-radius: 8px;
+      border-left: 2px solid var(--color-accent);
     }
     .stripe-badge {
       display: inline-flex;
@@ -1086,9 +1125,28 @@
     .contacto p {
       font-size: 1.1rem;
       max-width: 700px;
-      margin: 0 auto 3rem;
+      margin: 0 auto 1.5rem;
       line-height: 1.9;
       color: var(--color-text-light);
+    }
+    .contacto-options {
+      max-width: 700px;
+      margin: 2rem auto;
+      text-align: left;
+    }
+    .contacto-options p {
+      text-align: left;
+      margin-bottom: 1.2rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(139, 126, 106, 0.3);
+    }
+    .contacto-options p strong {
+      color: var(--color-primary);
+    }
+    .contacto-closing {
+      margin-top: 2.5rem;
+      font-style: italic;
+      font-size: 1.05rem;
     }
     .social-links {
       display: flex;
@@ -1322,6 +1380,9 @@
       }
       .hero-bullets p::before {
         display: none;
+      }
+      .hero-cta-group {
+        justify-content: center;
       }
       .trust-badges {
         justify-content: center;
@@ -1573,7 +1634,8 @@ footer p, .footer-text, .footer-copyright {
   <!-- Sticky CTA Mobile -->
   <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-content">
-    <button class="sticky-cta-btn" onclick="openModal()" data-translate="sticky-cta">Agendar sesión</button>
+    <!-- TODO: actualizar URL al crear el servicio de llamada de orientación en Setmore -->
+    <a href="https://psicoalquimia.setmore.com/" target="_blank" rel="noopener noreferrer" class="sticky-cta-btn" data-translate="sticky-cta">Reservar llamada</a>
     <button class="sticky-cta-close" onclick="closeStickyCta()" aria-label="Cerrar CTA">&times;</button>
   </div>
 </div>
@@ -1583,13 +1645,19 @@ footer p, .footer-text, .footer-copyright {
       <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
       <h3 data-translate="modal-title">¿Qué tipo de acompañamiento buscas?</h3>
       <div class="modal-options">
-        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="modal-option">
-          <strong data-translate="modal-option1-title">Sesión Individual</strong>
-          <span data-translate="modal-option1-desc">75 minutos • 65€</span>
+        <!-- TODO: actualizar URL al crear el servicio de llamada de orientación en Setmore -->
+        <a href="https://psicoalquimia.setmore.com/" target="_blank" class="modal-option">
+          <strong data-translate="modal-option1-title">Llamada de orientación</strong>
+          <span data-translate="modal-option1-desc">25 minutos • Gratuita</span>
         </a>
-        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="modal-option">
-          <strong data-translate="modal-option2-title">Proceso Profundo</strong>
-          <span data-translate="modal-option2-desc">4 sesiones • 240€</span>
+        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="modal-option">
+          <strong data-translate="modal-option2-title">Sesión individual</strong>
+          <span data-translate="modal-option2-desc">75 minutos • 80€</span>
+        </a>
+        <!-- TODO: actualizar URL al crear el servicio del proceso de 3 meses en Setmore -->
+        <a href="https://psicoalquimia.setmore.com/" target="_blank" class="modal-option">
+          <strong data-translate="modal-option3-title">Proceso de transformación profunda</strong>
+          <span data-translate="modal-option3-desc">3 meses • 12 sesiones • 950€</span>
         </a>
       </div>
     </div>
@@ -1603,12 +1671,15 @@ footer p, .footer-text, .footer-copyright {
         </div>
         <div class="hero-content">
           <h1>Javier Gómez</h1>
-          <h2 data-translate="hero-subtitle">Psicoterapeuta • Explorador de la Consciencia</h2>
+          <h2 data-translate="hero-subtitle">Psicoterapeuta • Explorador de la consciencia</h2>
           <div class="hero-bullets">
-            <p data-translate="hero-bullet1">Acompaño procesos de transformación interior</p>
-            <p data-translate="hero-bullet2">Puente entre misticismo y transformación social</p>
+            <p data-translate="hero-bullet1">Acompaño procesos de transformación profunda en el cruce entre psicología, mística y consciencia.</p>
           </div>
-          <button class="cta-button" onclick="openModal()" data-translate="hero-cta">Explorar servicios</button>
+          <div class="hero-cta-group">
+            <a href="#sobre-mi" class="cta-button" data-translate="hero-cta1">Conocer mi trabajo</a>
+            <!-- TODO: actualizar URL al crear el servicio de llamada de orientación en Setmore -->
+            <a href="https://psicoalquimia.setmore.com/" target="_blank" rel="noopener noreferrer" class="cta-button cta-button-primary" data-translate="hero-cta2">Reservar llamada de orientación</a>
+          </div>
         </div>
       </div>
       <div class="hero-scroll-indicator">
@@ -1622,13 +1693,12 @@ footer p, .footer-text, .footer-copyright {
       <h2 data-translate="about-title">Sobre Mí</h2>
       <div class="sobre-mi-container">
         <div class="sobre-mi-content">
-          <p data-translate="about-p1">Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.</p>
-          <p data-translate="about-p2">Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.</p>
-          <p data-translate="about-p3">Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.</p>
-          <p data-translate="about-p4">Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.</p>
-          <p data-translate="about-p5">Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.</p>
-          <p data-translate="about-p6">También podría decir que soy un eterno estudiante de la meditación y del sufismo, y que encuentro en la escritura una forma profunda de exploración y expresión. Soy autor de 'La Profecía del Eneagrama', un libro que revela el eneagrama como un mapa sagrado hacia nuestra verdadera naturaleza espiritual</p>
-          <p data-translate="about-p7">Lo que hago está dirigido a quienes buscan no solo sanar heridas, sino recordarse a sí mism@s, despertar su presencia y vivir en coherencia con su corazón</p>
+          <p data-translate="about-p1">Acompaño procesos de transformación profunda. Mi trabajo se sitúa en un cruce poco habitado: el lugar donde la psicología contemporánea, la experiencia mística y el compromiso con lo colectivo dejan de ser territorios separados.</p>
+          <p data-translate="about-p2">No vengo de la psicología clínica convencional. Vengo de un camino más largo y menos lineal: ocho años en Colombia, donde me formé como terapeuta gestalt integrativo y donde aprendí, al mismo tiempo, de curanderas tradicionales, de guardianes de medicinas ancestrales, y del trabajo con comunidades que han sostenido formas de saber que Occidente todavía no termina de escuchar. Trabajé en programas de psicología profunda aplicada a contextos sociales, acompañé a personas en procesos de integración psicodélica, y descubrí que la sanación individual y la transformación colectiva no son dos cosas separadas.</p>
+          <p data-translate="about-p3">Estudié las disciplinas de la psicología contemporánea —trabajo informado en trauma, abordajes somáticos, terapia integrativa— pero las habito desde un lugar que es a la vez más antiguo y más nuevo. Más antiguo: la sabiduría contemplativa de las tradiciones que llevan milenios indagando qué somos —el sufismo, las prácticas indígenas, la mística cristiana, la meditación—. Más nuevo: la convicción de que esa indagación, hoy, no puede separarse de la pregunta por cómo vivimos juntos, qué construimos, qué heredamos.</p>
+          <p data-translate="about-p4">Mi trabajo no busca arreglarte ni explicarte. Busca acompañarte a recordar lo que ya sabes pero has perdido de vista bajo el ruido. No vengo a imponer un mapa, sino a sostener un espacio donde el tuyo pueda dibujarse.</p>
+          <p data-translate="about-p5">Soy también escritor. <em>La Profecía del Eneagrama</em> es mi primer libro: un ensayo contemplativo que recupera el eneagrama como mapa sagrado de despertar, lejos de su uso comercial como test de personalidad. Escribir y acompañar son, para mí, dos formas del mismo gesto: hacer espacio para que algo verdadero pueda decirse.</p>
+          <p data-translate="about-p6">Trabajo en remoto desde el sur de España. Acompaño en español y en inglés.</p>
         </div>
         <div class="sobre-mi-image">
           <div class="sobre-mi-image-rect" role="img" aria-label="Foto de Javier Gómez en sesión terapéutica"></div>
@@ -1687,86 +1757,106 @@ footer p, .footer-text, .footer-copyright {
         <span data-translate="book-available">✨ Disponible ahora ✨</span>
       </div>
      <div class="libro-cta" style="text-align: center; margin-top: 1rem;">
-  <a href="https://mybook.to/LaProfeciaDelEneagrama" id="bookLink" class="cta-button" target="_blank" rel="noopener noreferrer" data-translate="book-cta">Consigue tu ejemplar</a>
+  <a href="https://mybook.to/LaProfeciaDelEneagrama" id="bookLink" class="cta-button" target="_blank" rel="noopener noreferrer" data-translate="book-cta">Conseguir el libro</a>
 </div>
+      <div class="libro-bridge">
+        <p data-translate="book-bridge">Si el libro te encuentra en un momento de profunda transformación, también puedes acompañar su lectura con un proceso de trabajo conmigo. Lo que se abre en sus páginas a veces pide ser sostenido en presencia.</p>
+        <a href="#servicios" class="cta-button" data-translate="book-bridge-cta">Conocer el acompañamiento que ofrezco</a>
+      </div>
     </div>
   </div>
 </section>
     <div class="section-separator">· · ·</div>
     <!-- Servicios Section -->
     <section class="servicios" id="servicios">
-      <h2 data-translate="services-title">Cómo Trabajamos Juntos</h2>
-      <p class="servicios-intro" data-translate="services-intro">"El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos."</p>
+      <h2 data-translate="services-title">Cómo trabajamos juntos</h2>
+      <p class="servicios-intro" data-translate="services-intro">El acompañamiento que ofrezco no busca arreglarte. Busca sostenerte mientras lo que estaba pidiendo nacer en ti encuentra su forma.<br><br><em>Cada espacio que comparto está pensado para una etapa distinta del camino. No todos te servirán ahora; sí lo hará alguno.</em></p>
+
+      <!-- Servicio 1: Llamada de orientación -->
       <div class="servicio-card">
-        <h3 data-translate="service1-title">Sesión Individual de Acompañamiento Terapéutico</h3>
-        <p data-translate="service1-desc">Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas (psicodélicas, místicas, traumáticas), trabajo con patrones inconscientes y desarrollo de capacidades.</p>
-        <p data-translate="service1-for"><strong>Este espacio es para ti si:</strong></p>
+        <h3 data-translate="service1-title">Llamada de orientación</h3>
+        <p data-translate="service1-desc">Un espacio breve y gratuito para conocernos antes de comprometernos con un proceso. Si has llegado hasta aquí y resuenas con lo que lees, esta llamada es la puerta más sencilla para empezar.</p>
+        <p data-translate="service1-desc2">Hablaremos de lo que estás atravesando, de lo que buscas, y de si mi forma de acompañar puede servirte en este momento. No es una sesión terapéutica — es una conversación honesta para que decidas con información, no con fantasía.</p>
+        <div class="servicio-details">
+          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service1-format">Online (videollamada)</span><br>
+          <strong data-translate="service-duration">Duración:</strong> 25 <span data-translate="service-minutes">minutos</span><br>
+          <strong data-translate="service-investment">Inversión:</strong> <span data-translate="service1-price">Gratuita</span>
+        </div>
+        <!-- TODO: actualizar URL al crear el servicio de llamada de orientación en Setmore -->
+        <a href="https://psicoalquimia.setmore.com/" target="_blank" class="servicio-button" data-translate="service1-cta">Reservar llamada</a>
+      </div>
+
+      <!-- Servicio 2: Sesión individual -->
+      <div class="servicio-card">
+        <h3 data-translate="service2-title">Sesión individual de acompañamiento</h3>
+        <p data-translate="service2-desc">Espacio para personas que atraviesan momentos significativos y necesitan presencia, escucha profunda y orientación cuidadosa. Trabajo informado en trauma, integrando herramientas de gestalt, abordajes somáticos y diálogo con tradiciones contemplativas.</p>
+        <p data-translate="service2-for"><strong>Este espacio es para ti si atraviesas:</strong></p>
         <ul>
-          <li data-translate="service1-li1">Estás atravesando una crisis existencial o transición vital</li>
-          <li data-translate="service1-li2">Has tenido experiencias que necesitas integrar</li>
-          <li data-translate="service1-li3">Sientes que necesitas ayuda para transitar cualquiera que sea tu experiencia actual</li>
+          <li data-translate="service2-li1">Una crisis existencial o un umbral vital significativo</li>
+          <li data-translate="service2-li2">Un proceso de duelo, separación o ruptura con la vida que tenías</li>
+          <li data-translate="service2-li3">La necesidad de integrar una experiencia mística, psicodélica o profundamente transformadora</li>
+          <li data-translate="service2-li4">Un momento de reorientación vocacional o espiritual</li>
+          <li data-translate="service2-li5">El despertar de preguntas que tu vida anterior ya no puede contener</li>
         </ul>
         <div class="servicio-details">
-          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service-virtual">Virtual</span><br>
-          <strong data-translate="service-duration">Duración:</strong> 75 <span data-translate="service-minutes">minutos</span>
+          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service2-format">Online (videollamada)</span><br>
+          <strong data-translate="service-duration">Duración:</strong> 75 <span data-translate="service-minutes">minutos</span><br>
+          <strong data-translate="service-investment">Inversión:</strong> 80€
         </div>
-        <p class="servicio-precio">
-          <span data-translate="service-investment">Inversión:</span> 65€
-          <span class="stripe-badge">
-            <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
-            <span data-translate="stripe-badge">Pago seguro</span>
-          </span>
-        </p>
-        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button" data-translate="service1-cta">Agendar sesión</a>
+        <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button" data-translate="service2-cta">Reservar sesión</a>
       </div>
+
+      <!-- Servicio 3: Proceso de transformación profunda -->
       <div class="servicio-card">
-        <h3 data-translate="service2-title">Proceso de Acompañamiento Profundo (4 Sesiones)</h3>
-        <p data-translate="service2-desc">Acompañamiento continuado para procesos que requieren más tiempo y profundidad.</p>
-        <p data-translate="service2-for"><strong>Este proceso es para ti si:</strong></p>
+        <h3 data-translate="service3-title">Proceso de transformación profunda — 3 meses</h3>
+        <p data-translate="service3-desc">Para quienes saben que lo que están atravesando no se resuelve en una sesión. Un acompañamiento sostenido de tres meses, pensado para procesos de reorientación vital profunda, integración de experiencias significativas, o trabajo con momentos de umbral importantes.</p>
+        <p data-translate="service3-includes"><strong>El proceso incluye:</strong></p>
         <ul>
-          <li data-translate="service2-li1">Estás comprometid@ con tu proceso terapéutico y sientes que una sesión no es suficiente</li>
-          <li data-translate="service2-li2">Necesitas acompañamiento continuado en una transición vital</li>
-          <li data-translate="service2-li3">Buscas transformación real, no solo alivio sintomático</li>
+          <li data-translate="service3-include1">12 sesiones individuales de 75 minutos (frecuencia quincenal o semanal según necesidad)</li>
+          <li data-translate="service3-include2">Dos textos personalizados a mitad y final del proceso, como espejo y mapa de lo trabajado</li>
+          <li data-translate="service3-include3">Material de lectura y prácticas contemplativas seleccionadas para tu proceso</li>
+          <li data-translate="service3-include4">Un encuentro de cierre dedicado a integrar lo recorrido</li>
+        </ul>
+        <p data-translate="service3-for"><strong>Este proceso es para ti si:</strong></p>
+        <ul>
+          <li data-translate="service3-li1">Sientes que estás atravesando un cambio estructural —no un episodio puntual</li>
+          <li data-translate="service3-li2">Buscas un acompañamiento serio, sostenido y comprometido</li>
+          <li data-translate="service3-li3">Necesitas espacio para una transformación que no admite atajos</li>
         </ul>
         <div class="servicio-details">
-          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service-virtual">Virtual</span><br>
-          <strong data-translate="service-duration">Duración:</strong> 4 <span data-translate="service-sessions">sesiones</span> <span data-translate="service-of">de</span> 75 <span data-translate="service-minutes">minutos</span>
+          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service3-format">Online</span><br>
+          <strong data-translate="service-duration">Duración:</strong> <span data-translate="service3-length">3 meses (12 sesiones)</span><br>
+          <strong data-translate="service-investment">Inversión:</strong> <span data-translate="service3-price">950€ (pago único) o 350€/mes durante 3 meses</span>
         </div>
-        <p class="servicio-precio">
-          <span data-translate="service-investment">Inversión:</span> 240€ (<span data-translate="service-save">ahorro de</span> 20€)
-          <span class="stripe-badge">
-            <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
-            <span data-translate="stripe-badge">Pago seguro</span>
-          </span>
-        </p>
-        <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button" data-translate="service2-cta">Agendar proceso</a>
-      </div>
-      <div class="servicio-card">
-        <h3 data-translate="service3-title">Círculo Mensual "La Práctica"</h3>
-        <p data-translate="service3-desc">Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.</p>
-        <div class="servicio-details">
-          <strong data-translate="service-modality">Modalidad:</strong> <span data-translate="service-virtual">Virtual</span><br>
-          <strong data-translate="service-frequency">Frecuencia:</strong> <span data-translate="service3-frequency">Por confirmar</span><br>
-          <strong data-translate="service-group">Grupo:</strong> <span data-translate="service3-group">Máximo 10 personas</span>
-        </div>
-        <p class="servicio-precio">
-          <span data-translate="service-investment">Inversión:</span> 10€ <span data-translate="service3-per">por sesión</span>
-          <span class="stripe-badge">
-            <svg viewBox="0 0 60 25" fill="none"><path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#635BFF"/></svg>
-            <span data-translate="stripe-badge">Pago seguro</span>
-          </span>
-        </p>
-        <a href="https://psicoalquimia.setmore.com/classes/f446a4e2-9355-4d2a-b5b0-04f35efa7d65" target="_blank" class="servicio-button" data-translate="service3-cta">Unirme al círculo</a>
+        <p class="servicio-nota" data-translate="service3-note">Plazas limitadas. Antes de iniciar el proceso confirmaremos su pertinencia en la llamada de orientación.</p>
+        <!-- TODO: actualizar URL al crear el servicio del proceso de 3 meses en Setmore -->
+        <a href="https://psicoalquimia.setmore.com/" target="_blank" class="servicio-button" data-translate="service3-cta">Solicitar proceso</a>
       </div>
     </section>
     <div class="section-separator">· · ·</div>
     <!-- Contacto Section -->
     <section class="contacto" id="contacto">
-      <h2 data-translate="contact-title">Conecta Conmigo</h2>
-      <p data-translate="contact-p1">Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.</p>
-      <p data-translate="contact-p2">También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.</p>
+      <h2 data-translate="contact-title">Conecta conmigo</h2>
+      <p data-translate="contact-p1">Si lo que has leído resuena contigo, hay tres formas de empezar:</p>
+      
+      <div class="contacto-options">
+        <p data-translate="contact-option1">— <strong>Reservar una llamada de orientación gratuita</strong> para que podamos conocernos antes de cualquier compromiso.</p>
+        <p data-translate="contact-option2">— <strong>Escribirme por email</strong> si prefieres una primera conversación escrita.</p>
+        <p data-translate="contact-option3">— <strong>Seguirme en redes</strong> si quieres habitar mi mundo un tiempo antes de dar otro paso.</p>
+      </div>
+      
+      <p class="contacto-closing" data-translate="contact-closing">Todas las formas son legítimas. Cada quien entra por la puerta que necesita.</p>
       
       <div class="social-links">
+        <!-- TODO: actualizar URL al crear el servicio de llamada de orientación en Setmore -->
+        <a href="https://psicoalquimia.setmore.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Reservar llamada de orientación">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.58l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/>
+            </svg>
+          </div>
+          <span class="social-label" data-translate="social-call">Llamada</span>
+        </a>
         <a href="mailto:psicoalquimia.co@gmail.com" class="social-link" aria-label="Enviar email">
           <div class="social-icon">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1816,24 +1906,25 @@ footer p, .footer-text, .footer-copyright {
         'nav-book': 'Libro',
         'nav-services': 'Servicios',
         'nav-contact': 'Contacto',
-        'sticky-cta': 'Agendar sesión',
+        'sticky-cta': 'Reservar llamada',
         'modal-title': '¿Qué tipo de acompañamiento buscas?',
-        'modal-option1-title': 'Sesión Individual',
-        'modal-option1-desc': '75 minutos • 65€',
-        'modal-option2-title': 'Proceso Profundo',
-        'modal-option2-desc': '4 sesiones • 240€',
-        'hero-subtitle': 'Psicoterapeuta • Explorador de la Consciencia',
-        'hero-bullet1': 'Acompaño procesos de transformación interior',
-        'hero-bullet2': 'Puente entre misticismo y transformación social',
-        'hero-cta': 'Explorar servicios',
+        'modal-option1-title': 'Llamada de orientación',
+        'modal-option1-desc': '25 minutos • Gratuita',
+        'modal-option2-title': 'Sesión individual',
+        'modal-option2-desc': '75 minutos • 80€',
+        'modal-option3-title': 'Proceso de transformación profunda',
+        'modal-option3-desc': '3 meses • 12 sesiones • 950€',
+        'hero-subtitle': 'Psicoterapeuta • Explorador de la consciencia',
+        'hero-bullet1': 'Acompaño procesos de transformación profunda en el cruce entre psicología, mística y consciencia.',
+        'hero-cta1': 'Conocer mi trabajo',
+        'hero-cta2': 'Reservar llamada de orientación',
         'about-title': 'Sobre Mí',
-        'about-p1': 'Acompaño procesos de autoconocimiento y transformación interior desde un enfoque integrativo que une psicología, espiritualidad y cuerpo.',
-        'about-p2': 'Mi trabajo nace del encuentro: no busco imponerte conocimiento, sino acompañarte a recordar el tuyo. No se trata de autoridad, sino de presencia compartida, escucha y descubrimiento mutuo.',
-        'about-p3': 'Soy psicólogo, terapeuta y psiconauta. Durante siete años viví en Colombia, donde me formé en terapia gestalt integrativa, trabajo informado en trauma, abordajes somáticos y otras técnicas y herramientas, mientras aprendía de curanderas tradicionales y guardianes de las medicinas ancestrales. Ahora vivo viajando, lo que me permite seguir aprendiendo constantemente y trabajar de manera virtual desde cualquier lugar del mundo, acompañando procesos sin fronteras.',
-        'about-p4': 'Integro el rigor de la psicología contemporánea con la sabiduría de las tradiciones de sanación milenarias, acompañando a personas en procesos de transformación profunda, crisis existenciales y despertar espiritual.',
-        'about-p5': 'Creo que la sanación individual es inseparable de la transformación colectiva. Practico una espiritualidad consciente y comprometida, que no huye del mundo, sino que lo escucha, lo cuestiona y busca regenerar la trama viva de lo humano y lo sagrado.',
-        'about-p6': 'También podría decir que soy un eterno estudiante de la meditación y del sufismo, y que encuentro en la escritura una forma profunda de exploración y expresión. Soy autor de \'La Profecía del Eneagrama\', un libro que revela el eneagrama como un mapa sagrado hacia nuestra verdadera naturaleza espiritual',
-        'about-p7': 'Lo que hago está dirigido a quienes buscan no solo sanar heridas, sino recordarse a sí mism@s, despertar su presencia y vivir en coherencia con su corazón',
+        'about-p1': 'Acompaño procesos de transformación profunda. Mi trabajo se sitúa en un cruce poco habitado: el lugar donde la psicología contemporánea, la experiencia mística y el compromiso con lo colectivo dejan de ser territorios separados.',
+        'about-p2': 'No vengo de la psicología clínica convencional. Vengo de un camino más largo y menos lineal: ocho años en Colombia, donde me formé como terapeuta gestalt integrativo y donde aprendí, al mismo tiempo, de curanderas tradicionales, de guardianes de medicinas ancestrales, y del trabajo con comunidades que han sostenido formas de saber que Occidente todavía no termina de escuchar. Trabajé en programas de psicología profunda aplicada a contextos sociales, acompañé a personas en procesos de integración psicodélica, y descubrí que la sanación individual y la transformación colectiva no son dos cosas separadas.',
+        'about-p3': 'Estudié las disciplinas de la psicología contemporánea —trabajo informado en trauma, abordajes somáticos, terapia integrativa— pero las habito desde un lugar que es a la vez más antiguo y más nuevo. Más antiguo: la sabiduría contemplativa de las tradiciones que llevan milenios indagando qué somos —el sufismo, las prácticas indígenas, la mística cristiana, la meditación—. Más nuevo: la convicción de que esa indagación, hoy, no puede separarse de la pregunta por cómo vivimos juntos, qué construimos, qué heredamos.',
+        'about-p4': 'Mi trabajo no busca arreglarte ni explicarte. Busca acompañarte a recordar lo que ya sabes pero has perdido de vista bajo el ruido. No vengo a imponer un mapa, sino a sostener un espacio donde el tuyo pueda dibujarse.',
+        'about-p5': 'Soy también escritor. <em>La Profecía del Eneagrama</em> es mi primer libro: un ensayo contemplativo que recupera el eneagrama como mapa sagrado de despertar, lejos de su uso comercial como test de personalidad. Escribir y acompañar son, para mí, dos formas del mismo gesto: hacer espacio para que algo verdadero pueda decirse.',
+        'about-p6': 'Trabajo en remoto desde el sur de España. Acompaño en español y en inglés.',
         'about-quote': 'Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.',
         'book-title': 'Mi Libro',
         'book-intro': '<strong>¿Y si el eneagrama nunca fue lo que creíste que era?</strong>',
@@ -1862,43 +1953,54 @@ footer p, .footer-text, .footer-copyright {
         'book-testimonial': '<em>"La Profecía del Eneagrama es una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método."</em>',
         'book-closing': 'Es un mapa hacia la totalidad. Una invitación a recordar. Un llamado a volver a ser lo que somos.<br><strong>Para los que aún pueden oír, en medio del ruido, el murmullo de lo sagrado.</strong>',
         'book-available': '✨ Disponible ahora ✨',
-        'book-cta': 'Consigue tu ejemplar',
-        'services-title': 'Cómo Trabajamos Juntos',
-        'services-intro': '"El acompañamiento es un espacio de verdad compartida.<br>No para ser arreglados, sino para recordar lo que somos."',
-        'service1-title': 'Sesión Individual de Acompañamiento Terapéutico',
-        'service1-desc': 'Espacio de 75 minutos informado en trauma para procesos de transformación interior profunda, crisis existenciales, integración de experiencias significativas (psicodélicas, místicas, traumáticas), trabajo con patrones inconscientes y desarrollo de capacidades.',
-        'service1-for': '<strong>Este espacio es para ti si:</strong>',
-        'service1-li1': 'Estás atravesando una crisis existencial o transición vital',
-        'service1-li2': 'Has tenido experiencias que necesitas integrar',
-        'service1-li3': 'Sientes que necesitas ayuda para transitar cualquiera que sea tu experiencia actual',
+        'book-cta': 'Conseguir el libro',
+        'book-bridge': 'Si el libro te encuentra en un momento de profunda transformación, también puedes acompañar su lectura con un proceso de trabajo conmigo. Lo que se abre en sus páginas a veces pide ser sostenido en presencia.',
+        'book-bridge-cta': 'Conocer el acompañamiento que ofrezco',
+        'services-title': 'Cómo trabajamos juntos',
+        'services-intro': 'El acompañamiento que ofrezco no busca arreglarte. Busca sostenerte mientras lo que estaba pidiendo nacer en ti encuentra su forma.<br><br><em>Cada espacio que comparto está pensado para una etapa distinta del camino. No todos te servirán ahora; sí lo hará alguno.</em>',
+        'service1-title': 'Llamada de orientación',
+        'service1-desc': 'Un espacio breve y gratuito para conocernos antes de comprometernos con un proceso. Si has llegado hasta aquí y resuenas con lo que lees, esta llamada es la puerta más sencilla para empezar.',
+        'service1-desc2': 'Hablaremos de lo que estás atravesando, de lo que buscas, y de si mi forma de acompañar puede servirte en este momento. No es una sesión terapéutica — es una conversación honesta para que decidas con información, no con fantasía.',
+        'service1-format': 'Online (videollamada)',
+        'service1-price': 'Gratuita',
+        'service1-cta': 'Reservar llamada',
         'service-modality': 'Modalidad:',
-        'service-virtual': 'Virtual',
         'service-duration': 'Duración:',
         'service-minutes': 'minutos',
         'service-investment': 'Inversión:',
-        'stripe-badge': 'Pago seguro',
-        'service1-cta': 'Agendar sesión',
-        'service2-title': 'Proceso de Acompañamiento Profundo (4 Sesiones)',
-        'service2-desc': 'Acompañamiento continuado para procesos que requieren más tiempo y profundidad.',
-        'service2-for': '<strong>Este proceso es para ti si:</strong>',
-        'service2-li1': 'Estás comprometid@ con tu proceso terapéutico y sientes que una sesión no es suficiente',
-        'service2-li2': 'Necesitas acompañamiento continuado en una transición vital',
-        'service2-li3': 'Buscas transformación real, no solo alivio sintomático',
-        'service-sessions': 'sesiones',
-        'service-of': 'de',
-        'service-save': 'ahorro de',
-        'service2-cta': 'Agendar proceso',
-        'service3-title': 'Círculo Mensual "La Práctica"',
-        'service3-desc': 'Encuentro grupal online una vez al mes para quienes buscan comunidad en el camino de transformación.',
-        'service-frequency': 'Frecuencia:',
-        'service3-frequency': 'Por confirmar',
-        'service-group': 'Grupo:',
-        'service3-group': 'Máximo 10 personas',
-        'service3-per': 'por sesión',
-        'service3-cta': 'Unirme al círculo',
-        'contact-title': 'Conecta Conmigo',
-        'contact-p1': 'Si resuenas con mi trabajo y sientes el llamado a trabajar juntos, escríbeme.',
-        'contact-p2': 'También puedes seguirme en redes para contenido sobre consciencia, transformación y espiritualidad verdadera.',
+        'service2-title': 'Sesión individual de acompañamiento',
+        'service2-desc': 'Espacio para personas que atraviesan momentos significativos y necesitan presencia, escucha profunda y orientación cuidadosa. Trabajo informado en trauma, integrando herramientas de gestalt, abordajes somáticos y diálogo con tradiciones contemplativas.',
+        'service2-for': '<strong>Este espacio es para ti si atraviesas:</strong>',
+        'service2-li1': 'Una crisis existencial o un umbral vital significativo',
+        'service2-li2': 'Un proceso de duelo, separación o ruptura con la vida que tenías',
+        'service2-li3': 'La necesidad de integrar una experiencia mística, psicodélica o profundamente transformadora',
+        'service2-li4': 'Un momento de reorientación vocacional o espiritual',
+        'service2-li5': 'El despertar de preguntas que tu vida anterior ya no puede contener',
+        'service2-format': 'Online (videollamada)',
+        'service2-cta': 'Reservar sesión',
+        'service3-title': 'Proceso de transformación profunda — 3 meses',
+        'service3-desc': 'Para quienes saben que lo que están atravesando no se resuelve en una sesión. Un acompañamiento sostenido de tres meses, pensado para procesos de reorientación vital profunda, integración de experiencias significativas, o trabajo con momentos de umbral importantes.',
+        'service3-includes': '<strong>El proceso incluye:</strong>',
+        'service3-include1': '12 sesiones individuales de 75 minutos (frecuencia quincenal o semanal según necesidad)',
+        'service3-include2': 'Dos textos personalizados a mitad y final del proceso, como espejo y mapa de lo trabajado',
+        'service3-include3': 'Material de lectura y prácticas contemplativas seleccionadas para tu proceso',
+        'service3-include4': 'Un encuentro de cierre dedicado a integrar lo recorrido',
+        'service3-for': '<strong>Este proceso es para ti si:</strong>',
+        'service3-li1': 'Sientes que estás atravesando un cambio estructural —no un episodio puntual',
+        'service3-li2': 'Buscas un acompañamiento serio, sostenido y comprometido',
+        'service3-li3': 'Necesitas espacio para una transformación que no admite atajos',
+        'service3-format': 'Online',
+        'service3-length': '3 meses (12 sesiones)',
+        'service3-price': '950€ (pago único) o 350€/mes durante 3 meses',
+        'service3-note': 'Plazas limitadas. Antes de iniciar el proceso confirmaremos su pertinencia en la llamada de orientación.',
+        'service3-cta': 'Solicitar proceso',
+        'contact-title': 'Conecta conmigo',
+        'contact-p1': 'Si lo que has leído resuena contigo, hay tres formas de empezar:',
+        'contact-option1': '— <strong>Reservar una llamada de orientación gratuita</strong> para que podamos conocernos antes de cualquier compromiso.',
+        'contact-option2': '— <strong>Escribirme por email</strong> si prefieres una primera conversación escrita.',
+        'contact-option3': '— <strong>Seguirme en redes</strong> si quieres habitar mi mundo un tiempo antes de dar otro paso.',
+        'contact-closing': 'Todas las formas son legítimas. Cada quien entra por la puerta que necesita.',
+        'social-call': 'Llamada',
         'footer-text': '© 2025 Javier Gómez • Creado con presencia y cuidado ♥︎',
         'footer-privacy': 'Política de Privacidad y Cookies'
       },
@@ -1914,24 +2016,25 @@ footer p, .footer-text, .footer-copyright {
         'nav-book': 'Book',
         'nav-services': 'Services',
         'nav-contact': 'Contact',
-        'sticky-cta': 'Book a session',
+        'sticky-cta': 'Book a call',
         'modal-title': 'What type of support are you seeking?',
-        'modal-option1-title': 'Individual Session',
-        'modal-option1-desc': '75 minutes • €65',
-        'modal-option2-title': 'In-depth Journey',
-        'modal-option2-desc': '4 sessions • €240',
+        'modal-option1-title': 'Orientation Call',
+        'modal-option1-desc': '25 minutes • Free',
+        'modal-option2-title': 'Individual Session',
+        'modal-option2-desc': '75 minutes • €80',
+        'modal-option3-title': 'Deep Transformation Process',
+        'modal-option3-desc': '3 months • 12 sessions • €950',
         'hero-subtitle': 'Psychotherapist • Consciousness Explorer',
-        'hero-bullet1': 'I accompany inner transformation processes',
-        'hero-bullet2': 'Bridge between mysticism and social transformation',
-        'hero-cta': 'Explore services',
+        'hero-bullet1': 'I accompany processes of deep transformation at the crossroads of psychology, mysticism and consciousness.',
+        'hero-cta1': 'Learn about my work',
+        'hero-cta2': 'Book an orientation call',
         'about-title': 'About Me',
-        'about-p1': 'I accompany self-knowledge and inner transformation processes from an integrative approach that unites psychology, spirituality, and body.',
-        'about-p2': 'My work is born from encounter: I don\'t seek to impose knowledge, but to accompany you in remembering your own. It\'s not about authority, but about shared presence, listening, and mutual discovery.',
-        'about-p3': 'I am a psychologist, therapist, and psychonaut. For seven years I lived in Colombia, where I trained in integrative gestalt therapy, trauma-informed work, somatic approaches and other techniques and tools, while learning from traditional healers and guardians of ancestral medicines. Now I live traveling, which allows me to continue learning constantly and work virtually from anywhere in the world, accompanying borderless processes.',
-        'about-p4': 'I integrate the rigor of contemporary psychology with the wisdom of ancient healing traditions, accompanying people in deep transformation processes, existential crises, and spiritual awakening.',
-        'about-p5': 'I believe that individual healing is inseparable from collective transformation. I practice a conscious and committed spirituality that doesn\'t flee from the world, but listens to it, questions it, and seeks to regenerate the living fabric of the human and the sacred.',
-        'about-p6': 'I could also say that I am an eternal student of meditation and Sufism, and that I find in writing a profound form of exploration and expression. I am the author of \'The Enneagram Prophecy\', a book that reveals the enneagram as a sacred map to our true spiritual nature',
-        'about-p7': 'What I do is aimed at those seeking not only to heal wounds, but to remember themselves, awaken their presence, and live in coherence with their heart',
+        'about-p1': 'I accompany processes of deep transformation. My work stands at a rarely inhabited crossroads: the place where contemporary psychology, mystical experience, and a commitment to the collective stop being separate territories.',
+        'about-p2': 'I don\'t come from conventional clinical psychology. I come from a longer and less linear path: eight years in Colombia, where I trained as an integrative Gestalt therapist and where, at the same time, I learned from traditional healers, keepers of ancestral medicines, and from working with communities that have sustained ways of knowing the West has not yet learned to listen to. I worked in programs of depth psychology applied to social contexts, accompanied people through processes of psychedelic integration, and discovered that individual healing and collective transformation are not two separate things.',
+        'about-p3': 'I studied the disciplines of contemporary psychology —trauma-informed work, somatic approaches, integrative therapy— but I inhabit them from a place that is both older and newer. Older: the contemplative wisdom of traditions that have spent millennia inquiring into what we are — Sufism, indigenous practices, Christian mysticism, meditation. Newer: the conviction that today this inquiry cannot be separated from the question of how we live together, what we build, what we inherit.',
+        'about-p4': 'My work does not try to fix you or explain you. It seeks to accompany you in remembering what you already know but have lost sight of beneath the noise. I don\'t come to impose a map — I come to hold a space where your own map can be drawn.',
+        'about-p5': 'I am also a writer. <em>The Enneagram Prophecy</em> is my first book: a contemplative essay that recovers the Enneagram as a sacred map of awakening, far from its commercial use as a personality test. For me, writing and accompanying are two forms of the same gesture: making space for something true to be said.',
+        'about-p6': 'I work remotely from southern Spain. I accompany in Spanish and in English.',
         'about-quote': 'I believe in <strong>human, integral, and compassionate</strong> therapy, where each person can <strong>reconnect with their truth, honor their story, and live closer to themselves</strong>.',
         'book-title': 'My Book',
         'book-intro': '<strong>What if the enneagram was never what you thought it was?</strong>',
@@ -1960,43 +2063,54 @@ footer p, .footer-text, .footer-copyright {
         'book-testimonial': '<em>"The Enneagram Prophecy is a profound spiritual work that questions power structures while embracing tenderness as method."</em>',
         'book-closing': 'It is a map toward wholeness. An invitation to remember. A call to return to being what we are.<br><strong>For those who can still hear, amid the noise, the murmur of the sacred.</strong>',
         'book-available': '✨ Available now ✨',
-        'book-cta': 'Get your copy',
-        'services-title': 'How We Work Together',
-        'services-intro': '"Accompaniment is a space of shared truth.<br>Not to be fixed, but to remember what we are."',
-        'service1-title': 'Individual Therapeutic Accompaniment Session',
-        'service1-desc': '75-minute trauma-informed space for deep inner transformation processes, existential crises, integration of significant experiences (psychedelic, mystical, traumatic), working with unconscious patterns and capacity development.',
-        'service1-for': '<strong>This space is for you if:</strong>',
-        'service1-li1': 'You are going through an existential crisis or life transition',
-        'service1-li2': 'You have had experiences you need to integrate',
-        'service1-li3': 'You feel you need help navigating whatever your current experience is',
-        'service-modality': 'Modality:',
-        'service-virtual': 'Virtual',
+        'book-cta': 'Get the book',
+        'book-bridge': 'If the book finds you in a moment of deep transformation, you can also accompany its reading with a process of work with me. What opens in its pages sometimes asks to be held in presence.',
+        'book-bridge-cta': 'Learn about my accompaniment',
+        'services-title': 'How we work together',
+        'services-intro': 'The accompaniment I offer does not try to fix you. It seeks to hold you while what was asking to be born in you finds its form.<br><br><em>Each space I offer is meant for a different stage of the path. Not all of them will serve you right now; one of them will.</em>',
+        'service1-title': 'Orientation Call',
+        'service1-desc': 'A brief and free space to meet before committing to a process. If you\'ve made it this far and resonate with what you read, this call is the simplest door to begin.',
+        'service1-desc2': 'We\'ll talk about what you\'re going through, what you\'re looking for, and whether my way of accompanying can serve you at this moment. It\'s not a therapy session — it\'s an honest conversation so you can decide with information, not with fantasy.',
+        'service1-format': 'Online (video call)',
+        'service1-price': 'Free',
+        'service1-cta': 'Book a call',
+        'service-modality': 'Format:',
         'service-duration': 'Duration:',
         'service-minutes': 'minutes',
         'service-investment': 'Investment:',
-        'stripe-badge': 'Secure payment',
-        'service1-cta': 'Book session',
-        'service2-title': 'In-depth Journey (4 Sessions)',
-        'service2-desc': 'Continued accompaniment for processes requiring more time and depth.',
-        'service2-for': '<strong>This process is for you if:</strong>',
-        'service2-li1': 'You are committed to your therapeutic process and feel one session isn\'t enough',
-        'service2-li2': 'You need continued accompaniment during a life transition',
-        'service2-li3': 'You seek real transformation, not just symptomatic relief',
-        'service-sessions': 'sessions',
-        'service-of': 'of',
-        'service-save': '€20 savings',
-        'service2-cta': 'Book journey',
-        'service3-title': 'Monthly Circle "The Practice"',
-        'service3-desc': 'Online group meeting once a month for those seeking community on the transformation path.',
-        'service-frequency': 'Frequency:',
-        'service3-frequency': 'To be confirmed',
-        'service-group': 'Group:',
-        'service3-group': 'Maximum 10 people',
-        'service3-per': 'per session',
-        'service3-cta': 'Join the circle',
-        'contact-title': 'Connect With Me',
-        'contact-p1': 'If you resonate with my work and feel the call to work together, write to me.',
-        'contact-p2': 'You can also follow me on social media for content about consciousness, transformation, and true spirituality.',
+        'service2-title': 'Individual Accompaniment Session',
+        'service2-desc': 'A space for people going through significant moments who need presence, deep listening, and careful guidance. Trauma-informed work, integrating Gestalt tools, somatic approaches, and dialogue with contemplative traditions.',
+        'service2-for': '<strong>This space is for you if you\'re going through:</strong>',
+        'service2-li1': 'An existential crisis or a significant life threshold',
+        'service2-li2': 'A process of grief, separation, or rupture with the life you had',
+        'service2-li3': 'The need to integrate a mystical, psychedelic, or deeply transformative experience',
+        'service2-li4': 'A moment of vocational or spiritual reorientation',
+        'service2-li5': 'The awakening of questions your previous life can no longer contain',
+        'service2-format': 'Online (video call)',
+        'service2-cta': 'Book session',
+        'service3-title': 'Deep Transformation Process — 3 months',
+        'service3-desc': 'For those who know that what they are going through cannot be resolved in a single session. A sustained three-month accompaniment, designed for processes of deep life reorientation, integration of significant experiences, or work with important thresholds.',
+        'service3-includes': '<strong>The process includes:</strong>',
+        'service3-include1': '12 individual sessions of 75 minutes (biweekly or weekly frequency depending on need)',
+        'service3-include2': 'Two personalized written reflections at the midpoint and end of the process, as a mirror and map of the work',
+        'service3-include3': 'Selected reading material and contemplative practices tailored to your process',
+        'service3-include4': 'A closing meeting dedicated to integrating the path traveled',
+        'service3-for': '<strong>This process is for you if:</strong>',
+        'service3-li1': 'You feel you are going through a structural change — not a passing episode',
+        'service3-li2': 'You\'re looking for serious, sustained, committed accompaniment',
+        'service3-li3': 'You need space for a transformation that admits no shortcuts',
+        'service3-format': 'Online',
+        'service3-length': '3 months (12 sessions)',
+        'service3-price': '€950 (single payment) or €350/month over 3 months',
+        'service3-note': 'Limited spaces. Before starting the process, we will confirm its relevance in the orientation call.',
+        'service3-cta': 'Request process',
+        'contact-title': 'Get in touch',
+        'contact-p1': 'If what you\'ve read resonates with you, there are three ways to begin:',
+        'contact-option1': '— <strong>Book a free orientation call</strong> so we can meet before any commitment.',
+        'contact-option2': '— <strong>Write to me by email</strong> if you prefer to start with a written conversation.',
+        'contact-option3': '— <strong>Follow me on social media</strong> if you want to inhabit my world for a while before taking another step.',
+        'contact-closing': 'All ways are legitimate. Each person enters through the door they need.',
+        'social-call': 'Call',
         'footer-text': '© 2025 Javier Gómez • Created with presence and care ♥︎',
         'footer-privacy': 'Privacy and Cookie Policy'
       }
