@@ -374,24 +374,37 @@
     .nav-fixed a:hover { color: var(--color-accent); }
     .nav-fixed a.active { color: var(--color-accent); }
 
-    @media (max-width: 768px) {
-      .nav-fixed {
-        padding: 0.7rem 0.8rem;
-        gap: 0;
-      }
-      .nav-row {
-        gap: 0.8rem;
-        flex-wrap: nowrap;
-        width: 100%;
-        justify-content: space-around;
-      }
-      .nav-fixed a {
-        font-size: 0.68rem;
-        letter-spacing: 0.05em;
-        padding: 0.2rem 0;
-        white-space: nowrap;
-      }
-    }
+  @media (max-width: 768px) {
+  .nav-fixed {
+    padding: 0.7rem 5.5rem 0.7rem 0.8rem;
+    gap: 0;
+  }
+  .nav-row {
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .nav-fixed a {
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-fixed {
+    padding-right: 5rem;
+  }
+  .nav-fixed a {
+    font-size: 0.6rem;
+    letter-spacing: 0.03em;
+  }
+  .nav-row {
+    gap: 0.45rem;
+  }
+}
 
     /* =================================
        STICKY CTA (Mobile)
