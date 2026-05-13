@@ -1,1041 +1,1344 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="La Profecía del Eneagrama - Un viaje iniciático hacia el Eneagrama como mapa sagrado de despertar espiritual">
-    <title>La Profecía del Eneagrama | Javier Gómez</title>
-    <style>
-        :root {
-            --color-bg: #f8f6f2;
-            --color-surface: #ffffff;
-            --color-card: #fafaf8;
-            --color-text: #2d3748;
-            --color-text-secondary: #4a5568;
-            --color-primary: #6B5B4D;
-            --color-primary-hover: #5a4a3e;
-            --color-secondary: #8B7355;
-            --color-secondary-hover: #735f45;
-            --color-accent: #4A5D5A;
-            --color-accent-hover: #3a4a47;
-            --color-border: rgba(107, 91, 77, 0.15);
-            --font-serif: 'EB Garamond', 'Crimson Text', 'Garamond', 'Georgia', 'Times New Roman', serif;
-            --font-display: 'EB Garamond', 'Garamond', 'Georgia', serif;
-            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --shadow-sm: 0 2px 8px rgba(107, 91, 77, 0.08);
-            --shadow-md: 0 4px 16px rgba(107, 91, 77, 0.12);
-            --shadow-lg: 0 8px 24px rgba(107, 91, 77, 0.16);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Language Selector Modal */
-        .language-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(61, 50, 38, 0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-            animation: fadeInModal 0.5s ease-out;
-        }
-
-        .language-modal.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        @keyframes fadeInModal {
-            from {
-                opacity: 0;
-                backdrop-filter: blur(0px);
-            }
-            to {
-                opacity: 1;
-                backdrop-filter: blur(4px);
-            }
-        }
-
-        .language-selector {
-            background: var(--color-surface);
-            padding: 3rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .language-selector h2 {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--color-text);
-        }
-
-        .language-selector p {
-            color: var(--color-text-secondary);
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .language-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-direction: column;
-        }
-
-        .lang-btn {
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            border: 2px solid var(--color-primary);
-            background: transparent;
-            color: var(--color-text);
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: var(--font-sans);
-            font-weight: 500;
-        }
-
-        .lang-btn:hover {
-            background: var(--color-primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(107, 91, 77, 0.25);
-        }
-
-        .lang-btn:active {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(107, 91, 77, 0.2);
-        }
-
-        /* Header */
-        header {
-            background: var(--color-surface);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--color-border);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Garamond', Georgia, serif;
-            color: var(--color-text);
-            letter-spacing: 0.3px;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.3;
-        }
-
-        .logo-name {
-            font-family: 'Garamond', Georgia, serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .logo-tagline {
-            font-size: 0.7rem;
-            color: var(--color-text-secondary);
-            font-weight: 300;
-            margin-top: 2px;
-        }
-
-        .lang-switch {
-            padding: 0.6rem 1.2rem;
-            background: transparent;
-            border: 1.5px solid var(--color-primary);
-            color: var(--color-text);
-            cursor: pointer;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-family: var(--font-sans);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
-        }
-
-        .lang-switch:hover {
-            background: var(--color-primary);
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(107, 91, 77, 0.2);
-        }
-
-        /* Hero Section */
-        .hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            color: var(--color-text);
-            font-weight: 400;
-            letter-spacing: 0.01em;
-        }
-
-        .hero .subtitle {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            margin-bottom: 2rem;
-            font-style: italic;
-            font-family: var(--font-display);
-        }
-
-        .book-cover {
-            max-width: 300px;
-            margin: 2rem auto 3rem auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-        }
-
-        .book-cover img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-
-        /* CTA Buttons */
-        .cta-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 400px;
-            margin: 2rem auto;
-        }
-
-        .cta-btn {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            font-weight: 600;
-            font-family: var(--font-sans);
-        }
-
-        .cta-primary {
-            background: var(--color-primary);
-            color: white;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: breathe 3s ease-in-out infinite;
-        }
-
-        @keyframes breathe {
-            0%, 100% { box-shadow: 0 4px 12px rgba(107, 91, 77, 0.3); }
-            50% { box-shadow: 0 6px 20px rgba(107, 91, 77, 0.5); }
-        }
-
-        .cta-primary:hover {
-            background: var(--color-primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(107, 91, 77, 0.4);
-            animation: none;
-        }
-
-        .cta-primary:active {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(107, 91, 77, 0.35);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            border: 2px solid var(--color-secondary);
-            color: var(--color-text);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .cta-secondary:hover {
-            background: var(--color-secondary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.25);
-        }
-
-        .cta-secondary:active {
-            transform: translateY(-1px);
-        }
-
-        .cta-accent {
-            background: transparent;
-            border: 2px solid var(--color-accent);
-            color: var(--color-text);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .cta-accent:hover {
-            background: var(--color-accent);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(74, 93, 90, 0.25);
-        }
-
-        .cta-accent:active {
-            transform: translateY(-1px);
-        }
-
-        /* Content Sections */
-        .section {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .section-card {
-            background: var(--color-card);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--color-border);
-        }
-
-        .section h2 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-text);
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-        }
-
-        .section h3 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            margin: 2rem 0 1rem;
-            color: var(--color-primary);
-            font-weight: 400;
-        }
-
-        .section p {
-            font-family: var(--font-display);
-            margin-bottom: 1rem;
-            color: var(--color-text-secondary);
-            line-height: 1.8;
-        }
-
-        .warning-box {
-            background: linear-gradient(135deg, rgba(107, 91, 77, 0.05), rgba(139, 115, 85, 0.05));
-            border-left: 4px solid var(--color-primary);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .warning-box:hover {
-            transform: translateX(2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .warning-box p {
-            margin-bottom: 0.5rem;
-        }
-
-        .warning-box strong {
-            color: var(--color-text);
-            font-size: 1.1rem;
-        }
-
-        /* Features List */
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-
-        .features-list li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--color-text-secondary);
-        }
-
-        .features-list li:before {
-            content: "◆";
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-            font-size: 1rem;
-        }
-
-        /* Comparison Lists */
-        .comparison {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-column h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--color-text);
-            font-family: var(--font-display);
-        }
-
-        .comparison-column ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .comparison-column li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--color-text-secondary);
-        }
-
-        .no-list li:before {
-            content: "×";
-            position: absolute;
-            left: 0;
-            color: #b85c5c;
-            font-size: 1.3rem;
-        }
-
-        .yes-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #5c8d5c;
-            font-size: 1.1rem;
-        }
-
-        /* Testimonials */
-        .testimonial {
-            background: var(--color-surface);
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            border-left: 3px solid var(--color-primary);
-            font-style: italic;
-            color: var(--color-text-secondary);
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* Buy Options */
-        .buy-options {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .buy-btn {
-            padding: 1rem 2rem;
-            background: var(--color-surface);
-            border: 2px solid var(--color-primary);
-            color: var(--color-text);
-            text-decoration: none;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: var(--font-sans);
-        }
-
-        .buy-btn:hover {
-            background: var(--color-primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .buy-btn:active {
-            transform: translateY(-1px);
-        }
-
-        .buy-btn.accent {
-            border-color: var(--color-accent);
-        }
-
-        .buy-btn.accent:hover {
-            background: var(--color-accent);
-        }
-
-        .buy-btn.preview {
-            border-color: var(--color-secondary);
-        }
-
-        .buy-btn.preview:hover {
-            background: var(--color-secondary);
-        }
-
-        /* Quote Section */
-        .quote-section {
-            margin: 5rem auto;
-            padding: 2.5rem 1.5rem;
-            font-style: italic;
-            color: var(--color-text-secondary);
-            max-width: 650px;
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-            text-align: center;
-        }
-
-        .quote-section p {
-            font-size: 1.1rem;
-            font-family: var(--font-serif);
-            line-height: 1.8;
-        }
-
-        .quote-section::before {
-            content: "※";
-            display: block;
-            font-size: 1.5rem;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-text);
-            color: var(--color-bg);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        footer p {
-            color: var(--color-bg);
-            opacity: 0.8;
-        }
-
-        footer a {
-            color: var(--color-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--color-primary);
-        }
-
-        /* Responsive - Desktop */
-        @media (min-width: 768px) {
-            .hero {
-                padding: 3.5rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .cta-section {
-                flex-direction: row;
-                max-width: 100%;
-                justify-content: center;
-            }
-
-            .cta-section .cta-btn {
-                flex: 1;
-                max-width: 280px;
-            }
-
-            .comparison {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .language-buttons {
-                flex-direction: row;
-            }
-
-            /* Cards solo en desktop */
-            .section-card {
-                padding: 2.5rem;
-            }
-
-            .section {
-                margin: 4rem auto;
-            }
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 767px) {
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .section {
-                padding: 0 1.25rem;
-            }
-
-            .section-card {
-                background: transparent;
-                box-shadow: none;
-                border: none;
-                padding: 0;
-            }
-
-            .warning-box {
-                padding: 1.25rem;
-            }
-
-            .cta-section {
-                gap: 0.75rem;
-            }
-
-            /* Prioridad visual al botón gratuito en móvil */
-            .cta-secondary {
-                order: -1;
-                border-width: 2.5px;
-            }
-        }
-
-        /* Utility classes */
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-2 {
-            margin-bottom: 2rem;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Smooth reveal animation */
-        .fade-in {
-            animation: fadeIn 0.6s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Profecía del Eneagrama — Un ensayo contemplativo que recupera el eneagrama como mapa sagrado de despertar, lejos de su uso comercial como test de personalidad. Por Javier Gómez.">
+  <meta name="author" content="Javier Gómez">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://psicoalquimia.github.io/landing-libro.html">
+  <meta property="og:title" content="La Profecía del Eneagrama | Javier Gómez">
+  <meta property="og:description" content="Un ensayo contemplativo que devuelve el eneagrama a su esencia: un mapa sagrado de despertar.">
+  <meta property="og:image" content="https://psicoalquimia.github.io/portada-libro.jpg">
+
+  <title>La Profecía del Eneagrama · Javier Gómez</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+  <!-- Preconnect tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =================================
+       VARIABLES (alineadas con la home)
+       ================================= */
+    :root {
+      --color-primary: #5a6350;
+      --color-primary-light: #6b7460;
+      --color-primary-dark: #4a5240;
+      --color-secondary: #a89f91;
+      --color-accent: #8b7e6a;
+      --color-light: #faf8f5;
+      --color-bg-soft: #f3f0e9;
+      --color-bg-hero: #ebe8e1;
+      --color-text: #3a3a3a;
+      --color-text-light: #6b6b6b;
+      --color-white: #ffffff;
+
+      --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-body: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      --shadow-sm: 0 2px 8px rgba(58, 58, 58, 0.06);
+      --shadow-md: 0 4px 16px rgba(58, 58, 58, 0.09);
+      --shadow-lg: 0 12px 40px rgba(58, 58, 58, 0.14);
+    }
+
+    [data-theme="dark"] {
+      --color-primary: #7a8870;
+      --color-primary-light: #8a9880;
+      --color-primary-dark: #6a7860;
+      --color-secondary: #b8af9f;
+      --color-accent: #9b8e7a;
+      --color-light: #1a1a1a;
+      --color-bg-soft: #232323;
+      --color-bg-hero: #252525;
+      --color-text: #e0e0e0;
+      --color-text-light: #a0a0a0;
+      --color-white: #2a2a2a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-light);
+      color: var(--color-text);
+      line-height: 1.75;
+      font-size: 19px;
+      font-weight: 400;
+      overflow-x: hidden;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    /* La sans-serif gobierna UI */
+    nav, button, .cta-button, .lang-switch, .lang-btn,
+    .header-link, .back-to-home, .footer-text,
+    .meta-pill, .eyebrow {
+      font-family: var(--font-ui);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* =================================
+       LANGUAGE MODAL (solo si no hay preferencia)
+       ================================= */
+    .language-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(58, 58, 58, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeInModal 0.5s ease-out;
+    }
+    .language-modal.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .language-selector {
+      background: var(--color-white);
+      padding: 3rem 2.5rem;
+      border-radius: 6px;
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: var(--shadow-lg);
+    }
+    .language-selector h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 0.6rem;
+      color: var(--color-primary);
+      letter-spacing: -0.005em;
+    }
+    .language-selector p {
+      color: var(--color-text-light);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      font-family: var(--font-display);
+      font-style: italic;
+    }
+    .language-buttons {
+      display: flex;
+      gap: 0.8rem;
+      flex-direction: column;
+    }
+    .lang-btn {
+      padding: 0.9rem 2rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--color-primary);
+      background: transparent;
+      color: var(--color-primary);
+      cursor: pointer;
+      border-radius: 50px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .lang-btn:hover {
+      background: var(--color-primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (min-width: 600px) {
+      .language-buttons { flex-direction: row; justify-content: center; }
+      .lang-btn { flex: 1; max-width: 160px; }
+    }
+
+    /* =================================
+       HEADER
+       ================================= */
+    header {
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(139, 126, 106, 0.12);
+      transition: background 0.5s ease;
+    }
+    [data-theme="dark"] header { background: rgba(26, 26, 26, 0.92); }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .back-to-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-primary);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .back-to-home:hover {
+      color: var(--color-accent);
+      transform: translateX(-3px);
+    }
+    .back-to-home svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .lang-switch, .theme-toggle {
+      background: var(--color-white);
+      border: 1.5px solid rgba(139, 126, 106, 0.2);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      font-family: var(--font-ui);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .lang-switch {
+      padding: 0.4rem 0.9rem;
+      height: 36px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--color-primary);
+    }
+    .theme-toggle {
+      padding: 0.4rem 0.7rem;
+      height: 36px;
+    }
+    .lang-switch:hover, .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .lang-switch svg, .theme-toggle svg {
+      width: 15px;
+      height: 15px;
+    }
+    .theme-toggle svg { transition: transform 0.3s ease; }
+    .theme-toggle:hover svg { transform: rotate(20deg); }
+
+    @media (max-width: 600px) {
+      header { padding: 0.8rem 1rem; }
+      .back-to-home {
+        font-size: 0.66rem;
+        letter-spacing: 0.06em;
+      }
+      .back-to-home .back-label-long { display: none; }
+      .lang-switch, .theme-toggle {
+        height: 32px;
+        padding: 0.3rem 0.65rem;
+      }
+      .lang-switch { font-size: 0.66rem; }
+    }
+
+    /* =================================
+       HERO
+       ================================= */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 4.5rem;
+      align-items: center;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at top left, rgba(168, 159, 145, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(107, 116, 96, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+    .book-cover {
+      width: 100%;
+      aspect-ratio: 2/3;
+      background-image: url('portada-libro.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(139, 126, 106, 0.2);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      transform: translateZ(0);
+    }
+    .book-cover:hover {
+      transform: translateY(-8px) rotate(-2deg);
+      box-shadow: 0 22px 60px rgba(58, 58, 58, 0.22);
+    }
+
+    .hero-content { display: flex; flex-direction: column; }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--color-primary);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--color-text-light);
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .meta-pill {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      padding: 0.35rem 0.9rem;
+      border: 1px solid rgba(139, 126, 106, 0.25);
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      max-width: 380px;
+    }
+    .hero-cta .cta-button { width: 100%; }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem 3rem;
+        text-align: center;
+      }
+      .hero-image {
+        max-width: 230px;
+        margin: 0 auto;
+      }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-subtitle { font-size: 1.1rem; }
+      .hero-meta { justify-content: center; }
+      .hero-cta { margin: 0 auto; max-width: 100%; width: 100%; }
+    }
+
+    /* =================================
+       BUTTONS
+       ================================= */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.8rem;
+      background: transparent;
+      color: var(--color-primary);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-family: var(--font-ui);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--color-primary);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 46px;
+    }
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: var(--color-primary);
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+      z-index: -1;
+    }
+    .cta-button:hover::before { width: 320px; height: 320px; }
+    .cta-button:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .cta-button:active { transform: translateY(0) scale(0.98); }
+    .cta-button-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+    .cta-button-primary::before { background: var(--color-primary-dark); }
+
+    /* =================================
+       SECTIONS
+       ================================= */
+    section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section.hero { opacity: 1; transform: none; max-width: 1100px; }
+
+    .section-eyebrow {
+      display: block;
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    section h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--color-primary);
+      text-align: center;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin-bottom: 2.5rem;
+      position: relative;
+      padding-bottom: 1.2rem;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      opacity: 0.5;
+    }
+
+    section p {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--color-text);
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+    }
+    section p strong { font-weight: 600; color: var(--color-primary); }
+    section p em { font-style: italic; }
+
+    .section-separator {
+      text-align: center;
+      padding: 1rem 0;
+      color: var(--color-accent);
+      font-size: 0.7rem;
+      opacity: 0.35;
+      letter-spacing: 1.2rem;
+    }
+
+    /* =================================
+       INVITATION (sustituye la advertencia agresiva)
+       ================================= */
+    .invitation {
+      background: var(--color-bg-soft);
+      max-width: 100%;
+      padding: 5rem 2rem;
+      transition: background 0.5s ease;
+    }
+    .invitation-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .invitation p {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--color-text);
+      margin-bottom: 1.6rem;
+    }
+    .invitation p:last-child {
+      margin-bottom: 0;
+      font-size: 1.15rem;
+      color: var(--color-text-light);
+      font-style: normal;
+    }
+    .invitation-ornament {
+      display: block;
+      margin: 0 auto 2.5rem;
+      width: 36px;
+      height: 36px;
+      opacity: 0.45;
+    }
+    @media (max-width: 600px) {
+      .invitation { padding: 4rem 1.5rem; }
+      .invitation p { font-size: 1.2rem; }
+      .invitation p:last-child { font-size: 1.02rem; }
+    }
+
+    /* =================================
+       QUÉ ES Y QUÉ NO ES (comparación reformulada)
+       ================================= */
+    .que-es {
+      background: var(--color-white);
+      max-width: 100%;
+      padding: 5rem 2rem;
+      transition: background 0.5s ease;
+    }
+    .que-es-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .columnas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2.5rem;
+    }
+    .columna h3 {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 1.3rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(139, 126, 106, 0.2);
+    }
+    .columna ul { list-style: none; padding: 0; }
+    .columna li {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      line-height: 1.6;
+      padding: 0.7rem 0;
+      color: var(--color-text);
+      font-style: italic;
+    }
+    .columna.no li { color: var(--color-text-light); }
+    .columna.si li::before {
+      content: '·';
+      color: var(--color-primary);
+      margin-right: 0.6rem;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .columnas { grid-template-columns: 1fr; gap: 2rem; }
+      .que-es { padding: 4rem 1.5rem; }
+    }
+
+    /* =================================
+       PARA QUIÉN
+       ================================= */
+    .para-quien-libro p {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      font-style: italic;
+      color: var(--color-text-light);
+    }
+    .lectores-list {
+      list-style: none;
+      padding: 0;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .lectores-list li {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      line-height: 1.65;
+      padding: 1rem 0 1rem 2rem;
+      position: relative;
+      border-bottom: 1px solid rgba(139, 126, 106, 0.12);
+      color: var(--color-text);
+    }
+    .lectores-list li:last-child { border-bottom: none; }
+    .lectores-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1.45rem;
+      width: 16px;
+      height: 1px;
+      background: var(--color-accent);
+    }
+
+    /* =================================
+       TESTIMONIOS (reales, anonimizados)
+       ================================= */
+    .testimonios {
+      background: var(--color-bg-soft);
+      max-width: 100%;
+      padding: 5rem 2rem;
+      transition: background 0.5s ease;
+    }
+    .testimonios-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .testimonio {
+      background: var(--color-white);
+      padding: 2.5rem 2rem;
+      border-radius: 4px;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonio:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .testimonio::before {
+      content: '"';
+      position: absolute;
+      top: 0.8rem;
+      left: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--color-accent);
+      opacity: 0.22;
+    }
+    .testimonio-text {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--color-text);
+      margin: 1.5rem 0;
+      padding-left: 0.5rem;
+    }
+    .testimonio-author {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 500;
+      border-top: 1px solid rgba(139, 126, 106, 0.18);
+      padding-top: 1rem;
+    }
+    .testimonios-source {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+    }
+    @media (max-width: 700px) {
+      .testimonios-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .testimonio { padding: 2rem 1.5rem; }
+      .testimonios { padding: 4rem 1.5rem; }
+    }
+
+    /* =================================
+       SOBRE EL AUTOR
+       ================================= */
+    .autor {
+      background: var(--color-white);
+      max-width: 100%;
+      padding: 5rem 2rem;
+      transition: background 0.5s ease;
+    }
+    .autor-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .autor p {
+      text-align: left;
+    }
+    .autor-cta {
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+
+    /* =================================
+       PUENTE AL ACOMPAÑAMIENTO
+       ================================= */
+    .puente {
+      max-width: 100%;
+      padding: 5rem 2rem;
+      background:
+        radial-gradient(ellipse at center, rgba(168, 159, 145, 0.06) 0%, transparent 70%),
+        var(--color-light);
+      text-align: center;
+      transition: background 0.5s ease;
+    }
+    .puente-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .puente p {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    @media (max-width: 600px) {
+      .puente { padding: 4rem 1.5rem; }
+      .puente p { font-size: 1.08rem; }
+    }
+
+    /* =================================
+       CIERRE / BUY SECTION FINAL
+       ================================= */
+    .cierre {
+      background: var(--color-bg-soft);
+      max-width: 100%;
+      padding: 5rem 2rem;
+      text-align: center;
+      transition: background 0.5s ease;
+    }
+    .cierre-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cierre h2 { margin-bottom: 1.5rem; }
+    .cierre-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+    .buy-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .buy-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.6rem;
+      background: var(--color-white);
+      border: 1px solid rgba(139, 126, 106, 0.2);
+      border-radius: 4px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-text);
+      letter-spacing: 0.04em;
+      transition: all 0.3s ease;
+    }
+    .buy-link:hover {
+      border-color: var(--color-primary);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-sm);
+    }
+    .buy-link .buy-label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      text-align: left;
+    }
+    .buy-link .buy-name {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    .buy-link .buy-meta {
+      font-size: 0.72rem;
+      color: var(--color-text-light);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+    }
+    .buy-link .buy-arrow {
+      font-size: 1.2rem;
+      color: var(--color-accent);
+      transition: transform 0.3s ease;
+    }
+    .buy-link:hover .buy-arrow { transform: translateX(3px); }
+
+
+    /* =================================
+       FOOTER
+       ================================= */
+    footer {
+      background: var(--color-primary);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+    footer p { margin: 0.3rem 0; }
+    footer a {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    footer a:hover { color: white; }
+
+    /* =================================
+       FOCUS STATES
+       ================================= */
+    *:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 500px) {
+      footer p { font-size: 0.78rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Language Selection Modal -->
-    <div class="language-modal" id="languageModal">
-        <div class="language-selector">
-            <h2>Choose Your Language / Elige tu Idioma</h2>
-            <p>Select your preferred language to continue</p>
-            <div class="language-buttons">
-                <button class="lang-btn" onclick="selectLanguage('es')">Español</button>
-                <button class="lang-btn" onclick="selectLanguage('en')">English</button>
-            </div>
+
+  <!-- Language Selection Modal (solo si no hay preferencia guardada desde la home) -->
+  <div class="language-modal hidden" id="languageModal">
+    <div class="language-selector">
+      <h2 id="modalTitle">Choose your language</h2>
+      <p id="modalSubtitle">Elige tu idioma para continuar</p>
+      <div class="language-buttons">
+        <button class="lang-btn" onclick="selectLanguage('es')">Español</button>
+        <button class="lang-btn" onclick="selectLanguage('en')">English</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="back-to-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span id="backLabel"><span class="back-label-long">Volver a </span>Javier Gómez</span>
+      </a>
+      <div class="header-actions">
+        <button class="lang-switch" id="langSwitch" onclick="toggleLanguage()" aria-label="Cambiar idioma">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="langSwitchText">EN</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg id="iconLight" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+          </svg>
+          <svg id="iconDark" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+            <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SPANISH CONTENT ============ -->
+  <div id="content-es">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-image">
+        <div class="book-cover" id="bookCover"></div>
+      </div>
+      <div class="hero-content">
+        <span class="eyebrow">Un libro de Javier Gómez</span>
+        <h1>La Profecía del Eneagrama</h1>
+        <p class="hero-subtitle">Apuntes del viaje colectivo hacia el Buen Vivir</p>
+        <div class="hero-meta">
+          <span class="meta-pill">Ensayo contemplativo</span>
+          <span class="meta-pill">Disponible en papel y digital</span>
         </div>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="https://psicoalquimia.github.io/" class="logo" style="text-decoration: none;">
-                <span class="logo-name">Javier Gómez</span>
-                <span class="logo-tagline">Misticismo • Transformación social</span>
-            </a>
-            
-            <button class="lang-switch" id="langSwitch" onclick="toggleLanguage()"></button>
+        <div class="hero-cta">
+          <a href="https://mybook.to/LaProfeciaDelEneagrama" class="cta-button cta-button-primary" target="_blank" rel="noopener noreferrer">Conseguir el libro</a>
+          <a href="https://flipbookpdf.net/web/site/8fba1682fbe0beeb5148a36bc6d945d797d1450d202602.pdf.html" class="cta-button" target="_blank" rel="noopener noreferrer">Leer las primeras páginas</a>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <!-- Spanish Content -->
-    <div id="content-es" class="hidden">
-        <!-- Hero Section -->
-        <section class="hero fade-in">
-            <h1>La Profecía del Eneagrama</h1>
-            <p class="subtitle">Apuntes del viaje colectivo hacia el Buen Vivir</p>
-            
-            <div class="book-cover">
-                <img src="portada-libro.jpg" alt="Portada La Profecía del Eneagrama">
+    <div class="section-separator">· · ·</div>
+
+    <!-- Invitación (sustituye la advertencia agresiva) -->
+    <section class="invitation">
+      <div class="invitation-inner">
+        <svg class="invitation-ornament" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="0.8" fill="var(--color-accent)"/>
+          <circle cx="20" cy="20" r="8" stroke="var(--color-accent)" stroke-width="0.5" fill="none" opacity="0.6"/>
+          <circle cx="20" cy="20" r="16" stroke="var(--color-accent)" stroke-width="0.5" fill="none" opacity="0.3"/>
+        </svg>
+        <p>¿Y si el eneagrama nunca fue lo que creíste que era?</p>
+        <p>Este libro no busca consolarte ni darte respuestas rápidas. Si lo que buscas es eso, hay libros mejores que el mío. Si lo que buscas es una compañía honesta en el camino del despertar, este libro puede ser tuyo.</p>
+      </div>
+    </section>
+
+    <!-- Qué encontrarás -->
+    <section class="que-encontraras">
+      <span class="section-eyebrow">El libro</span>
+      <h2>Un viaje iniciático, no un manual</h2>
+      <p><em>La Profecía del Eneagrama</em> no es un libro de autoayuda ni una clasificación de tipos psicológicos. Es un ensayo contemplativo, narrado a través de los apuntes y las notas de campo de un buscador del espíritu, que funciona como un verdadero ritual de autodescubrimiento.</p>
+      <p>A lo largo de cuatro cuadernos de viaje espiritual, el libro recupera el eneagrama como ciencia espiritual viva —más allá de su uso comercial como test de personalidad—, y lo entrelaza con la pregunta por cómo vivimos juntos, qué construimos, qué heredamos. Mística y compromiso social no caminan separados en sus páginas.</p>
+      <p>Cada página trabaja sutilmente con tu consciencia, invitándote a recordar lo que siempre has sido pero que, quizás, habías olvidado.</p>
+    </section>
+
+    <!-- Qué es y qué no es -->
+    <section class="que-es">
+      <div class="que-es-inner">
+        <span class="section-eyebrow">Para situarte</span>
+        <h2>Qué es y qué no es este libro</h2>
+        <div class="columnas">
+          <div class="columna no">
+            <h3>No encontrarás</h3>
+            <ul>
+              <li>Tests de personalidad.</li>
+              <li>Descripciones simplistas de «tu tipo».</li>
+              <li>Recetas rápidas de autoayuda.</li>
+              <li>Una herramienta diseñada para vender más herramientas.</li>
+            </ul>
+          </div>
+          <div class="columna si">
+            <h3>Encontrarás</h3>
+            <ul>
+              <li>Una visión del eneagrama como ciencia espiritual viva.</li>
+              <li>Un cruce entre psicología profunda, mística y crítica social.</li>
+              <li>Una lectura que funciona como meditación contemplativa.</li>
+              <li>Un puente entre espiritualidad auténtica y acción transformadora.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Para quién -->
+    <section class="para-quien-libro">
+      <span class="section-eyebrow">Lectoras y lectores</span>
+      <h2>Para quién es este libro</h2>
+      <p>Algunas señales por las que este libro puede encontrarte:</p>
+      <ul class="lectores-list">
+        <li>Si has estudiado el eneagrama y sientes que la versión comercial se quedaba corta.</li>
+        <li>Si intuyes que hay algo más allá de los «tipos» y quieres ver qué.</li>
+        <li>Si te interesa la psicología transpersonal, el misticismo aplicado o la filosofía contemplativa.</li>
+        <li>Si sospechas que el despertar interior no puede separarse de la pregunta por el mundo.</li>
+        <li>Si estás dispuesta o dispuesto a emprender el regreso a ti misma o a ti mismo.</li>
+      </ul>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonios">
+      <div class="testimonios-inner">
+        <span class="section-eyebrow">Voces de lectores</span>
+        <h2>Quienes ya lo han leído</h2>
+        <div class="testimonios-grid">
+          <div class="testimonio">
+            <p class="testimonio-text">Una manera de ver la vida tan natural, tan sin artificios, que invita a reflexionar sobre uno mismo y sobre nuestra sociedad. Está escrito en un estilo claro y ameno que mantiene el interés hasta el final.</p>
+            <div class="testimonio-author">Lector verificado · Amazon.es</div>
+          </div>
+          <div class="testimonio">
+            <p class="testimonio-text">Un libro íntimo y exquisito, que te reconecta con la autenticidad de la existencia humana. Hace tambalear las bases de los planteamientos vitales actuales, algo muy necesario para sobrevivir y empezar a cambiarlos.</p>
+            <div class="testimonio-author">Isabel · Amazon.es</div>
+          </div>
+        </div>
+        <p class="testimonios-source">Reseñas reales publicadas en Amazon España.</p>
+      </div>
+    </section>
+
+    <!-- Sobre el autor -->
+    <section class="autor">
+      <div class="autor-inner">
+        <span class="section-eyebrow">Sobre el autor</span>
+        <h2>Javier Gómez</h2>
+        <p>Psicoterapeuta y explorador de la consciencia. Su trabajo se sitúa en el cruce entre psicología profunda, mística contemplativa y compromiso con lo colectivo. Formado como terapeuta gestalt integrativo durante ocho años en Colombia —donde aprendió tanto de la psicología contemporánea como de tradiciones de sanación ancestrales—, acompaña hoy procesos de transformación profunda, integración de experiencias místicas y reorientación vital.</p>
+        <p>Este es su primer libro: un testimonio vivo de su propio camino, escrito como invitación a quienes intuyen que el despertar interior es inseparable de la transformación del mundo.</p>
+        <a href="index.html#sobre-mi" class="cta-button autor-cta">Saber más sobre Javier</a>
+      </div>
+    </section>
+
+    <!-- Puente al acompañamiento -->
+    <section class="puente">
+      <div class="puente-inner">
+        <p>Si el libro te encuentra en un momento de transformación, también puedes acompañar su lectura con un proceso conmigo. Lo que se abre en sus páginas a veces pide ser sostenido en presencia.</p>
+        <a href="index.html#servicios" class="cta-button">Conocer el acompañamiento que ofrezco</a>
+      </div>
+    </section>
+
+    <!-- Cierre / compra -->
+    <section class="cierre">
+      <div class="cierre-inner">
+        <h2>Un mapa hacia la totalidad</h2>
+        <p class="cierre-quote">«Una invitación a recordar. Un llamado a volver a lo esencial.»</p>
+        <div class="buy-grid">
+          <a href="https://mybook.to/LaProfeciaDelEneagrama" class="buy-link" target="_blank" rel="noopener noreferrer">
+            <div class="buy-label">
+              <span class="buy-name">Amazon</span>
+              <span class="buy-meta">Tapa blanda · Kindle</span>
             </div>
-
-            <div class="cta-section">
-                <a href="https://flipbookpdf.net/web/site/8fba1682fbe0beeb5148a36bc6d945d797d1450d202602.pdf.html" class="cta-btn cta-primary" target="_blank">Comienza a leerlo gratis</a>
-                <a href="http://books.apple.com/us/book/id6758738809" class="cta-btn cta-accent" target="_blank id="appleEs">Comprar en Apple Books</a>
-                <a href="https://mybook.to/LaProfeciaDelEneagrama" class="cta-btn cta-secondary" target="_blank">Comprar en Amazon</a>
-                
+            <span class="buy-arrow">→</span>
+          </a>
+          <a href="https://books.apple.com/us/book/id6758738809" class="buy-link" target="_blank" rel="noopener noreferrer">
+            <div class="buy-label">
+              <span class="buy-name">Apple Books</span>
+              <span class="buy-meta">Edición digital</span>
             </div>
-        </section>
-
-      
-
-        <!-- Warning Section -->
-        <section class="section">
-            <div class="section-card">
-                <div class="warning-box">
-                    <p><strong>ESTO NO ES UN LIBRO MÁS SOBRE EL ENEAGRAMA</strong></p>
-                    <p>¿Y si el Eneagrama que conoces es solo la versión comercial de algo mucho más profundo?</p>
-                    <p>Este libro no es otro manual de tipos de personalidad. Es un viaje iniciático hacia el Eneagrama como mapa sagrado de despertar espiritual —más allá del coaching, más allá del mercado, en su esencia original.</p>
-                </div>
+            <span class="buy-arrow">→</span>
+          </a>
+          <a href="https://flipbookpdf.net/web/site/8fba1682fbe0beeb5148a36bc6d945d797d1450d202602.pdf.html" class="buy-link" target="_blank" rel="noopener noreferrer">
+            <div class="buy-label">
+              <span class="buy-name">Leer las primeras páginas</span>
+              <span class="buy-meta">Vista previa gratuita</span>
             </div>
-        </section>
+            <span class="buy-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <!-- What You'll Find -->
-        <section class="section">
-            <div class="section-card">
-                <h2>¿Qué encontrarás en este libro?</h2>
-                <p>Este no es un libro para leer. Es un libro para <strong>experimentar</strong>.</p>
-                <p>A través de cuatro cuadernos de exploración espiritual, descubrirás:</p>
-                <ul class="features-list">
-                    <li>El Eneagrama como ciencia espiritual viva (no como test de personalidad)</li>
-                    <li>La experiencia mística accesible a través del autoconocimiento profundo</li>
-                    <li>Una crítica enraizada de las estructuras sociales que nos alejan de la esencia</li>
-                    <li>Cómo integrar el despertar interior con la creación de realidades alternativas</li>
-                    <li>Prosa y poesía entretejidas que tocan las fibras más profundas del alma</li>
-                </ul>
-                <p style="text-align: center; margin-top: 1.5rem; font-style: italic;">Cada página actúa como un espejo de consciencia, invitándote a recordar lo esencial.</p>
+  </div>
+
+  <!-- ============ ENGLISH CONTENT ============ -->
+  <div id="content-en" style="display:none;">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-image">
+        <div class="book-cover" style="background-image: url('portada-libro-en.jpg');"></div>
+      </div>
+      <div class="hero-content">
+        <span class="eyebrow">A book by Javier Gómez</span>
+        <h1>The Enneagram Prophecy</h1>
+        <p class="hero-subtitle">Notes from the Collective Journey to Buen Vivir</p>
+        <div class="hero-meta">
+          <span class="meta-pill">Contemplative essay</span>
+          <span class="meta-pill">Available in print and digital</span>
+        </div>
+        <div class="hero-cta">
+          <a href="https://mybook.to/TheEnneagramProphecy" class="cta-button cta-button-primary" target="_blank" rel="noopener noreferrer">Get the book</a>
+          <a href="https://flipbookpdf.net/web/site/e29cf962f65539caeef1ba1d9f657a3d9638af6f202602.pdf.html" class="cta-button" target="_blank" rel="noopener noreferrer">Read the first pages</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
+    <!-- Invitation -->
+    <section class="invitation">
+      <div class="invitation-inner">
+        <svg class="invitation-ornament" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="0.8" fill="var(--color-accent)"/>
+          <circle cx="20" cy="20" r="8" stroke="var(--color-accent)" stroke-width="0.5" fill="none" opacity="0.6"/>
+          <circle cx="20" cy="20" r="16" stroke="var(--color-accent)" stroke-width="0.5" fill="none" opacity="0.3"/>
+        </svg>
+        <p>What if the Enneagram was never what you thought it was?</p>
+        <p>This book does not seek to comfort you or give you quick answers. If that's what you're looking for, there are better books than mine. If you're looking for honest company on the path of awakening, this book may be yours.</p>
+      </div>
+    </section>
+
+    <!-- What you will find -->
+    <section class="que-encontraras">
+      <span class="section-eyebrow">The book</span>
+      <h2>An initiatory journey, not a manual</h2>
+      <p><em>The Enneagram Prophecy</em> is not a self-help book nor a classification of psychological types. It is a contemplative essay, narrated through the notes and field journals of a spirit seeker, working as a true ritual of self-discovery.</p>
+      <p>Across four notebooks of spiritual journey, the book recovers the Enneagram as a living spiritual science —far from its commercial use as a personality test— and weaves it together with the question of how we live together, what we build, what we inherit. Mysticism and social commitment do not walk separately through its pages.</p>
+      <p>Each page works subtly with your consciousness, inviting you to remember what you have always been but had perhaps forgotten.</p>
+    </section>
+
+    <!-- What it is and what it isn't -->
+    <section class="que-es">
+      <div class="que-es-inner">
+        <span class="section-eyebrow">To situate you</span>
+        <h2>What this book is and what it is not</h2>
+        <div class="columnas">
+          <div class="columna no">
+            <h3>You will not find</h3>
+            <ul>
+              <li>Personality tests.</li>
+              <li>Simplistic descriptions of «your type».</li>
+              <li>Quick self-help recipes.</li>
+              <li>A tool designed to sell more tools.</li>
+            </ul>
+          </div>
+          <div class="columna si">
+            <h3>You will find</h3>
+            <ul>
+              <li>A vision of the Enneagram as a living spiritual science.</li>
+              <li>A crossroads between depth psychology, mysticism, and social critique.</li>
+              <li>A reading that functions as contemplative meditation.</li>
+              <li>A bridge between authentic spirituality and transformative action.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For whom -->
+    <section class="para-quien-libro">
+      <span class="section-eyebrow">Readers</span>
+      <h2>Who this book is for</h2>
+      <p>Some signs that this book may find you:</p>
+      <ul class="lectores-list">
+        <li>If you have studied the Enneagram and felt that the commercial version fell short.</li>
+        <li>If you sense there is something beyond the «types» and want to see what.</li>
+        <li>If you are drawn to transpersonal psychology, applied mysticism, or contemplative philosophy.</li>
+        <li>If you suspect that inner awakening cannot be separated from the question of the world.</li>
+        <li>If you are willing to undertake the return to yourself.</li>
+      </ul>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonios">
+      <div class="testimonios-inner">
+        <span class="section-eyebrow">Readers' voices</span>
+        <h2>What those who have read it say</h2>
+        <div class="testimonios-grid">
+          <div class="testimonio">
+            <p class="testimonio-text">A way of seeing life that is so natural, so free of artifice, that it invites reflection on oneself and on our society. It is written in a clear and engaging style that holds your attention until the very end.</p>
+            <div class="testimonio-author">Verified reader · Amazon.es</div>
+          </div>
+          <div class="testimonio">
+            <p class="testimonio-text">An intimate and exquisite book that reconnects you with the authenticity of human existence. It shakes the foundations of contemporary life's premises — something very necessary if we are to survive and begin to change them.</p>
+            <div class="testimonio-author">Isabel · Amazon.es</div>
+          </div>
+        </div>
+        <p class="testimonios-source">Real reviews published on Amazon Spain.</p>
+      </div>
+    </section>
+
+    <!-- About the author -->
+    <section class="autor">
+      <div class="autor-inner">
+        <span class="section-eyebrow">About the author</span>
+        <h2>Javier Gómez</h2>
+        <p>Psychotherapist and consciousness explorer. His work stands at the crossroads of depth psychology, contemplative mysticism, and commitment to the collective. Trained as an integrative Gestalt therapist over eight years in Colombia —where he learned from both contemporary psychology and ancestral healing traditions— he accompanies processes of deep transformation, integration of mystical experiences, and vocational and spiritual reorientation.</p>
+        <p>This is his first book: a living testimony of his own path, written as an invitation to those who sense that inner awakening is inseparable from the transformation of the world.</p>
+        <a href="index.html#sobre-mi" class="cta-button autor-cta">Learn more about Javier</a>
+      </div>
+    </section>
+
+    <!-- Bridge -->
+    <section class="puente">
+      <div class="puente-inner">
+        <p>If the book finds you in a moment of transformation, you can also accompany its reading with a process of work with me. What opens in its pages sometimes asks to be held in presence.</p>
+        <a href="index.html#servicios" class="cta-button">Learn about my accompaniment</a>
+      </div>
+    </section>
+
+    <!-- Closing / buy -->
+    <section class="cierre">
+      <div class="cierre-inner">
+        <h2>A map toward wholeness</h2>
+        <p class="cierre-quote">«An invitation to remember. A call to return to the essential.»</p>
+        <div class="buy-grid">
+          <a href="https://mybook.to/TheEnneagramProphecy" class="buy-link" target="_blank" rel="noopener noreferrer">
+            <div class="buy-label">
+              <span class="buy-name">Amazon</span>
+              <span class="buy-meta">Paperback · Kindle</span>
             </div>
-        </section>
-
-        <!-- For Whom -->
-        <section class="section">
-            <div class="section-card">
-                <h2>Para quién es este libro</h2>
-                <ul class="features-list">
-                    <li>Buscadores espirituales cansados del eneagrama superficial y comercial</li>
-                    <li>Personas que intuyen que hay algo más allá de los "tipos"</li>
-                    <li>Quienes sienten el llamado al despertar consciente y la transformación real</li>
-                    <li>Lectores de psicología transpersonal, misticismo aplicado y filosofía espiritual</li>
-                    <li>Cualquiera dispuesto a emprender el regreso a sí mismo</li>
-                </ul>
+            <span class="buy-arrow">→</span>
+          </a>
+          <a href="https://books.apple.com/book/id6758346495" class="buy-link" target="_blank" rel="noopener noreferrer">
+            <div class="buy-label">
+              <span class="buy-name">Apple Books</span>
+              <span class="buy-meta">Digital edition</span>
             </div>
-        </section>
-
-        <!-- What Makes It Unique -->
-        <section class="section">
-            <div class="section-card">
-                <h2>Lo que hace único a este libro</h2>
-                <div class="comparison">
-                    <div class="comparison-column">
-                        <h4>No encontrarás:</h4>
-                        <ul class="no-list">
-                            <li>Tests de personalidad</li>
-                            <li>Descripciones simplistas de "tu tipo"</li>
-                            <li>Recetas rápidas de autoayuda</li>
-                            <li>Contenido diseñado para vender más contenido</li>
-                        </ul>
-                    </div>
-                    <div class="comparison-column">
-                        <h4>Sí encontrarás:</h4>
-                        <ul class="yes-list">
-                            <li>Una visión revolucionaria del Eneagrama espiritual</li>
-                            <li>Integración de psicología profunda, misticismo y crítica social</li>
-                            <li>Una lectura que funciona como meditación contemplativa</li>
-                            <li>Un puente entre espiritualidad auténtica y acción transformadora</li>
-                        </ul>
-                    </div>
-                </div>
+            <span class="buy-arrow">→</span>
+          </a>
+          <a href="https://flipbookpdf.net/web/site/e29cf962f65539caeef1ba1d9f657a3d9638af6f202602.pdf.html" class="buy-link" target="_blank" rel="noopener noreferrer">
+            <div class="buy-label">
+              <span class="buy-name">Read the first pages</span>
+              <span class="buy-meta">Free preview</span>
             </div>
-        </section>
+            <span class="buy-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <!-- Testimonials -->
-        <section class="section">
-            <div class="section-card">
-                <h2>Lo que dicen los lectores</h2>
-                <div class="testimonial">
-                    "Llevo años estudiando el Eneagrama y pensaba que lo conocía. Este libro me mostró que apenas había rozado la superficie. Es profundo, desafiante y necesario."
-                </div>
-                <div class="testimonial">
-                    "No es un libro cómodo. Te confronta, te invita a despertar y no te deja igual. Exactamente lo que necesitaba."
-                </div>
-            </div>
-        </section>
+  </div>
 
-        <!-- Warning -->
-        <section class="section">
-            <div class="section-card">
-                <div class="warning-box">
-                    <p><strong>Advertencia:</strong></p>
-                    <p>Este libro no ofrece respuestas fáciles ni soluciones instantáneas.</p>
-                    <p>Invita a contemplar en lugar de interpretar, a escuchar lo esencial bajo el ruido del mundo.</p>
-                    <p><strong>Si buscas comodidad, este no es tu libro.</strong></p>
-                    <p><strong>Si buscas verdad, bienvenido.</strong></p>
-                </div>
-            </div>
-        </section>
+  <!-- Footer -->
+  <footer>
+    <p id="footerCopy">© 2026 Javier Gómez · Todos los derechos reservados</p>
+    <p style="margin-top: 0.6rem;">
+      <a href="index.html">psicoalquimia.github.io</a>
+    </p>
+  </footer>
 
-        <!-- About Author -->
-        <section class="section">
-            <div class="section-card">
-           <h2>Sobre el autor</h2>
-<p>Javier Gómez es psicólogo y terapeuta transpersonal. Integra psicología profunda, el misticismo y práctica contemplativa, con años de experiencia clínica y acompañamiento a personas en crisis existenciales o espirituales.</p>
-<p>Su trabajo trasciende el ámbito individual para tejer puentes entre la transformación interior y la transformación social.</p>
-<p>Este es su primer libro: un testimonio vivo de su propio camino de despertar.</p>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section text-center">
-            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem;">Un mapa hacia la totalidad</h3>
-            <p style="font-style: italic;">Una invitación a recordar. Un llamado a volver a lo esencial.</p>
-            <div class="buy-options">
-                <a href="https://mybook.to/LaProfeciaDelEneagrama" class="buy-btn" target="_blank">
-                    Comprar en Amazon
-                </a>
-                <a href="http://books.apple.com/us/book/id6758738809" class="buy-btn accent" target="_blank id="appleEs2">
-                    Comprar en Apple Books
-                </a>
-                <a href="https://www.flipbookpdf.net/web/site/8fba1682fbe0beeb5148a36bc6d945d797d1450d202602.pdf.html" class="buy-btn preview" target="_blank">
-                    Comienza a leerlo gratis
-                </a>
-            </div>
-        </section>
-          <!-- Quote Section -->
-        <section class="quote-section">
-            <p>
-                "El despertar no es una posibilidad lejana,<br>se parece más bien al hecho de recordar,<br>de volver a habitar lo que ya somos"
-            </p>
-        </section>
-    </div>
-
-    <!-- English Content -->
-    <div id="content-en" class="hidden">
-        <!-- Hero Section -->
-        <section class="hero fade-in">
-            <h1>The Enneagram Prophecy</h1>
-            <p class="subtitle">Notes from the Collective Journey to Buen Vivir</p>
-            
-            <div class="book-cover">
-                <img src="portada-libro-en.jpg" alt="The Enneagram Prophecy Cover">
-            </div>
-
-            <div class="cta-section">
-                <a href="https://mybook.to/TheEnneagramProphecy" class="cta-btn cta-primary" target="_blank">Buy on Amazon</a>
-                <a href="https://books.apple.com/book/id6758346495" class="cta-btn cta-accent" target="_blank">Buy on Apple Books</a>
-                <a href="https://flipbookpdf.net/web/site/e29cf962f65539caeef1ba1d9f657a3d9638af6f202602.pdf.html" class="cta-btn cta-secondary" target="_blank">Start reading for free</a>
-            </div>
-        </section>
-
-    
-
-        <!-- Warning Section -->
-        <section class="section">
-            <div class="section-card">
-                <div class="warning-box">
-                    <p><strong>THIS IS NOT JUST ANOTHER ENNEAGRAM BOOK</strong></p>
-                    <p>What if the Enneagram you know is just the commercial version of something much deeper?</p>
-                    <p>This book is not another personality types manual. It is an initiatory journey toward the Enneagram as a sacred map of spiritual awakening—beyond coaching, beyond the market, in its original essence.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- What You'll Find -->
-        <section class="section">
-            <div class="section-card">
-                <h2>What will you find in this book?</h2>
-                <p>This is not a book to read. It is a book to <strong>experience</strong>.</p>
-                <p>Through four notebooks of spiritual exploration, you will discover:</p>
-                <ul class="features-list">
-                    <li>The Enneagram as a living spiritual science (not as a personality test)</li>
-                    <li>The mystical experience accessible through deep self-knowledge</li>
-                    <li>A rooted critique of social structures that distance us from essence</li>
-                    <li>How to integrate inner awakening with the creation of alternative realities</li>
-                    <li>Prose and poetry interwoven that touch the deepest fibers of the soul</li>
-                </ul>
-                <p style="text-align: center; margin-top: 1.5rem; font-style: italic;">Each page acts as a mirror of consciousness, inviting you to remember the essential.</p>
-            </div>
-        </section>
-
-        <!-- For Whom -->
-        <section class="section">
-            <div class="section-card">
-                <h2>Who this book is for</h2>
-                <ul class="features-list">
-                    <li>Spiritual seekers tired of superficial and commercial enneagram</li>
-                    <li>People who sense there is something beyond the "types"</li>
-                    <li>Those who feel the call to conscious awakening and real transformation</li>
-                    <li>Readers of transpersonal psychology, applied mysticism and spiritual philosophy</li>
-                    <li>Anyone willing to undertake the return to themselves</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- What Makes It Unique -->
-        <section class="section">
-            <div class="section-card">
-                <h2>What makes this book unique</h2>
-                <div class="comparison">
-                    <div class="comparison-column">
-                        <h4>You will NOT find:</h4>
-                        <ul class="no-list">
-                            <li>Personality tests</li>
-                            <li>Simplistic descriptions of "your type"</li>
-                            <li>Quick self-help recipes</li>
-                            <li>Content designed to sell more content</li>
-                        </ul>
-                    </div>
-                    <div class="comparison-column">
-                        <h4>You WILL find:</h4>
-                        <ul class="yes-list">
-                            <li>A revolutionary vision of the spiritual Enneagram</li>
-                            <li>Integration of deep psychology, mysticism and social critique</li>
-                            <li>A reading that works as contemplative meditation</li>
-                            <li>A bridge between authentic spirituality and transformative action</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="section">
-            <div class="section-card">
-                <h2>What readers say</h2>
-                <div class="testimonial">
-                    "I've been studying the Enneagram for years and thought I knew it. This book showed me I had barely scratched the surface. It's profound, challenging and necessary."
-                </div>
-                <div class="testimonial">
-                    "It's not a comfortable book. It confronts you, invites you to awaken and doesn't leave you the same. Exactly what I needed."
-                </div>
-            </div>
-        </section>
-
-        <!-- Warning -->
-        <section class="section">
-            <div class="section-card">
-                <div class="warning-box">
-                    <p><strong>Warning:</strong></p>
-                    <p>This book does not offer easy answers or instant solutions.</p>
-                    <p>It invites you to contemplate rather than interpret, to listen to the essential beneath the noise of the world.</p>
-                    <p><strong>If you seek comfort, this is not your book.</strong></p>
-                    <p><strong>If you seek truth, welcome.</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Author -->
-        <section class="section">
-            <div class="section-card">
-        <h2>About the author</h2>
-<p>Javier Gómez is a psychologist and transpersonal therapist. He integrates deep psychology, mysticism and contemplative practice, with years of clinical experience and accompaniment to people in existential or spiritual crises.</p>
-<p>His work transcends the individual sphere to weave bridges between inner transformation and social transformation.</p>
-<p>This is his first book: a living testimony of his own awakening path.</p>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section text-center">
-            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem;">A map toward wholeness</h3>
-            <p style="font-style: italic;">An invitation to remember. A call to return to the essential.</p>
-            <div class="buy-options">
-                <a href="https://mybook.to/TheEnneagramProphecy" class="buy-btn" target="_blank">
-                    Buy on Amazon
-                </a>
-                <a href="https://books.apple.com/book/id6758346495" class="buy-btn accent" target="_blank">
-                    Buy on Apple Books
-                </a>
-                <a href="https://flipbookpdf.net/web/site/e29cf962f65539caeef1ba1d9f657a3d9638af6f202602.pdf.html" class="buy-btn preview" target="_blank">
-                    Start reading for free
-                </a>
-            </div>
-        </section>
-            <!-- Quote Section -->
-        <section class="quote-section">
-            <p>
-                "Awakening is not a distant possibility,<br>it is more like remembering,<br>returning to inhabit what we already are"
-            </p>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Javier Gómez. Todos los derechos reservados / All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-            <a href="https://psicoalquimia.github.io/">psicoalquimia.github.io</a>
-        </p>
-    </footer>
-
-    <script>
+  <script>
+    // ==========================================
+    // LANGUAGE MANAGEMENT
+    // Lee preferencia de la home (localStorage). Si no existe, muestra modal.
+    // ==========================================
     let currentLang = null;
 
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+      document.documentElement.lang = lang;
+
+      document.getElementById('content-es').style.display = lang === 'es' ? 'block' : 'none';
+      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+
+      // Header
+      document.getElementById('langSwitchText').textContent = lang === 'es' ? 'EN' : 'ES';
+      const backLabel = document.getElementById('backLabel');
+      backLabel.innerHTML = lang === 'es'
+        ? '<span class="back-label-long">Volver a </span>Javier Gómez'
+        : '<span class="back-label-long">Back to </span>Javier Gómez';
+
+      // Footer
+      document.getElementById('footerCopy').textContent = lang === 'es'
+        ? '© 2026 Javier Gómez · Todos los derechos reservados'
+        : '© 2026 Javier Gómez · All rights reserved';
+
+      // Title
+      document.title = lang === 'es'
+        ? 'La Profecía del Eneagrama · Javier Gómez'
+        : 'The Enneagram Prophecy · Javier Gómez';
+    }
+
     function selectLanguage(lang) {
-        currentLang = lang;
-        document.getElementById('languageModal').classList.add('hidden');
-        document.getElementById('content-' + lang).classList.remove('hidden');
-        updateLangSwitch();
+      document.getElementById('languageModal').classList.add('hidden');
+      applyLanguage(lang);
     }
 
     function toggleLanguage() {
-        const newLang = currentLang === 'es' ? 'en' : 'es';
-        document.getElementById('content-' + currentLang).classList.add('hidden');
-        document.getElementById('content-' + newLang).classList.remove('hidden');
-        currentLang = newLang;
-        updateLangSwitch();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      applyLanguage(newLang);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function updateLangSwitch() {
-        const switchBtn = document.getElementById('langSwitch');
-        switchBtn.textContent = currentLang === 'es' ? 'English Edition' : 'Edición en Español';
-    }
+    // Init: leer preferencia desde la home o mostrar modal
+    (function initLanguage() {
+      const saved = localStorage.getItem('language');
+      if (saved === 'es' || saved === 'en') {
+        document.getElementById('languageModal').classList.add('hidden');
+        applyLanguage(saved);
+      } else {
+        // No hay preferencia → mostrar modal
+        document.getElementById('languageModal').classList.remove('hidden');
+      }
+    })();
 
-    // Efecto de aparición progresiva
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
+    // ==========================================
+    // THEME TOGGLE (sincronizado con la home)
+    // ==========================================
+    const themeToggle = document.getElementById('themeToggle');
+    const iconLight = document.getElementById('iconLight');
+    const iconDark = document.getElementById('iconDark');
+    const htmlEl = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlEl.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
 
-    document.querySelectorAll('.section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
+    themeToggle.addEventListener('click', () => {
+      const newTheme = htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      htmlEl.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
     });
-    </script>
+
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        iconLight.style.display = 'none';
+        iconDark.style.display = 'block';
+      } else {
+        iconLight.style.display = 'block';
+        iconDark.style.display = 'none';
+      }
+    }
+
+    // ==========================================
+    // SECTION REVEAL ON SCROLL
+    // ==========================================
+    const sections = document.querySelectorAll('section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    sections.forEach(section => sectionObserver.observe(section));
+  </script>
 </body>
 </html>
