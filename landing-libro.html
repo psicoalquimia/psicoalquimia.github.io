@@ -78,91 +78,13 @@
     }
 
     /* La sans-serif gobierna UI */
-    nav, button, .cta-button, .lang-switch, .lang-btn,
+    nav, button, .cta-button, .lang-switch,
     .header-link, .back-to-home, .footer-text,
     .meta-pill, .eyebrow {
       font-family: var(--font-ui);
     }
 
     a { color: inherit; text-decoration: none; }
-
-    /* =================================
-       LANGUAGE MODAL (solo si no hay preferencia)
-       ================================= */
-    .language-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(58, 58, 58, 0.85);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      animation: fadeInModal 0.5s ease-out;
-    }
-    .language-modal.hidden {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-    @keyframes fadeInModal {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .language-selector {
-      background: var(--color-white);
-      padding: 3rem 2.5rem;
-      border-radius: 6px;
-      text-align: center;
-      max-width: 420px;
-      width: 90%;
-      box-shadow: var(--shadow-lg);
-    }
-    .language-selector h2 {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin-bottom: 0.6rem;
-      color: var(--color-primary);
-      letter-spacing: -0.005em;
-    }
-    .language-selector p {
-      color: var(--color-text-light);
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
-      font-family: var(--font-display);
-      font-style: italic;
-    }
-    .language-buttons {
-      display: flex;
-      gap: 0.8rem;
-      flex-direction: column;
-    }
-    .lang-btn {
-      padding: 0.9rem 2rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: 1.5px solid var(--color-primary);
-      background: transparent;
-      color: var(--color-primary);
-      cursor: pointer;
-      border-radius: 50px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .lang-btn:hover {
-      background: var(--color-primary);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    @media (min-width: 600px) {
-      .language-buttons { flex-direction: row; justify-content: center; }
-      .lang-btn { flex: 1; max-width: 160px; }
-    }
 
     /* =================================
        HEADER
@@ -293,8 +215,11 @@
     }
     .book-cover {
       width: 100%;
-      aspect-ratio: 2/3;
-      background-image: url('portada-libro.jpg');
+      height: 0;
+      padding-top: 150%;
+      background-color: #d4cfc4;
+      background-image: linear-gradient(135deg, #d4cfc4, #c9c2b6);
+      background-image: url('portada-libro.jpg'), linear-gradient(135deg, #d4cfc4, #c9c2b6);
       background-size: cover;
       background-position: center;
       border-radius: 4px;
@@ -306,6 +231,14 @@
     .book-cover:hover {
       transform: translateY(-8px) rotate(-2deg);
       box-shadow: 0 22px 60px rgba(58, 58, 58, 0.22);
+    }
+    /* Navegadores modernos: proporcion nativa. Los antiguos se quedan con el padding. */
+    @supports (aspect-ratio: 2 / 3) {
+      .book-cover {
+        height: auto;
+        padding-top: 0;
+        aspect-ratio: 2 / 3;
+      }
     }
 
     .hero-content { display: flex; flex-direction: column; }
@@ -372,7 +305,10 @@
         text-align: center;
       }
       .hero-image {
-        max-width: 230px;
+        /* width explicito: sin el, los margenes auto anulan el estirado del grid,
+           la anchura queda indefinida y la portada colapsa a 2x3 px. */
+        width: 100%;
+        max-width: 260px;
         margin: 0 auto;
       }
       .hero h1 { font-size: 2.2rem; }
@@ -869,18 +805,6 @@
 </head>
 <body>
 
-  <!-- Language Selection Modal (solo si no hay preferencia guardada desde la home) -->
-  <div class="language-modal hidden" id="languageModal">
-    <div class="language-selector">
-      <h2 id="modalTitle">Choose your language</h2>
-      <p id="modalSubtitle">Elige tu idioma para continuar</p>
-      <div class="language-buttons">
-        <button class="lang-btn" onclick="selectLanguage('es')">Español</button>
-        <button class="lang-btn" onclick="selectLanguage('en')">English</button>
-      </div>
-    </div>
-  </div>
-
   <!-- Header -->
   <header>
     <div class="header-content">
@@ -1025,7 +949,7 @@
       <div class="autor-inner">
         <span class="section-eyebrow">Sobre el autor</span>
         <h2>Javier Gómez</h2>
-        <p>Psicoterapeuta y explorador de la consciencia. Su trabajo se sitúa en el cruce entre psicología profunda, mística contemplativa y compromiso con lo colectivo. Formado como terapeuta gestalt integrativo durante ocho años en Colombia —donde aprendió tanto de la psicología contemporánea como de tradiciones de sanación ancestrales—, acompaña hoy procesos de transformación profunda, integración de experiencias místicas y reorientación vital.</p>
+        <p>Psicoterapeuta y explorador de la consciencia. Graduado en Psicología, terapeuta gestalt integrativo y titulado en el Certificate Program in Traumatic Stress Studies de la Trauma Research Foundation. Su trabajo se sitúa en el cruce entre psicología profunda, mística contemplativa y compromiso con lo colectivo. Formado durante ocho años en Colombia —donde aprendió tanto de la psicología contemporánea como de tradiciones de sanación ancestrales—, acompaña hoy procesos de transformación profunda, integración de experiencias místicas y reorientación vital.</p>
         <p>Este es su primer libro: un testimonio vivo de su propio camino, escrito como invitación a quienes intuyen que el despertar interior es inseparable de la transformación del mundo.</p>
         <a href="index.html#sobre-mi" class="cta-button autor-cta">Saber más sobre Javier</a>
       </div>
@@ -1078,7 +1002,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-image">
-        <div class="book-cover" style="background-image: url('portada-libro-en.jpg');"></div>
+        <div class="book-cover" style="background-image: url('portada-libro-en.jpg'), linear-gradient(135deg, #d4cfc4, #c9c2b6);"></div>
       </div>
       <div class="hero-content">
         <span class="eyebrow">A book by Javier Gómez</span>
@@ -1185,7 +1109,7 @@
       <div class="autor-inner">
         <span class="section-eyebrow">About the author</span>
         <h2>Javier Gómez</h2>
-        <p>Psychotherapist and consciousness explorer. His work stands at the crossroads of depth psychology, contemplative mysticism, and commitment to the collective. Trained as an integrative Gestalt therapist over eight years in Colombia —where he learned from both contemporary psychology and ancestral healing traditions— he accompanies processes of deep transformation, integration of mystical experiences, and vocational and spiritual reorientation.</p>
+        <p>Psychotherapist and consciousness explorer. He holds a degree in Psychology, is an integrative Gestalt therapist, and completed the Certificate Program in Traumatic Stress Studies at the Trauma Research Foundation. His work stands at the crossroads of depth psychology, contemplative mysticism, and commitment to the collective. Trained over eight years in Colombia —where he learned from both contemporary psychology and ancestral healing traditions— he accompanies processes of deep transformation, integration of mystical experiences, and vocational and spiritual reorientation.</p>
         <p>This is his first book: a living testimony of his own path, written as an invitation to those who sense that inner awakening is inseparable from the transformation of the world.</p>
         <a href="index.html#sobre-mi" class="cta-button autor-cta">Learn more about Javier</a>
       </div>
@@ -1273,27 +1197,16 @@
         : 'The Enneagram Prophecy · Javier Gómez';
     }
 
-    function selectLanguage(lang) {
-      document.getElementById('languageModal').classList.add('hidden');
-      applyLanguage(lang);
-    }
-
     function toggleLanguage() {
       const newLang = currentLang === 'es' ? 'en' : 'es';
       applyLanguage(newLang);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Init: leer preferencia desde la home o mostrar modal
+    // Init: hereda el idioma elegido en la home; si no hay preferencia, español.
     (function initLanguage() {
       const saved = localStorage.getItem('language');
-      if (saved === 'es' || saved === 'en') {
-        document.getElementById('languageModal').classList.add('hidden');
-        applyLanguage(saved);
-      } else {
-        // No hay preferencia → mostrar modal
-        document.getElementById('languageModal').classList.remove('hidden');
-      }
+      applyLanguage(saved === 'en' ? 'en' : 'es');
     })();
 
     // ==========================================
