@@ -1149,17 +1149,150 @@
     .testimonios-intro {
       text-align: center;
       max-width: 600px;
-      margin: 0 auto 4rem;
+      margin: 0 auto 2.5rem;
       font-family: var(--font-display);
       font-size: 1.1rem;
       font-style: italic;
       color: var(--color-text-light);
       line-height: 1.7;
     }
-    .testimonios-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
+    /* Carrusel horizontal de voces */
+    .voces {
+      position: relative;
+    }
+    /* Difuminado en los bordes: insinua que hay mas a los lados */
+    .voces::before,
+    .voces::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 1.2rem;
+      width: 3rem;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    .voces::before {
+      left: -0.5rem;
+      background: linear-gradient(90deg, var(--color-light), transparent);
+    }
+    .voces::after {
+      right: -0.5rem;
+      background: linear-gradient(270deg, var(--color-light), transparent);
+    }
+    .voces.has-prev::before,
+    .voces.has-next::after { opacity: 1; }
+
+    .voces-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0.6rem 0 1.2rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+    }
+    .voces-track::-webkit-scrollbar { display: none; }
+    .voces-track.dragging {
+      cursor: grabbing;
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+    }
+    .voces-track:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 6px;
+      border-radius: 8px;
+    }
+
+    .voces-track .testimonio {
+      flex: 0 0 auto;
+      width: min(380px, 78vw);
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .voces-track .testimonio-author { margin-top: auto; }
+    /* Al arrastrar, el texto no debe seleccionarse */
+    .voces-track.dragging .testimonio { user-select: none; }
+
+    /* Flechas (solo raton) */
+    .voces-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--color-white);
+      border: 1.5px solid rgba(139, 126, 106, 0.22);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-base);
+    }
+    .voces-nav svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-primary);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .voces-nav:hover:not(:disabled) {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+    .voces-nav:disabled { opacity: 0.25; cursor: default; }
+    .voces-prev { left: -1.4rem; }
+    .voces-next { right: -1.4rem; }
+    @media (hover: hover) and (pointer: fine) and (min-width: 900px) {
+      .voces-nav { display: flex; }
+    }
+
+    /* Indicadores */
+    .voces-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.4rem;
+    }
+    .voces-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      background: var(--color-accent);
+      opacity: 0.28;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .voces-dot.active {
+      opacity: 0.85;
+      width: 22px;
+      border-radius: 50px;
+    }
+
+    .voces-fuente {
+      text-align: center;
+      margin-top: 2.2rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .voces-track { scroll-behavior: auto; }
+      .voces-track .testimonio { transition: none; }
     }
     .testimonio {
       padding: 2.5rem 2rem;
@@ -1169,7 +1302,6 @@
       transition: transform var(--transition-base), box-shadow var(--transition-base);
     }
     .testimonio:hover {
-      transform: translateY(-4px);
       box-shadow: var(--shadow-md);
     }
     .testimonio::before {
@@ -1202,20 +1334,12 @@
       border-top: 1px solid rgba(139, 126, 106, 0.2);
       padding-top: 1.2rem;
     }
-    .testimonios-disclaimer {
-      max-width: 640px;
-      margin: 3rem auto 0;
-      text-align: center;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--color-text-light);
-      line-height: 1.6;
-    }
 
     @media (max-width: 600px) {
       .testimonios { padding: 5rem 1.5rem; }
       .testimonio { padding: 2rem 1.5rem; }
+      .voces-track { gap: 1rem; }
+      .voces-track .testimonio { width: min(320px, 82vw); }
     }
 
     /* =================================
@@ -1637,7 +1761,7 @@
           </div>
           <div class="libro-content">
             <div class="libro-eyebrow" data-translate="libro-eyebrow">Mi primer libro</div>
-            <h3 class="libro-title">La Profecía del Eneagrama</h3>
+            <h3 class="libro-title" data-translate="libro-title">La Profecía del Eneagrama</h3>
             <p class="libro-desc" data-translate="libro-desc">Un ensayo contemplativo que devuelve el eneagrama a su esencia: un mapa sagrado de despertar, lejos de su uso comercial como test de personalidad.</p>
             <p class="libro-pull" data-translate="libro-pull">«Una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método.»</p>
             <div class="libro-cta-group">
@@ -1727,30 +1851,37 @@
     <!-- ============ TESTIMONIOS ============ -->
     <section class="testimonios" id="testimonios">
       <div class="testimonios-inner">
-        <h2 data-translate="testimonios-title">Voces de quienes han pasado por aquí</h2>
-        <p class="testimonios-intro" data-translate="testimonios-intro">Fragmentos compartidos con consentimiento. Anonimizados por respeto al proceso de cada persona.</p>
+        <h2 data-translate="testimonios-title">Voces</h2>
+        <p class="testimonios-intro" data-translate="testimonios-intro">Trabajo con pocas personas y no acostumbro a pedir testimonios. Lo que hay aquí se compartió con permiso, o es una reseña pública de mi libro. Cada voz lleva su procedencia.</p>
 
-        <div class="testimonios-grid">
-          <!-- TESTIMONIO 1 -->
-          <div class="testimonio">
-            <p class="testimonio-text" data-translate="testimonio-1-text">Muy agudo en sus apreciaciones. Javier me ayudó a darme cuenta de aspectos que me quitaban tranquilidad y que yo no estaba viendo. Gracias por el proceso.</p>
-            <div class="testimonio-author" data-translate="testimonio-1-author">D. P. · Proceso individual</div>
+        <div class="voces" id="voces">
+          <button class="voces-nav voces-prev" id="vocesPrev" type="button" aria-label="Voz anterior" aria-controls="vocesTrack">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="voces-track" id="vocesTrack" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Voces">
+          <figure class="testimonio">
+            <blockquote class="testimonio-text" data-translate="testimonio-1-text">Muy agudo en sus apreciaciones. Javier me ayudó a darme cuenta de aspectos que me quitaban tranquilidad y que yo no estaba viendo. Gracias por el proceso.</blockquote>
+            <figcaption class="testimonio-author" data-translate="testimonio-1-author">D. P. · Proceso individual</figcaption>
+          </figure>
+          <figure class="testimonio">
+            <blockquote class="testimonio-text" data-translate="testimonio-2-text">Una manera de ver la vida tan natural, tan sin artificios, que invita a reflexionar sobre uno mismo y sobre nuestra sociedad. Está escrito en un estilo claro y ameno que mantiene el interés hasta el final.</blockquote>
+            <figcaption class="testimonio-author" data-translate="testimonio-2-author">Lector verificado · La Profecía del Eneagrama</figcaption>
+          </figure>
+          <figure class="testimonio">
+            <blockquote class="testimonio-text" data-translate="testimonio-3-text">Un libro íntimo y exquisito, que te reconecta con la autenticidad de la existencia humana. Hace tambalear las bases de los planteamientos vitales actuales, algo muy necesario para sobrevivir y empezar a cambiarlos.</blockquote>
+            <figcaption class="testimonio-author" data-translate="testimonio-3-author">Isabel · La Profecía del Eneagrama</figcaption>
+          </figure>
           </div>
 
-          <!-- TESTIMONIO 2 -->
-          <div class="testimonio">
-            <p class="testimonio-text" data-translate="testimonio-2-text">Llegué buscando entender lo que me había pasado. Lo que encontré fue alguien capaz de sostener el silencio cuando no había palabras, y de hacer las preguntas justas cuando ya las había.</p>
-            <div class="testimonio-author" data-translate="testimonio-2-author">M. · Integración de experiencia psicodélica</div>
-          </div>
-
-          <!-- TESTIMONIO 3 -->
-          <div class="testimonio">
-            <p class="testimonio-text" data-translate="testimonio-3-text">No esperaba un acompañamiento así. No hay diagnósticos rápidos ni recetas. Hay presencia, escucha, y un trabajo que te devuelve poco a poco a un lugar que reconoces.</p>
-            <div class="testimonio-author" data-translate="testimonio-3-author">L. R. · Proceso de duelo</div>
-          </div>
+          <button class="voces-nav voces-next" id="vocesNext" type="button" aria-label="Voz siguiente" aria-controls="vocesTrack">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
 
-        <p class="testimonios-disclaimer" data-translate="testimonios-disclaimer">Cuando es posible, prefiero que la confianza la construya nuestra primera conversación, no las palabras de otros.</p>
+        <div class="voces-dots" id="vocesDots"></div>
+        <p class="voces-fuente" data-translate="voces-fuente">Las reseñas del libro están publicadas en Amazon España.</p>
+
       </div>
     </section>
 
@@ -1906,15 +2037,15 @@
         'service3-cta': 'Reservar el paquete',
         'viaje-label': 'Sobre las fechas',
         'viaje-text': 'Trabajo mientras viajo, así que alguna sesión puede necesitar moverse por razones de conexión o huso horario. Si ocurre, te aviso con la mayor antelación posible y buscamos hueco esa misma semana. Del mismo modo, puedes reprogramar la tuya avisando con 24 horas. La hora la acordamos siempre en tu huso horario.',
-        'testimonios-title': 'Voces de quienes han pasado por aquí',
-        'testimonios-intro': 'Fragmentos compartidos con consentimiento. Anonimizados por respeto al proceso de cada persona.',
+        'testimonios-title': 'Voces',
+        'testimonios-intro': 'Trabajo con pocas personas y no acostumbro a pedir testimonios. Lo que hay aquí se compartió con permiso, o es una reseña pública de mi libro. Cada voz lleva su procedencia.',
         'testimonio-1-text': 'Muy agudo en sus apreciaciones. Javier me ayudó a darme cuenta de aspectos que me quitaban tranquilidad y que yo no estaba viendo. Gracias por el proceso.',
         'testimonio-1-author': 'D. P. · Proceso individual',
-        'testimonio-2-text': 'Llegué buscando entender lo que me había pasado. Lo que encontré fue alguien capaz de sostener el silencio cuando no había palabras, y de hacer las preguntas justas cuando ya las había.',
-        'testimonio-2-author': 'M. · Integración de experiencia psicodélica',
-        'testimonio-3-text': 'No esperaba un acompañamiento así. No hay diagnósticos rápidos ni recetas. Hay presencia, escucha, y un trabajo que te devuelve poco a poco a un lugar que reconoces.',
-        'testimonio-3-author': 'L. R. · Proceso de duelo',
-        'testimonios-disclaimer': 'Cuando es posible, prefiero que la confianza la construya nuestra primera conversación, no las palabras de otros.',
+        'testimonio-2-text': 'Una manera de ver la vida tan natural, tan sin artificios, que invita a reflexionar sobre uno mismo y sobre nuestra sociedad. Está escrito en un estilo claro y ameno que mantiene el interés hasta el final.',
+        'testimonio-2-author': 'Lector verificado · La Profecía del Eneagrama',
+        'testimonio-3-text': 'Un libro íntimo y exquisito, que te reconecta con la autenticidad de la existencia humana. Hace tambalear las bases de los planteamientos vitales actuales, algo muy necesario para sobrevivir y empezar a cambiarlos.',
+        'testimonio-3-author': 'Isabel · La Profecía del Eneagrama',
+        'voces-fuente': 'Las reseñas del libro están publicadas en Amazon España.',
         'about-title': 'Sobre mí',
         'about-p1': 'Acompaño procesos de transformación profunda. Mi trabajo se sitúa en un cruce poco habitado: el lugar donde la psicología contemporánea, la experiencia mística y el compromiso con lo colectivo dejan de ser territorios separados.',
         'about-p2': 'No vengo de la psicología clínica convencional. Vengo de un camino más largo y menos lineal: ocho años en Colombia, donde me formé como terapeuta gestalt integrativo y donde aprendí, al mismo tiempo, de curanderas tradicionales, de guardianes de medicinas ancestrales, y del trabajo con comunidades que han sostenido formas de saber que Occidente todavía no termina de escuchar. Trabajé en programas de psicología profunda aplicada a contextos sociales, acompañé a personas en procesos de integración psicodélica, y descubrí que la sanación individual y la transformación colectiva no son dos cosas separadas.',
@@ -1925,6 +2056,7 @@
         'about-p6': 'Vivo viajando y trabajo en remoto desde donde esté. Acompaño en español y en inglés.',
         'about-quote': 'Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.',
         'libro-eyebrow': 'Mi primer libro',
+        'libro-title': 'La Profecía del Eneagrama',
         'libro-desc': 'Un ensayo contemplativo que devuelve el eneagrama a su esencia: un mapa sagrado de despertar, lejos de su uso comercial como test de personalidad.',
         'libro-pull': '«Una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método.»',
         'libro-cta1': 'Conseguir el libro',
@@ -2001,15 +2133,15 @@
         'service3-cta': 'Book the package',
         'viaje-label': 'About scheduling',
         'viaje-text': 'I work while travelling, so a session may occasionally need to move for connection or time-zone reasons. If that happens, I\'ll let you know as early as I can and we\'ll find another slot that same week. Equally, you can reschedule yours with 24 hours\' notice. We always set the time in your own time zone.',
-        'testimonios-title': 'Voices of people who have been here',
-        'testimonios-intro': 'Shared with permission. Anonymized out of respect for each person\'s process.',
+        'testimonios-title': 'Voices',
+        'testimonios-intro': 'I work with few people and don\'t usually ask for testimonials. What\'s here was shared with permission, or is a public review of my book. Each voice carries its source.',
         'testimonio-1-text': 'Very perceptive. Javier helped me see things that were unsettling me and that I hadn\'t noticed myself. Thank you for the process.',
         'testimonio-1-author': 'D. P. · Individual process',
-        'testimonio-2-text': 'I came wanting to understand what had happened to me. What I found was someone who could sit with the silence when there were no words, and ask the right questions once there were.',
-        'testimonio-2-author': 'M. · Psychedelic experience integration',
-        'testimonio-3-text': 'I wasn\'t expecting this kind of support. No quick diagnoses, no formulas. Just presence, listening, and work that slowly brings you back to somewhere you recognize.',
-        'testimonio-3-author': 'L. R. · Grief process',
-        'testimonios-disclaimer': 'Where possible, I\'d rather trust be built through our first conversation than through other people\'s words.',
+        'testimonio-2-text': 'A way of seeing life that is so natural, so free of artifice, that it invites reflection on oneself and on our society. It is written in a clear and engaging style that holds your attention until the very end.',
+        'testimonio-2-author': 'Verified reader · The Enneagram Prophecy',
+        'testimonio-3-text': 'An intimate and exquisite book that reconnects you with the authenticity of human existence. It shakes the foundations of contemporary life\'s premises — something very necessary if we are to survive and begin to change them.',
+        'testimonio-3-author': 'Isabel · The Enneagram Prophecy',
+        'voces-fuente': 'The book reviews are published on Amazon Spain.',
         'about-title': 'About me',
         'about-p1': 'I accompany processes of deep transformation. My work stands at a rarely inhabited crossroads: the place where contemporary psychology, mystical experience, and a commitment to the collective stop being separate territories.',
         'about-p2': 'I don\'t come from conventional clinical psychology. I come from a longer and less linear path: eight years in Colombia, where I trained as an integrative Gestalt therapist and where, at the same time, I learned from traditional healers, keepers of ancestral medicines, and from working with communities that have sustained ways of knowing the West has not yet learned to listen to. I worked in programs of depth psychology applied to social contexts, accompanied people through processes of psychedelic integration, and discovered that individual healing and collective transformation are not two separate things.',
@@ -2020,6 +2152,7 @@
         'about-p6': 'I live travelling and work remotely from wherever I am. I accompany in Spanish and in English.',
         'about-quote': 'I believe in <strong>human, integral, and compassionate</strong> therapy, where each person can <strong>reconnect with their truth, honor their story, and live closer to themselves</strong>.',
         'libro-eyebrow': 'My first book',
+        'libro-title': 'The Enneagram Prophecy',
         'libro-desc': 'A contemplative essay that returns the Enneagram to its essence: a sacred map of awakening, far from its commercial use as a personality test.',
         'libro-pull': '«A profound spiritual work that questions power structures while embracing tenderness as method.»',
         'libro-cta1': 'Get the book',
@@ -2058,6 +2191,13 @@
           ? 'https://mybook.to/LaProfeciaDelEneagrama'
           : 'https://mybook.to/TheEnneagramProphecy';
       }
+
+      const vocesPrev = document.getElementById('vocesPrev');
+      const vocesNext = document.getElementById('vocesNext');
+      if (vocesPrev) vocesPrev.setAttribute('aria-label', lang === 'es' ? 'Voz anterior' : 'Previous voice');
+      if (vocesNext) vocesNext.setAttribute('aria-label', lang === 'es' ? 'Voz siguiente' : 'Next voice');
+      const vocesTrackEl = document.getElementById('vocesTrack');
+      if (vocesTrackEl) vocesTrackEl.setAttribute('aria-label', lang === 'es' ? 'Voces' : 'Voices');
 
       const bookCover = document.getElementById('libroParallax');
       if (bookCover) {
@@ -2217,6 +2357,127 @@
       threshold: 0
     });
     sectionsToObserve.forEach(sec => activeObserver.observe(sec));
+
+
+    // ==========================================
+    // CARRUSEL DE VOCES
+    // ==========================================
+    (function vocesCarousel() {
+      const wrap = document.getElementById('voces');
+      const track = document.getElementById('vocesTrack');
+      const dotsBox = document.getElementById('vocesDots');
+      const prev = document.getElementById('vocesPrev');
+      const next = document.getElementById('vocesNext');
+      if (!wrap || !track || !dotsBox) return;
+
+      const cards = Array.from(track.querySelectorAll('.testimonio'));
+      if (!cards.length) return;
+
+      // Indicadores
+      cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'voces-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', String(i + 1));
+        dot.addEventListener('click', () => irA(i));
+        dotsBox.appendChild(dot);
+      });
+      const dots = Array.from(dotsBox.children);
+
+      function alPrincipio() { return track.scrollLeft <= 2; }
+      function alFinal() { return track.scrollLeft >= track.scrollWidth - track.clientWidth - 2; }
+
+      function indiceActual() {
+        // En los extremos mandan los extremos: cuando el carril apenas tiene
+        // recorrido, la tarjeta mas cercana al centro no es la que toca.
+        if (alPrincipio()) return 0;
+        if (alFinal()) return cards.length - 1;
+        const centro = track.scrollLeft + track.clientWidth / 2;
+        let mejor = 0, dist = Infinity;
+        cards.forEach((c, i) => {
+          const d = Math.abs((c.offsetLeft + c.offsetWidth / 2) - centro);
+          if (d < dist) { dist = d; mejor = i; }
+        });
+        return mejor;
+      }
+
+      function irA(i) {
+        const c = cards[Math.max(0, Math.min(cards.length - 1, i))];
+        track.scrollTo({
+          left: c.offsetLeft - (track.clientWidth - c.offsetWidth) / 2,
+          behavior: 'smooth'
+        });
+      }
+
+      let pendiente = false;
+      function actualizar() {
+        if (pendiente) return;
+        pendiente = true;
+        requestAnimationFrame(() => {
+          pendiente = false;
+          const i = indiceActual();
+          dots.forEach((d, k) => d.classList.toggle('active', k === i));
+          const inicio = alPrincipio();
+          const fin = alFinal();
+          wrap.classList.toggle('has-prev', !inicio);
+          wrap.classList.toggle('has-next', !fin);
+          if (prev) prev.disabled = inicio;
+          if (next) next.disabled = fin;
+        });
+      }
+
+      track.addEventListener('scroll', actualizar, { passive: true });
+      window.addEventListener('resize', actualizar);
+      // El estado de flechas y difuminados depende de la anchura real del carril.
+      // Las tipografias llegan por red y reflujan la maqueta despues del arranque,
+      // asi que recalculamos cuando eso ocurre en lugar de medir una sola vez.
+      window.addEventListener('load', actualizar);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(actualizar).catch(() => {});
+      if (window.ResizeObserver) {
+        const ro = new ResizeObserver(actualizar);
+        ro.observe(track);
+        cards.forEach((c) => ro.observe(c));
+      }
+      if (prev) prev.addEventListener('click', () => irA(indiceActual() - 1));
+      if (next) next.addEventListener('click', () => irA(indiceActual() + 1));
+
+      // Teclado
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); irA(indiceActual() + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); irA(indiceActual() - 1); }
+      });
+
+      // Arrastre con raton (en tactil ya funciona el gesto nativo)
+      let arrastrando = false, xInicio = 0, scrollInicio = 0, movido = 0;
+      track.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse') return;
+        arrastrando = true; movido = 0;
+        xInicio = e.clientX;
+        scrollInicio = track.scrollLeft;
+        track.classList.add('dragging');
+      });
+      track.addEventListener('pointermove', (e) => {
+        if (!arrastrando) return;
+        const dx = e.clientX - xInicio;
+        movido = Math.max(movido, Math.abs(dx));
+        track.scrollLeft = scrollInicio - dx;
+      });
+      function soltar() {
+        if (!arrastrando) return;
+        arrastrando = false;
+        track.classList.remove('dragging');
+        irA(indiceActual());
+      }
+      track.addEventListener('pointerup', soltar);
+      track.addEventListener('pointercancel', soltar);
+      track.addEventListener('pointerleave', soltar);
+      // Un arrastre no debe abrir enlaces dentro de la tarjeta
+      track.addEventListener('click', (e) => {
+        if (movido > 6) { e.preventDefault(); e.stopPropagation(); }
+      }, true);
+
+      actualizar();
+    })();
 
     // ==========================================
     // SECTION REVEAL ON SCROLL
