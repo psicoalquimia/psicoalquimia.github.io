@@ -1105,6 +1105,35 @@
       .servicio-details dt:first-child { margin-top: 0; }
     }
 
+    /* Nota sobre fechas y reprogramacion */
+    .nota-viaje {
+      margin-top: 3rem;
+      padding: 1.8rem 2rem;
+      background: var(--color-light);
+      border-radius: 6px;
+      border: 1px solid rgba(139, 126, 106, 0.18);
+    }
+    .nota-viaje-label {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+    .nota-viaje p {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--color-text-light);
+      margin: 0;
+    }
+    @media (max-width: 600px) {
+      .nota-viaje { padding: 1.5rem 1.3rem; }
+    }
+
     /* =================================
        TESTIMONIOS
        ================================= */
@@ -1214,7 +1243,8 @@
     }
     .libro-image-placeholder {
       width: 100%;
-      aspect-ratio: 2/3;
+      height: 0;
+      padding-top: 150%;
       background: linear-gradient(135deg, #d4cfc4, #c9c2b6);
       background-image: url('portada-libro.jpg');
       background-size: cover;
@@ -1229,6 +1259,14 @@
     .libro-image-placeholder:hover {
       transform: translateY(-8px) rotate(-2deg);
       box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    }
+    /* Navegadores modernos: proporcion nativa. Los antiguos se quedan con el padding. */
+    @supports (aspect-ratio: 2 / 3) {
+      .libro-image-placeholder {
+        height: auto;
+        padding-top: 0;
+        aspect-ratio: 2 / 3;
+      }
     }
     .libro-content {
       display: flex;
@@ -1288,7 +1326,10 @@
       .libro-image {
         position: relative;
         top: auto;
-        max-width: 220px;
+        /* width explicito: sin el, los margenes auto anulan el estirado del grid,
+           la anchura queda indefinida y la portada colapsa a 2x3 px. */
+        width: 100%;
+        max-width: 260px;
         margin: 0 auto;
       }
       .libro-title { font-size: 2rem; }
@@ -1506,10 +1547,10 @@
   <!-- Fixed Navigation (aparece al hacer scroll) -->
   <nav class="nav-fixed" id="navFixed" role="navigation">
     <div class="nav-row">
-      <a href="#sobre-mi" data-translate="nav-about">Sobre mí</a>
+      <a href="#libro" data-translate="nav-book">Libro</a>
       <a href="#servicios" data-translate="nav-services">Servicios</a>
       <a href="#testimonios" data-translate="nav-testimonios">Voces</a>
-      <a href="#libro" data-translate="nav-book">Libro</a>
+      <a href="#sobre-mi" data-translate="nav-about">Sobre mí</a>
       <a href="#contacto" data-translate="nav-contact">Contacto</a>
     </div>
   </nav>
@@ -1587,6 +1628,29 @@
 
     <div class="section-separator">· · ·</div>
 
+    <!-- ============ LIBRO (compacto) ============ -->
+    <section class="libro" id="libro">
+      <div class="libro-inner">
+        <div class="libro-container">
+          <div class="libro-image">
+            <div class="libro-image-placeholder" id="libroParallax" role="img" aria-label="Portada del libro La Profecía del Eneagrama"></div>
+          </div>
+          <div class="libro-content">
+            <div class="libro-eyebrow" data-translate="libro-eyebrow">Mi primer libro</div>
+            <h3 class="libro-title">La Profecía del Eneagrama</h3>
+            <p class="libro-desc" data-translate="libro-desc">Un ensayo contemplativo que devuelve el eneagrama a su esencia: un mapa sagrado de despertar, lejos de su uso comercial como test de personalidad.</p>
+            <p class="libro-pull" data-translate="libro-pull">«Una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método.»</p>
+            <div class="libro-cta-group">
+              <a href="https://mybook.to/LaProfeciaDelEneagrama" id="bookLink" class="cta-button cta-button-primary" target="_blank" rel="noopener noreferrer" data-translate="libro-cta1">Conseguir el libro</a>
+              <a href="landing-libro.html" class="cta-button" data-translate="libro-cta2">Saber más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator">· · ·</div>
+
     <!-- ============ SERVICIOS ============ -->
     <section class="servicios" id="servicios">
       <div class="servicios-inner">
@@ -1620,35 +1684,40 @@
             <dt data-translate="service-modality">Modalidad</dt>
             <dd data-translate="service2-format">Online · videollamada</dd>
             <dt data-translate="service-duration">Duración</dt>
-            <dd><span data-translate="service2-length">75 minutos</span></dd>
+            <dd><span data-translate="service2-length">60 - 75 minutos</span></dd>
             <dt data-translate="service-investment">Inversión</dt>
-            <dd data-translate="service2-price">80€ por sesión</dd>
+            <dd data-translate="service2-price">50€ por sesión</dd>
           </dl>
           <a href="https://psicoalquimia.setmore.com/services/948d7781-1964-49b2-9e8a-304de70cd109" target="_blank" class="servicio-button" data-translate="service2-cta">Reservar sesión</a>
         </div>
 
-        <!-- Servicio 3: Proceso de 3 meses -->
+        <!-- Servicio 3: Paquete de 4 sesiones -->
         <div class="servicio-card">
-          <div class="servicio-card-eyebrow" data-translate="service3-eyebrow">Acompañamiento sostenido</div>
-          <h3 data-translate="service3-title">Proceso de transformación profunda · 3 meses</h3>
-          <p data-translate="service3-desc">Para quienes saben que lo que están atravesando no se resuelve en una sesión. Un acompañamiento sostenido de tres meses, pensado para procesos de reorientación vital profunda, integración de experiencias significativas, o trabajo con momentos de umbral importantes.</p>
-          <p data-translate="service3-includes-label"><strong>El proceso incluye:</strong></p>
+          <div class="servicio-card-eyebrow" data-translate="service3-eyebrow">Compromiso con el proceso</div>
+          <h3 data-translate="service3-title">Paquete de 4 sesiones</h3>
+          <p data-translate="service3-desc">Un compromiso, y ya está. Cuatro sesiones de 60 a 75 minutos, semanales o quincenales, a utilizar en un plazo máximo de 60 días.</p>
+          <p data-translate="service3-desc2">Está pensado para quien sabe que necesita un proceso pero sabe también lo fácil que es no escribir, no agendar, dejarlo para la semana que viene. Haces un pago, fijamos las cuatro fechas, y ya no tienes que volver a decidir. Solo aparecer.</p>
+          <p data-translate="service3-includes-label"><strong>El paquete incluye:</strong></p>
           <ul>
-            <li data-translate="service3-include1">12 sesiones individuales de 75 minutos (frecuencia quincenal o semanal según necesidad)</li>
-            <li data-translate="service3-include2">Dos textos personalizados a mitad y final del proceso, como espejo y mapa de lo trabajado</li>
-            <li data-translate="service3-include3">Material de lectura y prácticas contemplativas seleccionadas para tu proceso</li>
-            <li data-translate="service3-include4">Un encuentro de cierre dedicado a integrar lo recorrido</li>
+            <li data-translate="service3-include1">4 sesiones individuales de 60 a 75 minutos</li>
+            <li data-translate="service3-include2">Frecuencia semanal o quincenal, la que mejor te siente</li>
+            <li data-translate="service3-include3">Las cuatro fechas acordadas desde el inicio</li>
+            <li data-translate="service3-include4">60 días de vigencia desde la primera sesión</li>
           </ul>
           <dl class="servicio-details">
             <dt data-translate="service-modality">Modalidad</dt>
-            <dd data-translate="service3-format">Online</dd>
+            <dd data-translate="service3-format">Online · videollamada</dd>
             <dt data-translate="service-duration">Duración</dt>
-            <dd><span data-translate="service3-length">3 meses · 12 sesiones</span></dd>
+            <dd><span data-translate="service3-length">4 sesiones · 60 días de vigencia</span></dd>
             <dt data-translate="service-investment">Inversión</dt>
-            <dd data-translate="service3-price">950€ (pago único) o 350€/mes</dd>
+            <dd data-translate="service3-price">180€ (45€ por sesión)</dd>
           </dl>
-          <p class="servicio-nota" data-translate="service3-note">Plazas limitadas. Antes de iniciar el proceso confirmaremos su pertinencia en la llamada de orientación.</p>
-          <a href="https://psicoalquimia.setmore.com/services/56fd609b-6278-4dc3-9413-ec9794da287d" target="_blank" class="servicio-button" data-translate="service3-cta">Solicitar proceso</a>
+          <a href="https://psicoalquimia.setmore.com" target="_blank" class="servicio-button" data-translate="service3-cta">Reservar el paquete</a>
+        </div>
+
+        <div class="nota-viaje">
+          <div class="nota-viaje-label" data-translate="viaje-label">Sobre las fechas</div>
+          <p data-translate="viaje-text">Trabajo mientras viajo, así que alguna sesión puede necesitar moverse por razones de conexión o huso horario. Si ocurre, te aviso con la mayor antelación posible y buscamos hueco esa misma semana. Del mismo modo, puedes reprogramar la tuya avisando con 24 horas. La hora la acordamos siempre en tu huso horario.</p>
         </div>
       </div>
     </section>
@@ -1695,9 +1764,10 @@
           <p data-translate="about-p1">Acompaño procesos de transformación profunda. Mi trabajo se sitúa en un cruce poco habitado: el lugar donde la psicología contemporánea, la experiencia mística y el compromiso con lo colectivo dejan de ser territorios separados.</p>
           <p data-translate="about-p2">No vengo de la psicología clínica convencional. Vengo de un camino más largo y menos lineal: ocho años en Colombia, donde me formé como terapeuta gestalt integrativo y donde aprendí, al mismo tiempo, de curanderas tradicionales, de guardianes de medicinas ancestrales, y del trabajo con comunidades que han sostenido formas de saber que Occidente todavía no termina de escuchar. Trabajé en programas de psicología profunda aplicada a contextos sociales, acompañé a personas en procesos de integración psicodélica, y descubrí que la sanación individual y la transformación colectiva no son dos cosas separadas.</p>
           <p data-translate="about-p3">Estudié las disciplinas de la psicología contemporánea —trabajo informado en trauma, abordajes somáticos, terapia integrativa— pero las habito desde un lugar que es a la vez más antiguo y más nuevo. Más antiguo: la sabiduría contemplativa de las tradiciones que llevan milenios indagando qué somos —el sufismo, las prácticas indígenas, la mística cristiana, la meditación—. Más nuevo: la convicción de que esa indagación, hoy, no puede separarse de la pregunta por cómo vivimos juntos, qué construimos, qué heredamos.</p>
+          <p data-translate="about-formacion">Formalmente: soy graduado en Psicología, terapeuta gestalt integrativo, y tengo el Certificate Program in Traumatic Stress Studies de la Trauma Research Foundation, fundada por Bessel van der Kolk.</p>
           <p data-translate="about-p4">Mi trabajo no busca arreglarte ni explicarte. Busca acompañarte a recordar lo que ya sabes pero has perdido de vista bajo el ruido. No vengo a imponer un mapa, sino a sostener un espacio donde el tuyo pueda dibujarse.</p>
           <p data-translate="about-p5">Soy también escritor. <em>La Profecía del Eneagrama</em> es mi primer libro: un ensayo contemplativo que recupera el eneagrama como mapa sagrado de despertar, lejos de su uso comercial como test de personalidad. Escribir y acompañar son, para mí, dos formas del mismo gesto: hacer espacio para que algo verdadero pueda decirse.</p>
-          <p data-translate="about-p6">Trabajo en remoto desde el sur de España. Acompaño en español y en inglés.</p>
+          <p data-translate="about-p6">Vivo viajando y trabajo en remoto desde donde esté. Acompaño en español y en inglés.</p>
         </div>
         <div class="sobre-mi-image">
           <div class="sobre-mi-image-rect" role="img" aria-label="Foto de Javier Gómez"></div>
@@ -1705,29 +1775,6 @@
       </div>
       <div class="quote">
         <span data-translate="about-quote">Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.</span>
-      </div>
-    </section>
-
-    <div class="section-separator">· · ·</div>
-
-    <!-- ============ LIBRO (compacto) ============ -->
-    <section class="libro" id="libro">
-      <div class="libro-inner">
-        <div class="libro-container">
-          <div class="libro-image">
-            <div class="libro-image-placeholder" id="libroParallax" role="img" aria-label="Portada del libro La Profecía del Eneagrama"></div>
-          </div>
-          <div class="libro-content">
-            <div class="libro-eyebrow" data-translate="libro-eyebrow">Mi primer libro</div>
-            <h3 class="libro-title">La Profecía del Eneagrama</h3>
-            <p class="libro-desc" data-translate="libro-desc">Un ensayo contemplativo que devuelve el eneagrama a su esencia: un mapa sagrado de despertar, lejos de su uso comercial como test de personalidad.</p>
-            <p class="libro-pull" data-translate="libro-pull">«Una obra espiritual profunda que cuestiona las estructuras de poder mientras abraza la ternura como método.»</p>
-            <div class="libro-cta-group">
-              <a href="https://mybook.to/LaProfeciaDelEneagrama" id="bookLink" class="cta-button cta-button-primary" target="_blank" rel="noopener noreferrer" data-translate="libro-cta1">Conseguir el libro</a>
-              <a href="landing-libro.html" class="cta-button" data-translate="libro-cta2">Saber más</a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1841,22 +1888,24 @@
         'service2-desc': 'Espacio para personas que atraviesan momentos significativos y necesitan presencia, escucha profunda y orientación cuidadosa. Trabajo informado en trauma, integrando herramientas de gestalt, abordajes somáticos y diálogo con tradiciones contemplativas.',
         'service2-modality': '<em>Puede tomarse como espacio puntual cuando lo necesites, o como modalidad de trabajo sostenida en el tiempo. No hay compromiso obligatorio: hay personas que vienen a una sesión cuando algo aprieta, y personas que se quedan meses. Ambos modos son legítimos.</em>',
         'service2-format': 'Online · videollamada',
-        'service2-length': '75 minutos',
-        'service2-price': '80€ por sesión',
+        'service2-length': '60 - 75 minutos',
+        'service2-price': '50€ por sesión',
         'service2-cta': 'Reservar sesión',
-        'service3-eyebrow': 'Acompañamiento sostenido',
-        'service3-title': 'Proceso de transformación profunda · 3 meses',
-        'service3-desc': 'Para quienes saben que lo que están atravesando no se resuelve en una sesión. Un acompañamiento sostenido de tres meses, pensado para procesos de reorientación vital profunda, integración de experiencias significativas, o trabajo con momentos de umbral importantes.',
-        'service3-includes-label': '<strong>El proceso incluye:</strong>',
-        'service3-include1': '12 sesiones individuales de 75 minutos (frecuencia quincenal o semanal según necesidad)',
-        'service3-include2': 'Dos textos personalizados a mitad y final del proceso, como espejo y mapa de lo trabajado',
-        'service3-include3': 'Material de lectura y prácticas contemplativas seleccionadas para tu proceso',
-        'service3-include4': 'Un encuentro de cierre dedicado a integrar lo recorrido',
-        'service3-format': 'Online',
-        'service3-length': '3 meses · 12 sesiones',
-        'service3-price': '950€ (pago único) o 350€/mes',
-        'service3-note': 'Plazas limitadas. Antes de iniciar el proceso confirmaremos su pertinencia en la llamada de orientación.',
-        'service3-cta': 'Solicitar proceso',
+        'service3-eyebrow': 'Compromiso con el proceso',
+        'service3-title': 'Paquete de 4 sesiones',
+        'service3-desc': 'Un compromiso, y ya está. Cuatro sesiones de 60 a 75 minutos, semanales o quincenales, a utilizar en un plazo máximo de 60 días.',
+        'service3-desc2': 'Está pensado para quien sabe que necesita un proceso pero sabe también lo fácil que es no escribir, no agendar, dejarlo para la semana que viene. Haces un pago, fijamos las cuatro fechas, y ya no tienes que volver a decidir. Solo aparecer.',
+        'service3-includes-label': '<strong>El paquete incluye:</strong>',
+        'service3-include1': '4 sesiones individuales de 60 a 75 minutos',
+        'service3-include2': 'Frecuencia semanal o quincenal, la que mejor te siente',
+        'service3-include3': 'Las cuatro fechas acordadas desde el inicio',
+        'service3-include4': '60 días de vigencia desde la primera sesión',
+        'service3-format': 'Online · videollamada',
+        'service3-length': '4 sesiones · 60 días de vigencia',
+        'service3-price': '180€ (45€ por sesión)',
+        'service3-cta': 'Reservar el paquete',
+        'viaje-label': 'Sobre las fechas',
+        'viaje-text': 'Trabajo mientras viajo, así que alguna sesión puede necesitar moverse por razones de conexión o huso horario. Si ocurre, te aviso con la mayor antelación posible y buscamos hueco esa misma semana. Del mismo modo, puedes reprogramar la tuya avisando con 24 horas. La hora la acordamos siempre en tu huso horario.',
         'testimonios-title': 'Voces de quienes han pasado por aquí',
         'testimonios-intro': 'Fragmentos compartidos con consentimiento. Anonimizados por respeto al proceso de cada persona.',
         'testimonio-1-text': 'Muy agudo en sus apreciaciones. Javier me ayudó a darme cuenta de aspectos que me quitaban tranquilidad y que yo no estaba viendo. Gracias por el proceso.',
@@ -1870,9 +1919,10 @@
         'about-p1': 'Acompaño procesos de transformación profunda. Mi trabajo se sitúa en un cruce poco habitado: el lugar donde la psicología contemporánea, la experiencia mística y el compromiso con lo colectivo dejan de ser territorios separados.',
         'about-p2': 'No vengo de la psicología clínica convencional. Vengo de un camino más largo y menos lineal: ocho años en Colombia, donde me formé como terapeuta gestalt integrativo y donde aprendí, al mismo tiempo, de curanderas tradicionales, de guardianes de medicinas ancestrales, y del trabajo con comunidades que han sostenido formas de saber que Occidente todavía no termina de escuchar. Trabajé en programas de psicología profunda aplicada a contextos sociales, acompañé a personas en procesos de integración psicodélica, y descubrí que la sanación individual y la transformación colectiva no son dos cosas separadas.',
         'about-p3': 'Estudié las disciplinas de la psicología contemporánea —trabajo informado en trauma, abordajes somáticos, terapia integrativa— pero las habito desde un lugar que es a la vez más antiguo y más nuevo. Más antiguo: la sabiduría contemplativa de las tradiciones que llevan milenios indagando qué somos —el sufismo, las prácticas indígenas, la mística cristiana, la meditación—. Más nuevo: la convicción de que esa indagación, hoy, no puede separarse de la pregunta por cómo vivimos juntos, qué construimos, qué heredamos.',
+        'about-formacion': 'Formalmente: soy graduado en Psicología, terapeuta gestalt integrativo, y tengo el Certificate Program in Traumatic Stress Studies de la Trauma Research Foundation, fundada por Bessel van der Kolk.',
         'about-p4': 'Mi trabajo no busca arreglarte ni explicarte. Busca acompañarte a recordar lo que ya sabes pero has perdido de vista bajo el ruido. No vengo a imponer un mapa, sino a sostener un espacio donde el tuyo pueda dibujarse.',
         'about-p5': 'Soy también escritor. <em>La Profecía del Eneagrama</em> es mi primer libro: un ensayo contemplativo que recupera el eneagrama como mapa sagrado de despertar, lejos de su uso comercial como test de personalidad. Escribir y acompañar son, para mí, dos formas del mismo gesto: hacer espacio para que algo verdadero pueda decirse.',
-        'about-p6': 'Trabajo en remoto desde el sur de España. Acompaño en español y en inglés.',
+        'about-p6': 'Vivo viajando y trabajo en remoto desde donde esté. Acompaño en español y en inglés.',
         'about-quote': 'Creo en una terapia <strong>humana, integral y compasiva</strong>, donde cada persona pueda <strong>reconectar con su verdad, honrar su historia y vivir más cerca de sí misma</strong>.',
         'libro-eyebrow': 'Mi primer libro',
         'libro-desc': 'Un ensayo contemplativo que devuelve el eneagrama a su esencia: un mapa sagrado de despertar, lejos de su uso comercial como test de personalidad.',
@@ -1933,22 +1983,24 @@
         'service2-desc': 'A space for people going through significant moments who need presence, deep listening, and careful guidance. Trauma-informed work, drawing on Gestalt tools, somatic approaches, and dialogue with contemplative traditions.',
         'service2-modality': '<em>You can take it as a one-off whenever you need it, or as ongoing work over time. There\'s no required commitment: some people come for a single session when something gets tight, others stay for months. Both are equally valid.</em>',
         'service2-format': 'Online · video call',
-        'service2-length': '75 minutes',
-        'service2-price': '€80 per session',
+        'service2-length': '60 - 75 minutes',
+        'service2-price': '€50 per session',
         'service2-cta': 'Book a session',
-        'service3-eyebrow': 'Ongoing work',
-        'service3-title': 'Deep transformation process · 3 months',
-        'service3-desc': 'For those who know that what they\'re going through won\'t be resolved in a single session. Three months of ongoing work, designed for deep life reorientation, integrating significant experiences, or moving through major thresholds.',
-        'service3-includes-label': '<strong>The process includes:</strong>',
-        'service3-include1': '12 individual 75-minute sessions (weekly or every two weeks, depending on what you need)',
-        'service3-include2': 'Two pieces of writing for you, at the midpoint and at the end, as a mirror and a map of the work',
-        'service3-include3': 'Reading material and contemplative practices chosen for your process',
-        'service3-include4': 'A closing session dedicated to integrating the ground you\'ve covered',
-        'service3-format': 'Online',
-        'service3-length': '3 months · 12 sessions',
-        'service3-price': '€950 (one payment) or €350/month',
-        'service3-note': 'Limited places. Before starting, we\'ll confirm together in the orientation call that this is the right fit.',
-        'service3-cta': 'Request the process',
+        'service3-eyebrow': 'Committing to the process',
+        'service3-title': 'Four-session package',
+        'service3-desc': 'One commitment, and that\'s it. Four sessions of 60 to 75 minutes, weekly or every two weeks, to be used within a maximum of 60 days.',
+        'service3-desc2': 'It\'s made for people who know they need a process but also know how easy it is not to write, not to book, to leave it for next week. You pay once, we set the four dates, and you don\'t have to decide again. Just show up.',
+        'service3-includes-label': '<strong>The package includes:</strong>',
+        'service3-include1': '4 individual sessions of 60 to 75 minutes',
+        'service3-include2': 'Weekly or every two weeks — whichever suits you best',
+        'service3-include3': 'All four dates agreed from the start',
+        'service3-include4': 'Valid for 60 days from the first session',
+        'service3-format': 'Online · video call',
+        'service3-length': '4 sessions · valid for 60 days',
+        'service3-price': '€180 (€45 per session)',
+        'service3-cta': 'Book the package',
+        'viaje-label': 'About scheduling',
+        'viaje-text': 'I work while travelling, so a session may occasionally need to move for connection or time-zone reasons. If that happens, I\'ll let you know as early as I can and we\'ll find another slot that same week. Equally, you can reschedule yours with 24 hours\' notice. We always set the time in your own time zone.',
         'testimonios-title': 'Voices of people who have been here',
         'testimonios-intro': 'Shared with permission. Anonymized out of respect for each person\'s process.',
         'testimonio-1-text': 'Very perceptive. Javier helped me see things that were unsettling me and that I hadn\'t noticed myself. Thank you for the process.',
@@ -1962,9 +2014,10 @@
         'about-p1': 'I accompany processes of deep transformation. My work stands at a rarely inhabited crossroads: the place where contemporary psychology, mystical experience, and a commitment to the collective stop being separate territories.',
         'about-p2': 'I don\'t come from conventional clinical psychology. I come from a longer and less linear path: eight years in Colombia, where I trained as an integrative Gestalt therapist and where, at the same time, I learned from traditional healers, keepers of ancestral medicines, and from working with communities that have sustained ways of knowing the West has not yet learned to listen to. I worked in programs of depth psychology applied to social contexts, accompanied people through processes of psychedelic integration, and discovered that individual healing and collective transformation are not two separate things.',
         'about-p3': 'I studied the disciplines of contemporary psychology —trauma-informed work, somatic approaches, integrative therapy— but I inhabit them from a place that is both older and newer. Older: the contemplative wisdom of traditions that have spent millennia inquiring into what we are — Sufism, indigenous practices, Christian mysticism, meditation. Newer: the conviction that today this inquiry cannot be separated from the question of how we live together, what we build, what we inherit.',
+        'about-formacion': 'Formally: I hold a degree in Psychology, I am an integrative Gestalt therapist, and I completed the Certificate Program in Traumatic Stress Studies at the Trauma Research Foundation, founded by Bessel van der Kolk.',
         'about-p4': 'My work does not try to fix you or explain you. It seeks to accompany you in remembering what you already know but have lost sight of beneath the noise. I don\'t come to impose a map — I come to hold a space where your own map can be drawn.',
         'about-p5': 'I am also a writer. <em>The Enneagram Prophecy</em> is my first book: a contemplative essay that recovers the Enneagram as a sacred map of awakening, far from its commercial use as a personality test. For me, writing and accompanying are two forms of the same gesture: making space for something true to be said.',
-        'about-p6': 'I work remotely from southern Spain. I accompany in Spanish and in English.',
+        'about-p6': 'I live travelling and work remotely from wherever I am. I accompany in Spanish and in English.',
         'about-quote': 'I believe in <strong>human, integral, and compassionate</strong> therapy, where each person can <strong>reconnect with their truth, honor their story, and live closer to themselves</strong>.',
         'libro-eyebrow': 'My first book',
         'libro-desc': 'A contemplative essay that returns the Enneagram to its essence: a sacred map of awakening, far from its commercial use as a personality test.',
@@ -2008,10 +2061,13 @@
 
       const bookCover = document.getElementById('libroParallax');
       if (bookCover) {
-        const coverImage = lang === 'es'
-          ? "url('portada-libro.jpg')"
-          : "url('portada-libro-en.jpg')";
-        bookCover.style.backgroundImage = coverImage;
+        // Solo sustituimos la portada si el archivo existe de verdad;
+        // si falta la version inglesa, se mantiene la espanola en lugar de un hueco.
+        const coverFile = lang === 'es' ? 'portada-libro.jpg' : 'portada-libro-en.jpg';
+        const probe = new Image();
+        probe.onload = function () { bookCover.style.backgroundImage = "url('" + coverFile + "')"; };
+        probe.onerror = function () { bookCover.style.backgroundImage = "url('portada-libro.jpg')"; };
+        probe.src = coverFile;
       }
 
       document.body.classList.add('fade-transition');
@@ -2143,7 +2199,7 @@
     // ACTIVE NAV LINK (indicador de sección)
     // ==========================================
     const navLinks = document.querySelectorAll('.nav-fixed a');
-    const sectionsToObserve = ['sobre-mi', 'servicios', 'testimonios', 'libro', 'contacto']
+    const sectionsToObserve = ['libro', 'servicios', 'testimonios', 'sobre-mi', 'contacto']
       .map(id => document.getElementById(id))
       .filter(Boolean);
 
